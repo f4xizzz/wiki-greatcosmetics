@@ -1542,7 +1542,7 @@
 
 <h1 id="language-minimessage"><strong>Language &amp; MiniMessage</strong></h1>
 <hr />
-<p>Every piece of text the mod shows a player — GUI labels, chat feedback, item names and lore, action-bar messages — lives in editable JSON under <strong><code>config/greatcosmetics/lang/</code></strong>. There is no built-in "language" toggle: you edit the values to whatever language, wording and colors you want.</p>
+<p>Every piece of text the mod shows a player — GUI labels, chat feedback, item names and lore, action-bar messages — lives in editable JSON under <strong><code>config/GreatCosmetics/lang/</code></strong>. There is no built-in "language" toggle: you edit the values to whatever language, wording and colors you want.</p>
 <p>Console log lines are <strong>not</strong> in here — they stay in English inside the code.</p>
 <hr />
 <h2 id="the-files"><strong>The files</strong></h2>
@@ -1653,10 +1653,10 @@
 <p><code>/gc reload</code>, reopen the wardrobe — the Head category renders with a purple gradient.</p>
 <hr />
 <h2 id="client-vs-server"><strong>Client vs. server</strong></h2>
-<p>Client and server each read <strong>their own</strong> <code>config/greatcosmetics/lang/</code> from disk — there is <strong>no network sync</strong>. Distribute the same <code>lang/</code> folder with your modpack. If they differ, the GUI uses the client's copy and chat uses the server's.</p>
+<p>Client and server each read <strong>their own</strong> <code>config/GreatCosmetics/lang/</code> from disk — there is <strong>no network sync</strong>. Distribute the same <code>lang/</code> folder with your modpack. If they differ, the GUI uses the client's copy and chat uses the server's.</p>
 <hr />
 <h2 id="migrating-an-old-langjson"><strong>Migrating an old <code>lang.json</code></strong></h2>
-<p>Older builds used a single <code>config/greatcosmetics/lang.json</code>. On first run of a new build the mod imports any values you customized there into the new split files (under their new key names) and renames the old file to <code>lang.json.migrated</code>.</p>
+<p>Older builds used a single <code>config/GreatCosmetics/lang.json</code>. On first run of a new build the mod imports any values you customized there into the new split files (under their new key names) and renames the old file to <code>lang.json.migrated</code>.</p>
 
 
 

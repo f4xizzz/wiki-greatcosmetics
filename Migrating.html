@@ -1497,7 +1497,7 @@
 <h1 id="migrating-legacy"><strong>Migrating (Legacy)</strong></h1>
 <hr />
 <p>GreatCosmetics evolved from an older cosmetics system that stored cosmetics as <strong><code>carved_pumpkin</code> items with a <code>custom_model_data</code> number</strong>. If your server used that, players may still be holding those old items. The migration system swaps them for the new cosmetic entries automatically.</p>
-<p>Config file: <strong><code>config/greatcosmetics/legacy_cosmetic_migration.json</code></strong>.</p>
+<p>Config file: <strong><code>config/GreatCosmetics/legacy_cosmetic_migration.json</code></strong>.</p>
 <hr />
 <h2 id="how-it-works"><strong>How it works</strong></h2>
 <p>The file is a map of <strong>old <code>custom_model_data</code> number → new cosmetic id</strong>:</p>
@@ -1525,7 +1525,7 @@
 </div>
 <hr />
 <h2 id="migrating-from-the-langjson-file"><strong>Migrating from the <code>lang.json</code> file</strong></h2>
-<p>Unrelated to the item migration: older builds kept all text in one <code>config/greatcosmetics/lang.json</code>. The current build automatically imports your customized values into the new split <code>lang/*.json</code> files and renames the old file to <code>lang.json.migrated</code>. See <a href="Language.html">Language &amp; MiniMessage</a>.</p>
+<p>Unrelated to the item migration: older builds kept all text in one <code>config/GreatCosmetics/lang.json</code>. The current build automatically imports your customized values into the new split <code>lang/*.json</code> files and renames the old file to <code>lang.json.migrated</code>. See <a href="Language.html">Language &amp; MiniMessage</a>.</p>
 <hr />
 <h2 id="migrating-the-database"><strong>Migrating the database</strong></h2>
 <p>To move player data between SQLite and MySQL, see <a href="Storage.html#migrating-sqlite--mysql">Storage → Migrating</a>.</p>
