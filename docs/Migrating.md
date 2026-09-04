@@ -4,7 +4,7 @@
 
 GreatCosmetics evolved from an older cosmetics system that stored cosmetics as **`carved_pumpkin` items with a `custom_model_data` number**. If your server used that, players may still be holding those old items. The migration system swaps them for the new cosmetic entries automatically.
 
-Config file: **`config/greatcosmetics/legacy_cosmetic_migration.json`**.
+Config file: **`config/GreatCosmetics/legacy_cosmetic_migration.json`**.
 
 ---
 
@@ -40,7 +40,7 @@ On join (and continuously), the mod scans the player's inventory. When it finds 
 
 ## **Migrating from the `lang.json` file**
 
-Unrelated to the item migration: older builds kept all text in one `config/greatcosmetics/lang.json`. The current build automatically imports your customized values into the new split `lang/*.json` files and renames the old file to `lang.json.migrated`. See [Language & MiniMessage](Language.md).
+Unrelated to the item migration: older builds kept all text in one `config/GreatCosmetics/lang.json`. The current build automatically imports your customized values into the new split `lang/*.json` files and renames the old file to `lang.json.migrated`. See [Language & MiniMessage](Language.md).
 
 ---
 

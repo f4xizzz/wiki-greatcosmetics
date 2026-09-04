@@ -63,4 +63,4 @@ A small drawer on the side shows the player's nine virtual slots and what's equi
 
 ## **Studio backgrounds**
 
-`/gc wardrobe setbackground <name>` saves your current position as a named scene. Then `/wardrobe <player> <name>` opens the wardrobe for that player **at that location** — handy for a decorated "dressing room" build. Saved in `config/greatcosmetics/studios.json`.
+`/gc wardrobe setbackground <name>` saves your current position as a named scene. Then `/wardrobe <player> <name>` opens the wardrobe for that player **at that location** — handy for a decorated "dressing room" build. Saved in `config/GreatCosmetics/studios.json`.

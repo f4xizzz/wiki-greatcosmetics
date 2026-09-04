@@ -2,7 +2,7 @@
 
 ---
 
-Every piece of text the mod shows a player — GUI labels, chat feedback, item names and lore, action-bar messages — lives in editable JSON under **`config/greatcosmetics/lang/`**. There is no built-in "language" toggle: you edit the values to whatever language, wording and colors you want.
+Every piece of text the mod shows a player — GUI labels, chat feedback, item names and lore, action-bar messages — lives in editable JSON under **`config/GreatCosmetics/lang/`**. There is no built-in "language" toggle: you edit the values to whatever language, wording and colors you want.
 
 Console log lines are **not** in here — they stay in English inside the code.
 
@@ -75,10 +75,10 @@ Keep the token spelled exactly (`{item}`, `{slot}`, `{limit}`, `{id}`, `{player}
 
 ## **Client vs. server**
 
-Client and server each read **their own** `config/greatcosmetics/lang/` from disk — there is **no network sync**. Distribute the same `lang/` folder with your modpack. If they differ, the GUI uses the client's copy and chat uses the server's.
+Client and server each read **their own** `config/GreatCosmetics/lang/` from disk — there is **no network sync**. Distribute the same `lang/` folder with your modpack. If they differ, the GUI uses the client's copy and chat uses the server's.
 
 ---
 
 ## **Migrating an old `lang.json`**
 
-Older builds used a single `config/greatcosmetics/lang.json`. On first run of a new build the mod imports any values you customized there into the new split files (under their new key names) and renames the old file to `lang.json.migrated`.
+Older builds used a single `config/GreatCosmetics/lang.json`. On first run of a new build the mod imports any values you customized there into the new split files (under their new key names) and renames the old file to `lang.json.migrated`.

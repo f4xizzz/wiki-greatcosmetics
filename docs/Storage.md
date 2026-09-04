@@ -21,7 +21,7 @@ Set it in [`mainconfig.conf`](Main Config.md):
 `useMySQL: false` — a single local file at:
 
 ```
-config/greatcosmetics/database.db
+config/GreatCosmetics/database.db
 ```
 
 Zero setup, perfect for a single server. Back it up by copying the file (server stopped).

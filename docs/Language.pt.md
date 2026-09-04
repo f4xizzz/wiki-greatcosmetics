@@ -2,7 +2,7 @@
 
 ---
 
-Todo texto que o mod mostra a um jogador — rótulos de GUI, feedback de chat, nomes e lore de item, mensagens de action bar — fica em JSON editável em **`config/greatcosmetics/lang/`**. Não existe um toggle de "idioma" embutido: você edita os valores pro idioma, texto e cores que quiser.
+Todo texto que o mod mostra a um jogador — rótulos de GUI, feedback de chat, nomes e lore de item, mensagens de action bar — fica em JSON editável em **`config/GreatCosmetics/lang/`**. Não existe um toggle de "idioma" embutido: você edita os valores pro idioma, texto e cores que quiser.
 
 Linhas de log de console **não** ficam aqui — elas continuam em inglês dentro do código.
 
@@ -75,10 +75,10 @@ Mantenha o token escrito exatamente (`{item}`, `{slot}`, `{limit}`, `{id}`, `{pl
 
 ## **Cliente vs. servidor**
 
-Cliente e servidor leem **cada um a sua própria** pasta `config/greatcosmetics/lang/` do disco — **não há sync por rede**. Distribua a mesma pasta `lang/` com o seu modpack. Se elas divergirem, a GUI usa a cópia do cliente e o chat usa a do servidor.
+Cliente e servidor leem **cada um a sua própria** pasta `config/GreatCosmetics/lang/` do disco — **não há sync por rede**. Distribua a mesma pasta `lang/` com o seu modpack. Se elas divergirem, a GUI usa a cópia do cliente e o chat usa a do servidor.
 
 ---
 
 ## **Migrando um `lang.json` antigo**
 
-Builds mais antigas usavam um único `config/greatcosmetics/lang.json`. No primeiro boot de uma build nova o mod importa os valores que você customizou lá pros novos arquivos divididos (com os nomes de chave novos) e renomeia o arquivo antigo pra `lang.json.migrated`.
+Builds mais antigas usavam um único `config/GreatCosmetics/lang.json`. No primeiro boot de uma build nova o mod importa os valores que você customizou lá pros novos arquivos divididos (com os nomes de chave novos) e renomeia o arquivo antigo pra `lang.json.migrated`.

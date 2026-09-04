@@ -4,7 +4,7 @@
 
 You can equip GreatCosmetics cosmetics on **any living entity** — EasyNPC NPCs, Armor Stands, mobs — not just players. The mod renders the cosmetic on the entity the same way it renders it on players, so custom 3D / GeckoLib parts show correctly.
 
-Runtime state is kept in **`config/greatcosmetics/npc_cosmetics.json`** (keyed by entity UUID) and re-synced to players on join and `/gc reload`.
+Runtime state is kept in **`config/GreatCosmetics/npc_cosmetics.json`** (keyed by entity UUID) and re-synced to players on join and `/gc reload`.
 
 ---
 

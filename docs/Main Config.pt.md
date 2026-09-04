@@ -2,7 +2,7 @@
 
 ---
 
-O arquivo **`config/greatcosmetics/mainconfig.conf`** guarda as configurações gerais do servidor: slots virtuais, tipos de acessório, banco de dados, resource pack forçado e comandos de boot. Ele é gerado no primeiro boot e regravado (com as chaves que faltarem preenchidas) toda vez que carrega.
+O arquivo **`config/GreatCosmetics/mainconfig.conf`** guarda as configurações gerais do servidor: slots virtuais, tipos de acessório, banco de dados, resource pack forçado e comandos de boot. Ele é gerado no primeiro boot e regravado (com as chaves que faltarem preenchidas) toda vez que carrega.
 
 Aplique mudanças com `/gc reload`.
 
@@ -67,7 +67,7 @@ Aplique mudanças com `/gc reload`.
 
 ### **4. Banco de Dados**
 
-* **`useMySQL`** *(padrão `false`)* — `false` usa o arquivo **SQLite** local embutido (`config/greatcosmetics/database.db`). `true` conecta no servidor MySQL abaixo.
+* **`useMySQL`** *(padrão `false`)* — `false` usa o arquivo **SQLite** local embutido (`config/GreatCosmetics/database.db`). `true` conecta no servidor MySQL abaixo.
 * **`mysqlHost` / `mysqlPort` / `mysqlDatabase` / `mysqlUser` / `mysqlPassword`** — dados de conexão, usados só quando `useMySQL` é `true`.
 
 Explicação completa em [Armazenamento (Banco de Dados)](Storage.md).

@@ -2,7 +2,7 @@
 
 ---
 
-Um **efeito de partícula** é um emissor de partículas nomeado e reutilizável que você anexa a cosméticos (como rastro, ou rastro só de voo). Definido na página **Effects** do [Dev Studio](Dev Studio.md) e guardado em **`config/greatcosmetics/effects.json`**.
+Um **efeito de partícula** é um emissor de partículas nomeado e reutilizável que você anexa a cosméticos (como rastro, ou rastro só de voo). Definido na página **Effects** do [Dev Studio](Dev Studio.md) e guardado em **`config/GreatCosmetics/effects.json`**.
 
 ---
 

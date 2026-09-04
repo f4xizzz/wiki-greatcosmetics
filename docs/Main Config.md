@@ -2,7 +2,7 @@
 
 ---
 
-The file **`config/greatcosmetics/mainconfig.conf`** holds server-wide settings: virtual slots, accessory types, the database, the forced resource pack and startup commands. It is generated on first startup and re-saved (with any missing keys filled in) every time it loads.
+The file **`config/GreatCosmetics/mainconfig.conf`** holds server-wide settings: virtual slots, accessory types, the database, the forced resource pack and startup commands. It is generated on first startup and re-saved (with any missing keys filled in) every time it loads.
 
 Apply changes with `/gc reload`.
 
@@ -67,7 +67,7 @@ Apply changes with `/gc reload`.
 
 ### **4. Database**
 
-* **`useMySQL`** *(default `false`)* — `false` uses the built-in local **SQLite** file (`config/greatcosmetics/` … `greatcosmetics.db`). `true` connects to the MySQL server below.
+* **`useMySQL`** *(default `false`)* — `false` uses the built-in local **SQLite** file (`config/GreatCosmetics/` … `greatcosmetics.db`). `true` connects to the MySQL server below.
 * **`mysqlHost` / `mysqlPort` / `mysqlDatabase` / `mysqlUser` / `mysqlPassword`** — connection details, used only when `useMySQL` is `true`.
 
 Full explanation on [Storage (Database)](Storage.md).

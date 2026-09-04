@@ -4,7 +4,7 @@
 
 Você pode equipar cosméticos do GreatCosmetics em **qualquer entidade viva** — NPCs do EasyNPC, Armor Stands, mobs — não só em jogadores. O mod renderiza o cosmético na entidade do mesmo jeito que renderiza num jogador, então partes 3D / GeckoLib personalizadas aparecem corretamente.
 
-O estado em runtime fica em **`config/greatcosmetics/npc_cosmetics.json`** (chaveado por UUID da entidade) e é re-sincronizado pros jogadores no join e no `/gc reload`.
+O estado em runtime fica em **`config/GreatCosmetics/npc_cosmetics.json`** (chaveado por UUID da entidade) e é re-sincronizado pros jogadores no join e no `/gc reload`.
 
 ---
 

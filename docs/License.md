@@ -16,7 +16,7 @@ GreatCosmetics is a paid mod. On a **dedicated server** it stays locked until yo
 
     `/gc activation GREATCOSMETICS-XXXX-XXXX`
 
-On success the server writes `config/greatcosmetics/license.json` and unlocks everything. The license is re-validated against the backend every 4 hours.
+On success the server writes `config/GreatCosmetics/license.json` and unlocks everything. The license is re-validated against the backend every 4 hours.
 
 !!! info "One server per key"
     On first activation the key is bound to that server instance. Your public IP can change (dynamic IP, host migration) without breaking activation, but the key will not work on a second, different server at the same time. Contact support on Discord to move a key to a new machine.

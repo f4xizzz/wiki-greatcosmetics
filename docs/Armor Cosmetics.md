@@ -6,7 +6,7 @@ An **armor cosmetic** ties a wardrobe cosmetic to a **real item**. When a player
 
 It's how you turn "a custom diamond helmet skin" that already exists as an item on your server into a proper cosmetic — the player keeps the look, frees the armor slot, and can toggle it in the wardrobe.
 
-Catalog file: **`config/greatcosmetics/armor_cosmetics.json`**.
+Catalog file: **`config/GreatCosmetics/armor_cosmetics.json`**.
 
 ---
 

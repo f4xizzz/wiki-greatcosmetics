@@ -37,4 +37,4 @@ Leave a field **blank** (or `none`) to disable that sound.
 
 ## **`sounds.json`**
 
-There is also a server-wide sound preset file at `config/greatcosmetics/sounds.json` used by a few internal actions (e.g. the "you hit a limit" error sound, the equip confirmation). Keys map a short name to `{ id, volume, pitch }`. Edit it and `/gc reload` to change those global feedback sounds.
+There is also a server-wide sound preset file at `config/GreatCosmetics/sounds.json` used by a few internal actions (e.g. the "you hit a limit" error sound, the equip confirmation). Keys map a short name to `{ id, volume, pitch }`. Edit it and `/gc reload` to change those global feedback sounds.

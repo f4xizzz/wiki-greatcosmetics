@@ -4,7 +4,7 @@
 
 A **cosmetic** is one wearable entry in the catalog. It occupies one virtual slot, renders one or more 3D **parts** on the player, and can carry stats, abilities, effects, Lure bonuses and sounds.
 
-The catalog lives in **`config/greatcosmetics/cosmeticsconfig.conf`** (JSON despite the extension). You rarely edit it by hand — the [Dev Studio](Dev Studio.md) writes it for you and broadcasts changes live. This page explains what each field means.
+The catalog lives in **`config/GreatCosmetics/cosmeticsconfig.conf`** (JSON despite the extension). You rarely edit it by hand — the [Dev Studio](Dev Studio.md) writes it for you and broadcasts changes live. This page explains what each field means.
 
 ---
 

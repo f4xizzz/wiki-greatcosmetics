@@ -21,7 +21,7 @@ Links de download em [Dependências](Dependencies.md).
 
 1. Coloque o `.jar` do GreatCosmetics na pasta `mods/` do seu servidor (junto com Cobblemon, Fabric API e Fabric Language Kotlin).
 2. Inicie (ou reinicie) o servidor.
-3. No primeiro boot o mod cria a pasta **`config/greatcosmetics/`** com todos os arquivos de config padrão, e gera um cosmético inicial pra você confirmar que carregou.
+3. No primeiro boot o mod cria a pasta **`config/GreatCosmetics/`** com todos os arquivos de config padrão, e gera um cosmético inicial pra você confirmar que carregou.
 
 !!! note "Mesmo jar pros jogadores"
     Só existe um jar — dê pros jogadores exatamente o mesmo arquivo que você colocou no servidor (mesma versão). A Dev Studio e as outras ferramentas de admin já são restritas a operadores e jogadores com a permissão específica, então não tem build separada e enxuta pra distribuir.
@@ -30,7 +30,7 @@ Links de download em [Dependências](Dependencies.md).
 
 ## **Passo 2 — Configure o básico**
 
-Abra `config/greatcosmetics/` e ajuste:
+Abra `config/GreatCosmetics/` e ajuste:
 
 | Arquivo | O que definir | Página |
 | :--- | :--- | :--- |
@@ -48,7 +48,7 @@ Num **servidor dedicado**, o GreatCosmetics fica travado até você ativar uma c
 1. Entre no seu servidor como operador.
 2. Rode: `/gc activation GREATCOSMETICS-XXXX-XXXX`
 
-Isso vincula a chave à instância do seu servidor e cria `config/greatcosmetics/license.json`.
+Isso vincula a chave à instância do seu servidor e cria `config/GreatCosmetics/license.json`.
 
 !!! warning "Um servidor por chave"
     Na primeira ativação a chave é vinculada àquela instância de servidor. O seu IP público pode mudar sem quebrar a ativação, mas a chave não pode ser compartilhada nem rodar num segundo servidor diferente. Fale com o suporte pra migrar uma chave pra outra máquina.

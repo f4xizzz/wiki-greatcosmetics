@@ -37,4 +37,4 @@ Deixe um campo **em branco** (ou `none`) pra desativar esse som.
 
 ## **`sounds.json`**
 
-Também existe um arquivo de presets de som globais do servidor em `config/greatcosmetics/sounds.json` usado por algumas ações internas (ex: o som de "você bateu num limite", a confirmação de equipar). As chaves mapeiam um nome curto pra `{ id, volume, pitch }`. Edite e `/gc reload` pra mudar esses sons de feedback globais.
+Também existe um arquivo de presets de som globais do servidor em `config/GreatCosmetics/sounds.json` usado por algumas ações internas (ex: o som de "você bateu num limite", a confirmação de equipar). As chaves mapeiam um nome curto pra `{ id, volume, pitch }`. Edite e `/gc reload` pra mudar esses sons de feedback globais.

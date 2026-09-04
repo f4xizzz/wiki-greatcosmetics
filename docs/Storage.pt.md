@@ -21,7 +21,7 @@ Defina no [`mainconfig.conf`](Main Config.md):
 `useMySQL: false` — um único arquivo local em:
 
 ```
-config/greatcosmetics/database.db
+config/GreatCosmetics/database.db
 ```
 
 Zero setup, perfeito pra um servidor único. Faça backup copiando o arquivo (servidor parado).

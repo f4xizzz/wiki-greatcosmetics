@@ -2,7 +2,7 @@
 
 ---
 
-A **particle effect** is a named, reusable particle emitter you attach to cosmetics (as a trail, or a fly-only trail). Defined in the [Dev Studio](Dev Studio.md) **Effects** page and stored in **`config/greatcosmetics/effects.json`**.
+A **particle effect** is a named, reusable particle emitter you attach to cosmetics (as a trail, or a fly-only trail). Defined in the [Dev Studio](Dev Studio.md) **Effects** page and stored in **`config/GreatCosmetics/effects.json`**.
 
 ---
 

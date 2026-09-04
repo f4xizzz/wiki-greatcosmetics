@@ -4,7 +4,7 @@
 
 **Tags** are selectable chat prefixes. A player picks one in the **Tags** tab of the wardrobe; the mod applies it through **LuckPerms**.
 
-Catalog file: **`config/greatcosmetics/tags.json`**. Requires **LuckPerms** to actually change the chat prefix — without it, Tags are preview-only.
+Catalog file: **`config/GreatCosmetics/tags.json`**. Requires **LuckPerms** to actually change the chat prefix — without it, Tags are preview-only.
 
 ---
 

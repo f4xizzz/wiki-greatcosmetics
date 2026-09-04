@@ -60,7 +60,7 @@ Rode `/gc reload`. Pro `mainconfig.conf` e os arquivos `lang/` isso basta. **Mod
 
 ### **8. Como eu traduzo o mod / mudo as mensagens dele?**
 
-Tudo fica em `config/greatcosmetics/lang/*.json`, um arquivo por área, tudo renderizado com MiniMessage. Edite os valores, `/gc reload`. Ver [Idioma & MiniMessage](Language.md).
+Tudo fica em `config/GreatCosmetics/lang/*.json`, um arquivo por área, tudo renderizado com MiniMessage. Edite os valores, `/gc reload`. Ver [Idioma & MiniMessage](Language.md).
 
 ---
 

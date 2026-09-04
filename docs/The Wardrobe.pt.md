@@ -63,4 +63,4 @@ Uma pequena gaveta na lateral mostra os nove slots virtuais do jogador e o que e
 
 ## **Cenários de estúdio**
 
-`/gc wardrobe setbackground <nome>` salva sua posição atual como uma cena nomeada. Aí `/wardrobe <jogador> <nome>` abre o guarda-roupa pra esse jogador **naquele lugar** — ótimo pra um "provador" decorado. Salvo em `config/greatcosmetics/studios.json`.
+`/gc wardrobe setbackground <nome>` salva sua posição atual como uma cena nomeada. Aí `/wardrobe <jogador> <nome>` abre o guarda-roupa pra esse jogador **naquele lugar** — ótimo pra um "provador" decorado. Salvo em `config/GreatCosmetics/studios.json`.

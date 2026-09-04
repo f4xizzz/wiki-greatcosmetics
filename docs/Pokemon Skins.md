@@ -4,7 +4,7 @@
 
 A **Pokémon Skin** applies a Cobblemon **aspect** (like `summer`, `clone`, `mega`) to one of the player's party Pokémon, changing its look. Players manage them in the **Party** tab of the wardrobe.
 
-Catalog file: **`config/greatcosmetics/pokeskins.json`**. Requires **Cobblemon**.
+Catalog file: **`config/GreatCosmetics/pokeskins.json`**. Requires **Cobblemon**.
 
 ---
 
@@ -50,7 +50,7 @@ The **DEV** toggle (needs `gc.dev` / OP) shows every skin as owned for testing.
 
 ## **Skin groups & colors**
 
-`config/greatcosmetics/skin_groups.json` maps a group name to a color used for its header in the list:
+`config/GreatCosmetics/skin_groups.json` maps a group name to a color used for its header in the list:
 
 ```json
 { "League of Legends": "#c8aa6e", "Arcane": "#3b0e6d" }

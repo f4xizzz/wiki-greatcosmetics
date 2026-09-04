@@ -6,7 +6,7 @@ Um **cosmético de armadura** vincula um cosmético do guarda-roupa a um **item 
 
 É assim que você transforma "uma skin de capacete de diamante personalizada" que já existe como item no seu servidor num cosmético de verdade — o jogador mantém o visual, libera o slot de armadura, e pode alternar no guarda-roupa.
 
-Arquivo de catálogo: **`config/greatcosmetics/armor_cosmetics.json`**.
+Arquivo de catálogo: **`config/GreatCosmetics/armor_cosmetics.json`**.
 
 ---
 

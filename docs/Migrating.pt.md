@@ -4,7 +4,7 @@
 
 O GreatCosmetics evoluiu de um sistema de cosméticos mais antigo que guardava cosméticos como **itens `carved_pumpkin` com um número `custom_model_data`**. Se o seu servidor usava isso, jogadores ainda podem estar segurando esses itens antigos. O sistema de migração troca eles pelas entradas de cosmético novas automaticamente.
 
-Arquivo de config: **`config/greatcosmetics/legacy_cosmetic_migration.json`**.
+Arquivo de config: **`config/GreatCosmetics/legacy_cosmetic_migration.json`**.
 
 ---
 
@@ -40,7 +40,7 @@ No join (e continuamente), o mod escaneia o inventário do jogador. Quando acha 
 
 ## **Migrando do arquivo `lang.json`**
 
-Sem relação com a migração de item: builds mais antigas guardavam todo texto num único `config/greatcosmetics/lang.json`. A build atual importa automaticamente os seus valores customizados pros novos arquivos divididos `lang/*.json` e renomeia o arquivo antigo pra `lang.json.migrated`. Ver [Idioma & MiniMessage](Language.md).
+Sem relação com a migração de item: builds mais antigas guardavam todo texto num único `config/GreatCosmetics/lang.json`. A build atual importa automaticamente os seus valores customizados pros novos arquivos divididos `lang/*.json` e renomeia o arquivo antigo pra `lang.json.migrated`. Ver [Idioma & MiniMessage](Language.md).
 
 ---
 

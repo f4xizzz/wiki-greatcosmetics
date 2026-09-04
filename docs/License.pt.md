@@ -16,7 +16,7 @@ O GreatCosmetics é um mod pago. Num **servidor dedicado** ele fica travado até
 
     `/gc activation GREATCOSMETICS-XXXX-XXXX`
 
-Ao dar certo o servidor grava `config/greatcosmetics/license.json` e destrava tudo. A licença é revalidada contra o backend a cada 4 horas.
+Ao dar certo o servidor grava `config/GreatCosmetics/license.json` e destrava tudo. A licença é revalidada contra o backend a cada 4 horas.
 
 !!! info "Um servidor por chave"
     Na primeira ativação a chave é vinculada àquela instância de servidor. O seu IP público pode mudar (IP dinâmico, troca de host) sem quebrar a ativação, mas a chave não funciona em um segundo servidor diferente ao mesmo tempo. Fale com o suporte no Discord pra migrar uma chave pra outra máquina.

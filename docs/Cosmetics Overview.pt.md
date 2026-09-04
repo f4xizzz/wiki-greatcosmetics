@@ -4,7 +4,7 @@
 
 Um **cosmético** é uma entrada vestível no catálogo. Ele ocupa um slot virtual, renderiza uma ou mais **partes** 3D no jogador, e pode carregar stats, habilidades, efeitos, bônus de Lure e sons.
 
-O catálogo fica em **`config/greatcosmetics/cosmeticsconfig.conf`** (JSON apesar da extensão). Você raramente edita na mão — o [Dev Studio](Dev Studio.md) grava pra você e transmite as mudanças ao vivo. Esta página explica o que cada campo significa.
+O catálogo fica em **`config/GreatCosmetics/cosmeticsconfig.conf`** (JSON apesar da extensão). Você raramente edita na mão — o [Dev Studio](Dev Studio.md) grava pra você e transmite as mudanças ao vivo. Esta página explica o que cada campo significa.
 
 ---
 
