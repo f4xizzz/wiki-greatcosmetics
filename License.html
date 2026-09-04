@@ -1520,7 +1520,7 @@
 
 <h1 id="license-activation"><strong>License &amp; Activation</strong></h1>
 <hr />
-<p>GreatCosmetics is a paid mod. On a <strong>dedicated server</strong> it stays locked until you activate a license key; the key is permanently bound to that server's IP by a signed backend.</p>
+<p>GreatCosmetics is a paid mod. On a <strong>dedicated server</strong> it stays locked until you activate a license key. The key is then bound to that server and validated against our backend.</p>
 <p><strong>Singleplayer and integrated LAN worlds are always active</strong> — no key, no internet check.</p>
 <hr />
 <h2 id="activating"><strong>Activating</strong></h2>
@@ -1532,10 +1532,14 @@
 <p><code>/gc activation GREATCOSMETICS-XXXX-XXXX</code></p>
 </li>
 </ol>
-<p>On success the server writes <code>config/greatcosmetics/license.json</code> and unlocks everything. This file is checked (offline, via RSA signature) on every boot and re-validated against the backend every 4 hours.</p>
-<div class="admonition warning">
-<p class="admonition-title">One IP per key</p>
-<p>The backend binds the key to the <strong>first IP</strong> that activates it. You cannot move a key to a new IP or share it. Contact support on Discord to reset a key you legitimately need to migrate.</p>
+<p>On success the server writes <code>config/greatcosmetics/license.json</code> and unlocks everything. The license is re-validated against the backend every 4 hours.</p>
+<div class="admonition info">
+<p class="admonition-title">One server per key</p>
+<p>On first activation the key is bound to that server instance. Your public IP can change (dynamic IP, host migration) without breaking activation, but the key will not work on a second, different server at the same time. Contact support on Discord to move a key to a new machine.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Backend outages don't take you down</p>
+<p>If the backend is temporarily unreachable, an already-activated server keeps running for a grace period while it retries in the background. You only lose access if the key is actually revoked or expires.</p>
 </div>
 <hr />
 <h2 id="while-unlicensed"><strong>While unlicensed</strong></h2>
@@ -1557,27 +1561,17 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><code>GREATCOSMETICS-XXXX-XXXX</code></td>
-<td style="text-align: left;">Normal key. IP-locked, jar-integrity checked. Lifetime unless issued as temporary.</td>
+<td style="text-align: left;">Normal key. Bound to your server. Lifetime unless issued as temporary.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>GREATCOSMETICS-XXXX-XXXX</code> <em>(temporary)</em></td>
 <td style="text-align: left;">Same, but expires at a set date; the mod locks itself when the date passes.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><code>GREATCOSMETICS-DEV-XXXX-XXXX</code></td>
-<td style="text-align: left;">Developer key. <strong>No IP-lock, no jar-hash check.</strong> For your own test environments.</td>
-</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="licensejson"><strong><code>license.json</code></strong></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"license_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREATCOSMETICS-XXXX-XXXX"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"base64-RSA-signature"</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Do <strong>not</strong> edit it — the <code>signature</code> is verified against the mod's embedded public key on every startup. A tampered signature locks the mod. Don't commit this file to version control; it's per-server.</p>
+<p>Written and managed by the mod. Do <strong>not</strong> edit it — an invalid file simply fails verification and the mod stays locked until you run <code>/gc activation</code> again. Don't commit this file to version control; it's per-server.</p>
 <hr />
 <h2 id="troubleshooting-activation"><strong>Troubleshooting activation</strong></h2>
 <table>
@@ -1589,24 +1583,16 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">"Activation failed. Invalid key, or bound to another IP."</td>
-<td style="text-align: left;">Key already used on another IP, revoked, or mistyped.</td>
+<td style="text-align: left;">"Activation failed. Invalid key, or bound to another server."</td>
+<td style="text-align: left;">Key already bound elsewhere, revoked, or mistyped.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Activation hangs then fails on the first try</td>
 <td style="text-align: left;">The backend was asleep (cold start ~30–60 s). Run the command again.</td>
 </tr>
 <tr>
-<td style="text-align: left;">"Integrity check failed. Adulterated JAR."</td>
-<td style="text-align: left;">Your jar's hash isn't registered for this release yet — use a <code>-DEV-</code> key, or ask support to register the release hash.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Works, then locks a few hours later</td>
-<td style="text-align: left;">Temporary key expired, or the 4-hour re-validation failed (key revoked / server offline).</td>
-</tr>
-<tr>
-<td style="text-align: left;">Log says "possible illegal mixin injection … Locking the mod"</td>
-<td style="text-align: left;">Another mod is touching the license classes. The mod locks itself (the server keeps running). Remove the offending mod or contact support.</td>
+<td style="text-align: left;">Works, then locks later</td>
+<td style="text-align: left;">Temporary key expired, the key was revoked, or the backend was unreachable past the grace period.</td>
 </tr>
 </tbody>
 </table>

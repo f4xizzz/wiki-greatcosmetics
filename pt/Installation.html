@@ -1598,8 +1598,8 @@
 <li>No primeiro boot o mod cria a pasta <strong><code>config/greatcosmetics/</code></strong> com todos os arquivos de config padrão, e gera um cosmético inicial pra você confirmar que carregou.</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Jar client-only</p>
-<p>A build também gera um <code>*-client.jar</code> com o <strong>Dev Studio removido</strong> e sem os drivers de banco. Dê esse pros seus jogadores no modpack; mantenha o jar completo no servidor. Os dois têm que ser da mesma versão.</p>
+<p class="admonition-title">Mesmo jar pros jogadores</p>
+<p>Só existe um jar — dê pros jogadores exatamente o mesmo arquivo que você colocou no servidor (mesma versão). A Dev Studio e as outras ferramentas de admin já são restritas a operadores e jogadores com a permissão específica, então não tem build separada e enxuta pra distribuir.</p>
 </div>
 <hr />
 <h2 id="passo-2-configure-o-basico"><strong>Passo 2 — Configure o básico</strong></h2>
@@ -1633,10 +1633,10 @@
 <li>Entre no seu servidor como operador.</li>
 <li>Rode: <code>/gc activation GREATCOSMETICS-XXXX-XXXX</code></li>
 </ol>
-<p>Isso vincula a chave ao IP do seu servidor e cria <code>config/greatcosmetics/license.json</code>.</p>
+<p>Isso vincula a chave à instância do seu servidor e cria <code>config/greatcosmetics/license.json</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Um servidor por chave</p>
-<p>O sistema de segurança vincula a chave permanentemente ao <strong>primeiro IP</strong> que a validar. Compartilhamento e múltiplas ativações não são possíveis. Chaves <code>-DEV-</code> são a exceção (sem trava de IP, sem checagem de hash do jar).</p>
+<p>Na primeira ativação a chave é vinculada àquela instância de servidor. O seu IP público pode mudar sem quebrar a ativação, mas a chave não pode ser compartilhada nem rodar num segundo servidor diferente. Fale com o suporte pra migrar uma chave pra outra máquina.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Singleplayer / LAN</p>

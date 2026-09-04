@@ -1598,8 +1598,8 @@
 <li>On first startup the mod creates the folder <strong><code>config/greatcosmetics/</code></strong> with all its default config files, and generates a starter cosmetic so you can confirm it loaded.</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Client-only jar</p>
-<p>The build also produces a <code>*-client.jar</code> with the <strong>Dev Studio removed</strong> and no database drivers. Give that one to your players in the modpack; keep the full jar on the server. Both must be the same version.</p>
+<p class="admonition-title">Same jar for players</p>
+<p>There's only one jar — give players the exact same file you put on the server (same version). The Dev Studio and other admin tools are already restricted to operators and players with the specific permission, so there's no separate stripped-down build to distribute.</p>
 </div>
 <hr />
 <h2 id="step-2-configure-the-basics"><strong>Step 2 — Configure the basics</strong></h2>
@@ -1633,10 +1633,10 @@
 <li>Join your server as an operator.</li>
 <li>Run: <code>/gc activation GREATCOSMETICS-XXXX-XXXX</code></li>
 </ol>
-<p>This binds the key to your server's IP and creates <code>config/greatcosmetics/license.json</code>.</p>
+<p>This binds the key to your server instance and creates <code>config/greatcosmetics/license.json</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">One server per key</p>
-<p>The security system permanently binds a key to the <strong>first IP</strong> that validates it. Key sharing and multi-activation are not possible. <code>-DEV-</code> keys are the exception (no IP-lock, no jar-hash check).</p>
+<p>On first activation the key is bound to that server instance. Your public IP can change without breaking activation, but a key cannot be shared or run on a second, different server. Contact support to migrate a key to a new machine.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Singleplayer / LAN</p>

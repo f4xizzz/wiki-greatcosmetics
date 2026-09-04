@@ -1520,7 +1520,7 @@
 
 <h1 id="licenca-ativacao"><strong>Licença &amp; Ativação</strong></h1>
 <hr />
-<p>O GreatCosmetics é um mod pago. Num <strong>servidor dedicado</strong> ele fica travado até você ativar uma chave de licença; a chave é vinculada permanentemente ao IP do servidor por um backend assinado.</p>
+<p>O GreatCosmetics é um mod pago. Num <strong>servidor dedicado</strong> ele fica travado até você ativar uma chave de licença. A chave é então vinculada ao servidor e validada contra o nosso backend.</p>
 <p><strong>Singleplayer e mundos LAN integrados estão sempre ativos</strong> — sem chave, sem checagem de internet.</p>
 <hr />
 <h2 id="ativando"><strong>Ativando</strong></h2>
@@ -1532,10 +1532,14 @@
 <p><code>/gc activation GREATCOSMETICS-XXXX-XXXX</code></p>
 </li>
 </ol>
-<p>Ao dar certo o servidor grava <code>config/greatcosmetics/license.json</code> e destrava tudo. Esse arquivo é verificado (offline, via assinatura RSA) a cada boot e revalidado contra o backend a cada 4 horas.</p>
-<div class="admonition warning">
-<p class="admonition-title">Um IP por chave</p>
-<p>O backend vincula a chave ao <strong>primeiro IP</strong> que a ativar. Você não pode mover uma chave pra um IP novo nem compartilhar. Fale com o suporte no Discord pra resetar uma chave que você legitimamente precisa migrar.</p>
+<p>Ao dar certo o servidor grava <code>config/greatcosmetics/license.json</code> e destrava tudo. A licença é revalidada contra o backend a cada 4 horas.</p>
+<div class="admonition info">
+<p class="admonition-title">Um servidor por chave</p>
+<p>Na primeira ativação a chave é vinculada àquela instância de servidor. O seu IP público pode mudar (IP dinâmico, troca de host) sem quebrar a ativação, mas a chave não funciona em um segundo servidor diferente ao mesmo tempo. Fale com o suporte no Discord pra migrar uma chave pra outra máquina.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Queda do backend não te derruba</p>
+<p>Se o backend ficar temporariamente fora do ar, um servidor já ativado continua rodando por um período de tolerância enquanto tenta de novo em segundo plano. Você só perde o acesso se a chave for realmente revogada ou expirar.</p>
 </div>
 <hr />
 <h2 id="enquanto-sem-licenca"><strong>Enquanto sem licença</strong></h2>
@@ -1557,27 +1561,17 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><code>GREATCOSMETICS-XXXX-XXXX</code></td>
-<td style="text-align: left;">Chave normal. Travada por IP, integridade do jar checada. Vitalícia, salvo se emitida como temporária.</td>
+<td style="text-align: left;">Chave normal. Vinculada ao seu servidor. Vitalícia, salvo se emitida como temporária.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>GREATCOSMETICS-XXXX-XXXX</code> <em>(temporária)</em></td>
 <td style="text-align: left;">Igual, mas expira numa data definida; o mod se trava quando a data passa.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><code>GREATCOSMETICS-DEV-XXXX-XXXX</code></td>
-<td style="text-align: left;">Chave de desenvolvedor. <strong>Sem trava de IP, sem checagem de hash do jar.</strong> Pros seus próprios ambientes de teste.</td>
-</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="licensejson"><strong><code>license.json</code></strong></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"license_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREATCOSMETICS-XXXX-XXXX"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"expires_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assinatura-RSA-em-base64"</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Não</strong> edite — a <code>signature</code> é verificada contra a chave pública embutida no mod a cada startup. Uma assinatura adulterada trava o mod. Não commite esse arquivo no controle de versão; ele é por servidor.</p>
+<p>Gravado e gerenciado pelo mod. <strong>Não</strong> edite — um arquivo inválido simplesmente falha na verificação e o mod fica travado até você rodar <code>/gc activation</code> de novo. Não commite esse arquivo no controle de versão; ele é por servidor.</p>
 <hr />
 <h2 id="resolvendo-problemas-de-ativacao"><strong>Resolvendo problemas de ativação</strong></h2>
 <table>
@@ -1589,24 +1583,16 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">"Activation failed. Invalid key, or bound to another IP."</td>
-<td style="text-align: left;">Chave já usada em outro IP, revogada, ou digitada errado.</td>
+<td style="text-align: left;">"Activation failed. Invalid key, or bound to another server."</td>
+<td style="text-align: left;">Chave já vinculada a outro servidor, revogada, ou digitada errado.</td>
 </tr>
 <tr>
 <td style="text-align: left;">A ativação trava e falha na primeira tentativa</td>
 <td style="text-align: left;">O backend estava dormindo (cold start ~30–60 s). Rode o comando de novo.</td>
 </tr>
 <tr>
-<td style="text-align: left;">"Integrity check failed. Adulterated JAR."</td>
-<td style="text-align: left;">O hash do seu jar não está registrado pra essa release ainda — use uma chave <code>-DEV-</code>, ou peça ao suporte pra registrar o hash da release.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Funciona, depois trava algumas horas depois</td>
-<td style="text-align: left;">Chave temporária expirou, ou a revalidação de 4h falhou (chave revogada / servidor offline).</td>
-</tr>
-<tr>
-<td style="text-align: left;">Log diz "possible illegal mixin injection … Locking the mod"</td>
-<td style="text-align: left;">Outro mod está mexendo nas classes de licença. O mod se trava (o servidor continua rodando). Remova o mod ofensor ou fale com o suporte.</td>
+<td style="text-align: left;">Funciona, depois trava</td>
+<td style="text-align: left;">Chave temporária expirou, a chave foi revogada, ou o backend ficou fora do ar além do período de tolerância.</td>
 </tr>
 </tbody>
 </table>
