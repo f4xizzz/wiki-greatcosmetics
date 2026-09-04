@@ -23,8 +23,8 @@ See [Dependencies](Dependencies.md) for download links.
 2. Start (or restart) the server.
 3. On first startup the mod creates the folder **`config/greatcosmetics/`** with all its default config files, and generates a starter cosmetic so you can confirm it loaded.
 
-!!! note "Client-only jar"
-    The build also produces a `*-client.jar` with the **Dev Studio removed** and no database drivers. Give that one to your players in the modpack; keep the full jar on the server. Both must be the same version.
+!!! note "Same jar for players"
+    There's only one jar — give players the exact same file you put on the server (same version). The Dev Studio and other admin tools are already restricted to operators and players with the specific permission, so there's no separate stripped-down build to distribute.
 
 ---
 
@@ -48,10 +48,10 @@ On a **dedicated server**, GreatCosmetics stays locked until you activate a lice
 1. Join your server as an operator.
 2. Run: `/gc activation GREATCOSMETICS-XXXX-XXXX`
 
-This binds the key to your server's IP and creates `config/greatcosmetics/license.json`.
+This binds the key to your server instance and creates `config/greatcosmetics/license.json`.
 
 !!! warning "One server per key"
-    The security system permanently binds a key to the **first IP** that validates it. Key sharing and multi-activation are not possible. `-DEV-` keys are the exception (no IP-lock, no jar-hash check).
+    On first activation the key is bound to that server instance. Your public IP can change without breaking activation, but a key cannot be shared or run on a second, different server. Contact support to migrate a key to a new machine.
 
 !!! info "Singleplayer / LAN"
     In singleplayer or an integrated LAN world the mod is **always active** — no key needed. Activation is a dedicated-server concept.

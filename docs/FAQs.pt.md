@@ -14,9 +14,9 @@ Quase sempre o **resource pack** não está carregado no cliente. O GreatCosmeti
 
 Você está num servidor dedicado sem uma chave ativada. Rode `/gc activation GREATCOSMETICS-XXXX-XXXX`. Se a ativação falhar:
 
-* A chave pode estar vinculada a outro IP (chaves são de servidor único).
+* A chave pode já estar vinculada a outro servidor (chaves são de servidor único).
 * O backend de licença pode estar acordando — a primeira requisição depois de um tempo parado pode levar até um minuto; tente de novo.
-* O hash do seu jar pode não estar registrado ainda pra essa release — use uma chave `-DEV-` enquanto isso.
+* Confirme que você está rodando o jar oficial sem modificação.
 
 Ver [Licença & Ativação](License.md).
 

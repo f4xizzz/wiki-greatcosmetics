@@ -23,13 +23,12 @@ Every piece of text the mod shows (menus, chat, item names) is stored in editabl
 * **Particle Effects & Sounds:** trailing particles and per-action sounds (equip, walk, fly, sneak, idle…).
 * **Armor → Cosmetic conversion:** turn real armor items into wardrobe cosmetics automatically.
 * **Forced Resource Pack:** the mod can push its texture pack to clients on join and on `/gc reload`, no `server.properties` edits needed.
-* **License Security:** IP-locked license keys validated against a signed backend, protecting the paid mod.
 
 ---
 
 ## **Development and Authorship**
 
-GreatCosmetics was fully designed and programmed by **F4xizzz** — the Fabric/Java mod, the Node.js licensing backend, and the security/validation systems.
+GreatCosmetics was fully designed and programmed by **F4xizzz** — the Fabric/Java mod and the Node.js licensing backend.
 
 ---
 

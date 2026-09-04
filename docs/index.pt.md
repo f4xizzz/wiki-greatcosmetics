@@ -23,13 +23,12 @@ Todo texto que o mod mostra (menus, chat, nomes de item) fica em arquivos JSON e
 * **Efeitos de Partícula e Sons:** rastros de partícula e sons por ação (equipar, andar, voar, agachar, parado…).
 * **Conversão Armadura → Cosmético:** transforma itens de armadura reais em cosméticos do guarda-roupa automaticamente.
 * **Resource Pack Forçado:** o mod pode enviar o texture pack pros clientes no join e no `/gc reload`, sem editar `server.properties`.
-* **Segurança de Licença:** chaves de licença travadas por IP, validadas contra um backend assinado, protegendo o mod pago.
 
 ---
 
 ## **Desenvolvimento e Autoria**
 
-O GreatCosmetics foi totalmente projetado e programado pelo **F4xizzz** — o mod Fabric/Java, o backend de licenciamento em Node.js, e os sistemas de segurança/validação.
+O GreatCosmetics foi totalmente projetado e programado pelo **F4xizzz** — o mod Fabric/Java e o backend de licenciamento em Node.js.
 
 ---
 

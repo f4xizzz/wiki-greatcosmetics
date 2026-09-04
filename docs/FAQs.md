@@ -14,9 +14,9 @@ Almost always the **resource pack** isn't loaded on the client. GreatCosmetics s
 
 You are on a dedicated server without an activated key. Run `/gc activation GREATCOSMETICS-XXXX-XXXX`. If activation fails:
 
-* The key may be bound to another IP (keys are single-server).
+* The key may already be bound to another server (keys are single-server).
 * The licensing backend may be waking up — the first request after idle can take up to a minute; try again.
-* Your jar hash may not be registered yet for this release — use a `-DEV-` key in the meantime.
+* Make sure you are running the unmodified official jar.
 
 See [License & Activation](License.md).
 

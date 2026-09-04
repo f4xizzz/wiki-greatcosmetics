@@ -23,8 +23,8 @@ Links de download em [Dependências](Dependencies.md).
 2. Inicie (ou reinicie) o servidor.
 3. No primeiro boot o mod cria a pasta **`config/greatcosmetics/`** com todos os arquivos de config padrão, e gera um cosmético inicial pra você confirmar que carregou.
 
-!!! note "Jar client-only"
-    A build também gera um `*-client.jar` com o **Dev Studio removido** e sem os drivers de banco. Dê esse pros seus jogadores no modpack; mantenha o jar completo no servidor. Os dois têm que ser da mesma versão.
+!!! note "Mesmo jar pros jogadores"
+    Só existe um jar — dê pros jogadores exatamente o mesmo arquivo que você colocou no servidor (mesma versão). A Dev Studio e as outras ferramentas de admin já são restritas a operadores e jogadores com a permissão específica, então não tem build separada e enxuta pra distribuir.
 
 ---
 
@@ -48,10 +48,10 @@ Num **servidor dedicado**, o GreatCosmetics fica travado até você ativar uma c
 1. Entre no seu servidor como operador.
 2. Rode: `/gc activation GREATCOSMETICS-XXXX-XXXX`
 
-Isso vincula a chave ao IP do seu servidor e cria `config/greatcosmetics/license.json`.
+Isso vincula a chave à instância do seu servidor e cria `config/greatcosmetics/license.json`.
 
 !!! warning "Um servidor por chave"
-    O sistema de segurança vincula a chave permanentemente ao **primeiro IP** que a validar. Compartilhamento e múltiplas ativações não são possíveis. Chaves `-DEV-` são a exceção (sem trava de IP, sem checagem de hash do jar).
+    Na primeira ativação a chave é vinculada àquela instância de servidor. O seu IP público pode mudar sem quebrar a ativação, mas a chave não pode ser compartilhada nem rodar num segundo servidor diferente. Fale com o suporte pra migrar uma chave pra outra máquina.
 
 !!! info "Singleplayer / LAN"
     No singleplayer ou num mundo LAN integrado o mod fica **sempre ativo** — sem chave. A ativação é um conceito de servidor dedicado.
