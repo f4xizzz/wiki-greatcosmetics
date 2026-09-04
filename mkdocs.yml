@@ -1,0 +1,91 @@
+# py -m mkdocs build --clean
+# py -m mkdocs serve
+# py -m mkdocs gh-deploy
+site_name: GreatCosmetics Wiki
+site_url: https://f4xizzz.github.io/wiki-greatcosmetics/
+theme:
+  name: material
+  language: en
+  favicon: assets/icon.png
+  logo: assets/icon.png
+  custom_dir: overrides
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+  features:
+    - navigation.sections
+    - search.highlight
+    - search.suggest
+    - navigation.footer
+
+plugins:
+  - search
+  - i18n:
+      languages:
+        - locale: en
+          name: English
+          default: true
+        - locale: pt
+          name: Português
+          docs_path: pt
+      fallback_to_default: true
+
+nav:
+  - Getting Started:
+      - Introduction: index.md
+      - Dependencies: Dependencies.md
+      - Installation: Installation.md
+      - Commands: Commands.md
+      - Permissions: Permissions.md
+      - FAQs: FAQs.md
+
+  - Configuration:
+      - Main Config: Main Config.md
+      - Language & MiniMessage: Language.md
+      - Storage (Database): Storage.md
+      - Resource Pack: Resource Pack.md
+      - License & Activation: License.md
+
+  - The Wardrobe:
+      - The Wardrobe: The Wardrobe.md
+      - Backpacks: Backpacks.md
+
+  - Cosmetics:
+      - Cosmetics Overview: Cosmetics Overview.md
+      - Dev Studio: Dev Studio.md
+      - Parts & Models: Parts and Models.md
+      - Slots & Types: Slots and Types.md
+      - Attributes & Abilities: Attributes.md
+      - Lure System: Lure System.md
+      - Sounds: Sounds.md
+      - Armor Cosmetics: Armor Cosmetics.md
+
+  - More Systems:
+      - Tags: Tags.md
+      - Pokemon Skins: Pokemon Skins.md
+      - Particle Effects: Particle Effects.md
+      - NPC Cosmetics: NPC Cosmetics.md
+      - Migrating (Legacy): Migrating.md
+
+markdown_extensions:
+  - attr_list: {}
+  - md_in_html: {}
+  - admonition: {}
+  - pymdownx.details: {}
+  - pymdownx.superfences: {}
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+use_directory_urls: false

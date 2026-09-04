@@ -1,0 +1,8 @@
+py -m mkdocs serve
+py -m mkdocs build --clean
+py -m mkdocs gh-deploy
+
+
+git add .
+git commit -m "Atualizando documentação para a versão 1.1.0"
+git push

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block styles %}
+  {{ super() }}
+  <style>
+    /* Título no cabeçalho */
+    .md-header__title {
+        display: block !important;
+        font-size: 28px !important;
+        font-weight: bold !important;
+        color: white !important;
+        margin-left: 15px !important;
+    }
+    /* Logo no cabeçalho */
+    .md-header .md-logo img {
+        height: 80px !important;
+        max-height: 70px !important;
+        width: auto !important;
+    }
+    .md-header__button.md-logo {
+        height: 70px !important;
+        padding: 0 !important;
+    }
+    .md-header {
+        height: 80px !important;
+    }
+    /* Cor primária/accent (roxo cosmético) */
+    [data-md-color-scheme="default"],
+    [data-md-color-scheme="slate"] {
+        --md-primary-fg-color: #6d28d9 !important;
+        --md-primary-fg-color--light: #4c1d95 !important;
+        --md-accent-fg-color: #ffffff !important;
+    }
+    .md-nav__item--nested > .md-nav__link {
+        color: #a855f7 !important;
+        font-weight: bold !important;
+    }
+  </style>
+{% endblock %}
