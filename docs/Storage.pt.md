@@ -55,7 +55,7 @@ Criadas automaticamente. Normalmente você nunca mexe nelas direto.
 | `player_equipped_cosmetics` | Cosméticos usados no momento (por slot / tipo) |
 | `player_cosmetic_settings` | Toggles de esconder capacete / peitoral / calça / botas |
 | `player_hidden_cosmetics` | Cosméticos escondidos individualmente |
-| `player_backpacks` | NBT em Base64 de cada página de mochila |
+| `player_backpacks` | NBT em Base64 do conteúdo de cada mochila |
 | `player_unlocked_skins` / `player_skin_cooldowns` | Posse e timestamps de cooldown das Skins de Pokémon |
 | `player_tags` | Tags possuídas e a equipada |
 

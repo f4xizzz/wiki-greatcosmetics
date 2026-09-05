@@ -55,7 +55,7 @@ Created automatically. You normally never touch these directly.
 | `player_equipped_cosmetics` | Currently worn cosmetics (per slot / type) |
 | `player_cosmetic_settings` | Hide-helmet / chestplate / leggings / boots toggles |
 | `player_hidden_cosmetics` | Individually hidden cosmetics |
-| `player_backpacks` | Base64 NBT of each backpack page |
+| `player_backpacks` | Base64 NBT of each backpack's contents |
 | `player_unlocked_skins` / `player_skin_cooldowns` | Pokémon Skins ownership and cooldown timestamps |
 | `player_tags` | Owned Tags and the equipped one |
 
