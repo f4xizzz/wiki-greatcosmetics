@@ -12,7 +12,7 @@
 | Minecraft | 1.21.1 | 1.21.1 |
 | Java | 21 ou superior | 21 ou superior |
 | Loader | Fabric Loader 0.16 ou superior | NeoForge 21.1.133 ou superior |
-| Cobblemon | 1.7.3 | 1.7.3 |
+| Cobblemon | 1.8.0 | 1.8.0 |
 | Runtime Kotlin | Fabric Language Kotlin `1.13.13+kotlin.2.4.10` ou superior | Kotlin for Forge `5.7.0` ou superior |
 | API | Fabric API `0.116.9+1.21.1` ou superior | — |
 | Architectury API | `13.0.0` ou superior | `13.0.0` ou superior |

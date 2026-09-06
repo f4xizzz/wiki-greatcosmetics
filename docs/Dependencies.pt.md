@@ -12,7 +12,7 @@ O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java 
 | [**Fabric API**](https://modrinth.com/mod/fabric-api) `0.116.9+1.21.1` ou mais novo | Hooks base do build Fabric. |
 | [**Fabric Language Kotlin**](https://modrinth.com/mod/fabric-language-kotlin) `1.13.13+kotlin.2.4.10` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
 | [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (Fabric) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
-| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.7.3` (Fabric) | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
+| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` (Fabric) | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
 
 ## **Obrigatórias — NeoForge**
 
@@ -21,7 +21,7 @@ O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java 
 | [**NeoForge**](https://neoforged.net/) `21.1.133` ou mais novo | Carregador de mods. |
 | [**Kotlin for Forge**](https://modrinth.com/mod/kotlin-for-forge) `5.7.0` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
 | [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (NeoForge) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
-| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.7.3` (NeoForge) | As mesmas features do Fabric. |
+| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` (NeoForge) | As mesmas features do Fabric. |
 
 !!! note "Bibliotecas embutidas"
     O **GeckoLib** (renderizador dos modelos 3D animados), a biblioteca de texto **adventure / MiniMessage** e os drivers JDBC de SQLite / MySQL vêm *dentro* do jar do GreatCosmetics nos dois loaders. Você nunca os adiciona manualmente.
