@@ -4,7 +4,7 @@
 
 ## **Welcome to GreatCosmetics**
 
-**GreatCosmetics** is a full cosmetics framework for **Cobblemon** servers running on **Fabric**. It gives your players a 3D *Avatar Studio* to browse and equip cosmetics on nine virtual body slots, plus chat tags, Pokémon skins, storage backpacks, particle effects and a Cobblemon *Lure* bonus system — all editable **in-game**, with no restart, through the built-in **Dev Studio**.
+**GreatCosmetics** is a full cosmetics framework for **Cobblemon** servers on **Fabric** and **NeoForge**. It gives your players a 3D *Avatar Studio* to browse and equip cosmetics on nine virtual body slots, plus chat tags, Pokémon skins, storage backpacks, particle effects and a Cobblemon *Lure* bonus system — all editable **in-game**, with no restart, through the built-in **Dev Studio**.
 
 Every piece of text the mod shows (menus, chat, item names) is stored in editable JSON files and rendered through **MiniMessage**, so you control the language, colors and formatting without touching the code.
 

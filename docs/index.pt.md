@@ -4,7 +4,7 @@
 
 ## **Bem-vindo ao GreatCosmetics**
 
-O **GreatCosmetics** é um framework completo de cosméticos para servidores **Cobblemon** em **Fabric**. Ele dá aos seus jogadores um *Avatar Studio* 3D para escolher e equipar cosméticos em nove slots virtuais do corpo, além de tags de chat, skins de Pokémon, mochilas de armazenamento, efeitos de partícula e um sistema de bônus de *Lure* do Cobblemon — tudo editável **dentro do jogo**, sem reiniciar, pelo **Dev Studio** embutido.
+O **GreatCosmetics** é um framework completo de cosméticos para servidores **Cobblemon** em **Fabric** e **NeoForge**. Ele dá aos seus jogadores um *Avatar Studio* 3D para escolher e equipar cosméticos em nove slots virtuais do corpo, além de tags de chat, skins de Pokémon, mochilas de armazenamento, efeitos de partícula e um sistema de bônus de *Lure* do Cobblemon — tudo editável **dentro do jogo**, sem reiniciar, pelo **Dev Studio** embutido.
 
 Todo texto que o mod mostra (menus, chat, nomes de item) fica em arquivos JSON editáveis e é renderizado com **MiniMessage**, então você controla o idioma, as cores e a formatação sem mexer no código.
 

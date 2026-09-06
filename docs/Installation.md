@@ -2,16 +2,20 @@
 
 ---
 
+!!! info "Fabric **and** NeoForge"
+    GreatCosmetics ships for both loaders. Pick the jar that matches your server — `greatcosmetics-fabric-<version>.jar` or `greatcosmetics-neoforge-<version>.jar`. NeoForge support is a recent addition; if something behaves differently from Fabric, report it on [Discord](https://discord.gg/aDCgBbvRe5).
+
 ## **Server Requirements**
 
-| Requirement | Version |
-| :--- | :--- |
-| Minecraft | 1.21.1 |
-| Fabric Loader | 0.18.3 or higher |
-| Fabric API | 0.116.9+1.21.1 or higher |
-| Java | 21 or higher |
-| Cobblemon | 1.7.3 |
-| Fabric Language Kotlin | 1.13.13+kotlin.2.4.10 or higher |
+| Requirement | Fabric | NeoForge |
+| :--- | :--- | :--- |
+| Minecraft | 1.21.1 | 1.21.1 |
+| Java | 21 or higher | 21 or higher |
+| Loader | Fabric Loader 0.16 or higher | NeoForge 21.1.133 or higher |
+| Cobblemon | 1.7.3 | 1.7.3 |
+| Kotlin runtime | Fabric Language Kotlin `1.13.13+kotlin.2.4.10` or higher | Kotlin for Forge `5.7.0` or higher |
+| API | Fabric API `0.116.9+1.21.1` or higher | — |
+| Architectury API | `13.0.0` or higher | `13.0.0` or higher |
 
 See [Dependencies](Dependencies.md) for download links.
 
@@ -19,7 +23,7 @@ See [Dependencies](Dependencies.md) for download links.
 
 ## **Step 1 — Drop in the jar**
 
-1. Place the GreatCosmetics `.jar` in your server's `mods/` folder (alongside Cobblemon, Fabric API and Fabric Language Kotlin).
+1. Place the GreatCosmetics `.jar` for your loader in your server's `mods/` folder, alongside Cobblemon, Architectury API and the Kotlin runtime (Fabric Language Kotlin on Fabric, Kotlin for Forge on NeoForge — plus Fabric API on Fabric).
 2. Start (or restart) the server.
 3. On first startup the mod creates the folder **`config/GreatCosmetics/`** with all its default config files, and generates a starter cosmetic so you can confirm it loaded.
 

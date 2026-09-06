@@ -2,19 +2,29 @@
 
 ---
 
-## **Obrigatórias**
+O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java `21+`). Baixe o jar que combina com o seu loader.
+
+## **Obrigatórias — Fabric**
 
 | Dependência | Observações |
 | :--- | :--- |
-| [**Fabric Loader**](https://fabricmc.net/use/) `>= 0.18.3` | Carregador de mods. |
-| [**Fabric API**](https://modrinth.com/mod/fabric-api) `0.116.9+1.21.1` ou mais novo | Hooks base do mod. |
-| [**Fabric Language Kotlin**](https://modrinth.com/mod/fabric-language-kotlin) `1.13.13+kotlin.2.4.10` ou mais novo | Exigido pelo Cobblemon e pelo GreatCosmetics. |
-| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.7.3` | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
-| **GeckoLib** (Fabric, 1.21.1) | Renderiza os modelos 3D animados dos cosméticos. **Já vem dentro do jar do mod** — você não instala separado. |
-| **Minecraft** `1.21.1` · **Java** `21+` | Servidor e cliente. |
+| [**Fabric Loader**](https://fabricmc.net/use/) `>= 0.16` | Carregador de mods. |
+| [**Fabric API**](https://modrinth.com/mod/fabric-api) `0.116.9+1.21.1` ou mais novo | Hooks base do build Fabric. |
+| [**Fabric Language Kotlin**](https://modrinth.com/mod/fabric-language-kotlin) `1.13.13+kotlin.2.4.10` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
+| [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (Fabric) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
+| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.7.3` (Fabric) | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
+
+## **Obrigatórias — NeoForge**
+
+| Dependência | Observações |
+| :--- | :--- |
+| [**NeoForge**](https://neoforged.net/) `21.1.133` ou mais novo | Carregador de mods. |
+| [**Kotlin for Forge**](https://modrinth.com/mod/kotlin-for-forge) `5.7.0` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
+| [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (NeoForge) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
+| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.7.3` (NeoForge) | As mesmas features do Fabric. |
 
 !!! note "Bibliotecas embutidas"
-    GeckoLib, a biblioteca de texto **adventure / MiniMessage** e os drivers JDBC de SQLite / MySQL vêm *dentro* do jar do GreatCosmetics. Você nunca os adiciona manualmente.
+    O **GeckoLib** (renderizador dos modelos 3D animados), a biblioteca de texto **adventure / MiniMessage** e os drivers JDBC de SQLite / MySQL vêm *dentro* do jar do GreatCosmetics nos dois loaders. Você nunca os adiciona manualmente.
 
 ---
 
