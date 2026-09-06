@@ -1516,11 +1516,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Backpack Rows</strong></td>
-<td style="text-align: left;">Chest rows per page, <code>1</code>–<code>6</code> (9 slots each).</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Backpack Pages</strong></td>
-<td style="text-align: left;">How many independent pages. <code>1</code> = a single chest, no page arrows.</td>
+<td style="text-align: left;">Chest rows, <code>1</code>–<code>6</code> (9 slots each).</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Backpack Name</strong></td>
@@ -1536,12 +1532,10 @@
 <li>Press the backpack keybind (default <strong><code>B</code></strong>), or bind it in <strong>Options → Controls → GreatCosmetics</strong>.</li>
 <li>If the player wears <strong>several</strong> backpacks, a small picker appears first.</li>
 </ul>
-<p>Multi-page backpacks show <strong><code>&lt;</code> / <code>&gt;</code></strong> arrows and a <strong><code>Page X/Y</code></strong> label attached to the chest; switching pages swaps the contents in place without closing the GUI.</p>
 <hr />
 <h2 id="storage-safety"><strong>Storage &amp; safety</strong></h2>
 <ul>
 <li>Contents are saved to the database <strong>on every change</strong>, not just on close — a crash won't lose items.</li>
-<li>Each page is stored separately, so existing single-page backpacks keep their items when you later add pages.</li>
 <li>Contents are per-player and per-backpack-cosmetic. Removing the cosmetic from a player does <strong>not</strong> delete the stored items — re-granting it brings them back.</li>
 </ul>
 <hr />

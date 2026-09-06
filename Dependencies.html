@@ -442,10 +442,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#required" class="md-nav__link">
+  <a href="#required-fabric" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required
+        Required — Fabric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-neoforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required — NeoForge
       
     </span>
   </a>
@@ -1414,10 +1425,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#required" class="md-nav__link">
+  <a href="#required-fabric" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required
+        Required — Fabric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-neoforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required — NeoForge
       
     </span>
   </a>
@@ -1454,7 +1476,8 @@
 
 <h1 id="dependencies"><strong>Dependencies</strong></h1>
 <hr />
-<h2 id="required"><strong>Required</strong></h2>
+<p>GreatCosmetics runs on <strong>Fabric</strong> or <strong>NeoForge</strong> for Minecraft <code>1.21.1</code> (Java <code>21+</code>). Download the jar that matches your loader.</p>
+<h2 id="required-fabric"><strong>Required — Fabric</strong></h2>
 <table>
 <thead>
 <tr>
@@ -1464,34 +1487,57 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="https://fabricmc.net/use/"><strong>Fabric Loader</strong></a> <code>&gt;= 0.18.3</code></td>
+<td style="text-align: left;"><a href="https://fabricmc.net/use/"><strong>Fabric Loader</strong></a> <code>&gt;= 0.16</code></td>
 <td style="text-align: left;">Mod loader.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="https://modrinth.com/mod/fabric-api"><strong>Fabric API</strong></a> <code>0.116.9+1.21.1</code> or newer</td>
-<td style="text-align: left;">Core hooks the mod is built on.</td>
+<td style="text-align: left;">Core hooks the Fabric build uses.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="https://modrinth.com/mod/fabric-language-kotlin"><strong>Fabric Language Kotlin</strong></a> <code>1.13.13+kotlin.2.4.10</code> or newer</td>
-<td style="text-align: left;">Required by Cobblemon and by GreatCosmetics.</td>
+<td style="text-align: left;">Kotlin runtime — required by Cobblemon.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.7.3</code></td>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/architectury-api"><strong>Architectury API</strong></a> <code>&gt;= 13.0</code> (Fabric)</td>
+<td style="text-align: left;">Cross-loader hooks GreatCosmetics is built on. Usually already installed by Cobblemon.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.7.3</code> (Fabric)</td>
 <td style="text-align: left;">The Party tab, Pokémon Skins and the Lure system read Cobblemon data.</td>
 </tr>
+</tbody>
+</table>
+<h2 id="required-neoforge"><strong>Required — NeoForge</strong></h2>
+<table>
+<thead>
 <tr>
-<td style="text-align: left;"><strong>GeckoLib</strong> (Fabric, 1.21.1)</td>
-<td style="text-align: left;">Renders the animated 3D cosmetic models. <strong>Bundled inside the mod jar</strong> — you do not install it separately.</td>
+<th style="text-align: left;">Dependency</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://neoforged.net/"><strong>NeoForge</strong></a> <code>21.1.133</code> or newer</td>
+<td style="text-align: left;">Mod loader.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Minecraft</strong> <code>1.21.1</code> · <strong>Java</strong> <code>21+</code></td>
-<td style="text-align: left;">Server and client.</td>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/kotlin-for-forge"><strong>Kotlin for Forge</strong></a> <code>5.7.0</code> or newer</td>
+<td style="text-align: left;">Kotlin runtime — required by Cobblemon.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/architectury-api"><strong>Architectury API</strong></a> <code>&gt;= 13.0</code> (NeoForge)</td>
+<td style="text-align: left;">Cross-loader hooks GreatCosmetics is built on. Usually already installed by Cobblemon.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.7.3</code> (NeoForge)</td>
+<td style="text-align: left;">Same features as on Fabric.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Bundled libraries</p>
-<p>GeckoLib, the <strong>adventure / MiniMessage</strong> text library, and the SQLite / MySQL JDBC drivers are shipped <em>inside</em> the GreatCosmetics jar. You never add them manually.</p>
+<p><strong>GeckoLib</strong> (the animated 3D model renderer), the <strong>adventure / MiniMessage</strong> text library, and the SQLite / MySQL JDBC drivers are shipped <em>inside</em> the GreatCosmetics jar on both loaders. You never add them manually.</p>
 </div>
 <hr />
 <h2 id="optional"><strong>Optional</strong></h2>

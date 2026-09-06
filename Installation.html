@@ -1554,38 +1554,54 @@
 
 <h1 id="installation"><strong>Installation</strong></h1>
 <hr />
+<div class="admonition info">
+<p class="admonition-title">Fabric <strong>and</strong> NeoForge</p>
+<p>GreatCosmetics ships for both loaders. Pick the jar that matches your server — <code>greatcosmetics-fabric-&lt;version&gt;.jar</code> or <code>greatcosmetics-neoforge-&lt;version&gt;.jar</code>. NeoForge support is a recent addition; if something behaves differently from Fabric, report it on <a href="https://discord.gg/aDCgBbvRe5">Discord</a>.</p>
+</div>
 <h2 id="server-requirements"><strong>Server Requirements</strong></h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Requirement</th>
-<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Fabric</th>
+<th style="text-align: left;">NeoForge</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Minecraft</td>
 <td style="text-align: left;">1.21.1</td>
-</tr>
-<tr>
-<td style="text-align: left;">Fabric Loader</td>
-<td style="text-align: left;">0.18.3 or higher</td>
-</tr>
-<tr>
-<td style="text-align: left;">Fabric API</td>
-<td style="text-align: left;">0.116.9+1.21.1 or higher</td>
+<td style="text-align: left;">1.21.1</td>
 </tr>
 <tr>
 <td style="text-align: left;">Java</td>
 <td style="text-align: left;">21 or higher</td>
+<td style="text-align: left;">21 or higher</td>
+</tr>
+<tr>
+<td style="text-align: left;">Loader</td>
+<td style="text-align: left;">Fabric Loader 0.16 or higher</td>
+<td style="text-align: left;">NeoForge 21.1.133 or higher</td>
 </tr>
 <tr>
 <td style="text-align: left;">Cobblemon</td>
 <td style="text-align: left;">1.7.3</td>
+<td style="text-align: left;">1.7.3</td>
 </tr>
 <tr>
-<td style="text-align: left;">Fabric Language Kotlin</td>
-<td style="text-align: left;">1.13.13+kotlin.2.4.10 or higher</td>
+<td style="text-align: left;">Kotlin runtime</td>
+<td style="text-align: left;">Fabric Language Kotlin <code>1.13.13+kotlin.2.4.10</code> or higher</td>
+<td style="text-align: left;">Kotlin for Forge <code>5.7.0</code> or higher</td>
+</tr>
+<tr>
+<td style="text-align: left;">API</td>
+<td style="text-align: left;">Fabric API <code>0.116.9+1.21.1</code> or higher</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Architectury API</td>
+<td style="text-align: left;"><code>13.0.0</code> or higher</td>
+<td style="text-align: left;"><code>13.0.0</code> or higher</td>
 </tr>
 </tbody>
 </table>
@@ -1593,7 +1609,7 @@
 <hr />
 <h2 id="step-1-drop-in-the-jar"><strong>Step 1 — Drop in the jar</strong></h2>
 <ol>
-<li>Place the GreatCosmetics <code>.jar</code> in your server's <code>mods/</code> folder (alongside Cobblemon, Fabric API and Fabric Language Kotlin).</li>
+<li>Place the GreatCosmetics <code>.jar</code> for your loader in your server's <code>mods/</code> folder, alongside Cobblemon, Architectury API and the Kotlin runtime (Fabric Language Kotlin on Fabric, Kotlin for Forge on NeoForge — plus Fabric API on Fabric).</li>
 <li>Start (or restart) the server.</li>
 <li>On first startup the mod creates the folder <strong><code>config/GreatCosmetics/</code></strong> with all its default config files, and generates a starter cosmetic so you can confirm it loaded.</li>
 </ol>
