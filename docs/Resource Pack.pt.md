@@ -50,12 +50,6 @@ Deixe o mod enviar o pack no join e no `/gc reload`. No [`mainconfig.conf`](Main
 
 ---
 
-## **Texturas Claras / Escuras**
-
-Os jogadores podem rodar `/lightmode` ou `/darkmode` no cliente pra trocar o tema da GUI do guarda-roupa; o mod recarrega os recursos do cliente, então um pack que forneça as duas variantes troca na hora.
-
----
-
 ## **Resolução de Problemas**
 
 * **Tudo é uma textura roxa/preta de faltando** → o cliente não tem pack, ou o pack falhou ao baixar. Cheque o `latest.log` do cliente por um erro de download de resource pack.

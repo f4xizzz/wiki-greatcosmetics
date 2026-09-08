@@ -49,17 +49,6 @@ Every subcommand has its **own permission node** — see [Permissions](Permissio
 
 ---
 
-## **Client Commands**
-
-Run on the client, no permission needed:
-
-| Command | Description |
-| :--- | :--- |
-| `/lightmode` | Switches the wardrobe GUI/textures to the light theme and reloads resources. |
-| `/darkmode` | Switches back to the dark theme. |
-
----
-
 ## **Keybinds**
 
 Configurable in **Options → Controls → GreatCosmetics**:

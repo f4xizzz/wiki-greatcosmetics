@@ -65,4 +65,4 @@ Everything is in `config/GreatCosmetics/lang/*.json`, one file per area, all ren
 ---
 
 !!! tip "Still stuck?"
-    Open a **support ticket** on our [Discord](https://discord.gg/aDCgBbvRe5) with your `latest.log` and a description of what you expected.
+    Open a **support ticket** on our [Discord](https://discord.gg/YgM4Ng4QGu) with your `latest.log` and a description of what you expected.

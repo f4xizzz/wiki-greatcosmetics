@@ -17,6 +17,12 @@ Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Config
 
 ---
 
+## **Lure HUD**
+
+While a player wears one or more Lure cosmetics (or cosmetic-armor) with `enabled: true`, a small column appears to the **right of the hotbar** showing the **combined** bonuses — the same summed totals the server actually applies. It disappears when no Lure is active. Toggle it server-wide with `lureHud` in [Main Config](Main Config.md) (on by default).
+
+---
+
 ## **Fields**
 
 | Field | Type | Effect | When |

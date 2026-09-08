@@ -6,11 +6,14 @@ GreatCosmetics is a paid mod. On a **dedicated server** it stays locked until yo
 
 **Singleplayer and integrated LAN worlds are always active** — no key, no internet check.
 
+!!! tip "Free trial"
+    Grab a free `GREATCOSMETICS-TRIAL-XXXX-XXXX` key on our [Discord](https://discord.gg/YgM4Ng4QGu) to try the mod on your server. One trial key works on any server; each server gets its own countdown that starts on its first activation, and the mod locks itself when that trial runs out.
+
 ---
 
 ## **Activating**
 
-1. Buy a key on our [Discord](https://discord.gg/aDCgBbvRe5) — you receive a `GREATCOSMETICS-XXXX-XXXX` key after payment.
+1. Get a key on our [Discord](https://discord.gg/YgM4Ng4QGu) — a free `GREATCOSMETICS-TRIAL-XXXX-XXXX` trial key, or a `GREATCOSMETICS-XXXX-XXXX` full key after purchase.
 2. Join your server as a real operator.
 3. Run:
 
@@ -40,8 +43,9 @@ On a dedicated server without a valid license:
 
 | Format | Behaviour |
 | :--- | :--- |
-| `GREATCOSMETICS-XXXX-XXXX` | Normal key. Bound to your server. Lifetime unless issued as temporary. |
+| `GREATCOSMETICS-XXXX-XXXX` | Full key. Bound to your server. Lifetime unless issued as temporary. |
 | `GREATCOSMETICS-XXXX-XXXX` *(temporary)* | Same, but expires at a set date; the mod locks itself when the date passes. |
+| `GREATCOSMETICS-TRIAL-XXXX-XXXX` | Free trial. Works on any server; each server gets its own N-day countdown starting at its first activation. Locks when the trial ends. |
 
 ---
 

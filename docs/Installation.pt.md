@@ -2,8 +2,8 @@
 
 ---
 
-!!! info "Fabric **e** NeoForge"
-    O GreatCosmetics tem versão pros dois loaders. Escolha o jar que combina com o seu servidor — `greatcosmetics-fabric-<versão>.jar` ou `greatcosmetics-neoforge-<versão>.jar`. O suporte a NeoForge é recente; se algo se comportar diferente do Fabric, avise no [Discord](https://discord.gg/aDCgBbvRe5).
+!!! info "Fabric é o lançamento atual"
+    A versão pública roda em **Fabric** — use `greatcosmetics-fabric-<versão>.jar`. Existe um build de **NeoForge** em testes; ele vai ser publicado assim que for verificado. Fica de olho no [Discord](https://discord.gg/YgM4Ng4QGu) pro anúncio.
 
 ## **Requisitos do Servidor**
 

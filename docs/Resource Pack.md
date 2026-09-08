@@ -50,12 +50,6 @@ Let the mod push the pack on join and on `/gc reload`. In [`mainconfig.conf`](Ma
 
 ---
 
-## **Light / Dark textures**
-
-Players can run `/lightmode` or `/darkmode` on the client to switch the wardrobe GUI theme; the mod reloads client resources so a pack that provides both light and dark variants swaps instantly.
-
----
-
 ## **Troubleshooting**
 
 * **Everything is a purple/black missing texture** → the client has no pack, or the pack failed to download. Check the client's `latest.log` for a resource pack download error.

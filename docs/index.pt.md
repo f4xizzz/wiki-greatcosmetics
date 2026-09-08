@@ -33,5 +33,5 @@ O GreatCosmetics foi totalmente projetado e programado pelo **F4xizzz** — o mo
 ---
 
 !!! info "Comunidade Oficial"
-    Dúvidas de configuração, reports de bug e novidades de update acontecem no nosso [**Discord**](https://discord.gg/aDCgBbvRe5) oficial.
+    Dúvidas de configuração, reports de bug e novidades de update acontecem no nosso [**Discord**](https://discord.gg/YgM4Ng4QGu) oficial.
     *Esta documentação é mantida atualizada para te dar a melhor experiência de setup do GreatCosmetics no seu servidor.*

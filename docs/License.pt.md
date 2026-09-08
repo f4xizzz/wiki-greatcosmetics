@@ -6,11 +6,14 @@ O GreatCosmetics é um mod pago. Num **servidor dedicado** ele fica travado até
 
 **Singleplayer e mundos LAN integrados estão sempre ativos** — sem chave, sem checagem de internet.
 
+!!! tip "Trial grátis"
+    Pega uma chave `GREATCOSMETICS-TRIAL-XXXX-XXXX` grátis no nosso [Discord](https://discord.gg/YgM4Ng4QGu) pra testar o mod no seu servidor. Uma chave de trial funciona em qualquer servidor; cada servidor tem sua própria contagem regressiva, que começa na primeira ativação dele, e o mod se trava quando o trial acaba.
+
 ---
 
 ## **Ativando**
 
-1. Compre uma chave no nosso [Discord](https://discord.gg/aDCgBbvRe5) — você recebe uma chave `GREATCOSMETICS-XXXX-XXXX` após o pagamento.
+1. Pega uma chave no nosso [Discord](https://discord.gg/YgM4Ng4QGu) — uma `GREATCOSMETICS-TRIAL-XXXX-XXXX` grátis, ou uma `GREATCOSMETICS-XXXX-XXXX` completa após a compra.
 2. Entre no seu servidor como operador de verdade.
 3. Rode:
 
@@ -40,8 +43,9 @@ Num servidor dedicado sem licença válida:
 
 | Formato | Comportamento |
 | :--- | :--- |
-| `GREATCOSMETICS-XXXX-XXXX` | Chave normal. Vinculada ao seu servidor. Vitalícia, salvo se emitida como temporária. |
+| `GREATCOSMETICS-XXXX-XXXX` | Chave completa. Vinculada ao seu servidor. Vitalícia, salvo se emitida como temporária. |
 | `GREATCOSMETICS-XXXX-XXXX` *(temporária)* | Igual, mas expira numa data definida; o mod se trava quando a data passa. |
+| `GREATCOSMETICS-TRIAL-XXXX-XXXX` | Trial grátis. Funciona em qualquer servidor; cada servidor tem sua contagem de N dias, começando na primeira ativação dele. Trava quando o trial acaba. |
 
 ---
 

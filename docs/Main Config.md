@@ -13,6 +13,8 @@ Apply changes with `/gc reload`.
 ```json
 {
   "autoDetectModels": true,
+  "compactStatusBars": true,
+  "lureHud": true,
   "devModePermission": "gc.perm.devmode",
   "tagGroupBlacklist": ["default"],
 
@@ -57,22 +59,29 @@ Apply changes with `/gc reload`.
 
 * **`autoDetectModels`** *(default `true`)* — lets the mod scan the resource pack and auto-generate the Custom Model Data overrides on the ghost item. Leave this on unless you build the item model JSON by hand.
 
-### **2. Dev Mode**
+### **2. HUD**
+
+Both are client-visible toggles synced from the server; change them here and `/gc reload`.
+
+* **`compactStatusBars`** *(default `true`)* — when a player's **maximum** health or armor goes past two full rows (20 points), the HUD shows one bar plus an `xN` multiplier instead of stacking squashed rows (health) or clipping the overflow (armor). Purely visual, and it only ever triggers if a player actually has >20 max health/armor from attributes or equipment — a vanilla-stats server never sees it. Set `false` for 100% vanilla bars.
+* **`lureHud`** *(default `true`)* — shows the **aggregated Lure bonuses** (the summed total of every equipped Lure cosmetic / cosmetic-armor with `enabled: true`, exactly as the server applies them) in a column to the right of the hotbar. Hidden when no Lure is active, when the HUD is hidden (F1), or while a GUI is open. See [Lure System](Lure System.md).
+
+### **3. Dev Mode**
 
 * **`devModePermission`** *(default `gc.perm.devmode`)* — the permission node that grants the **Dev Mode** bypass (equip any cosmetic for testing without owning it). Change it if you want a different node name.
 
-### **3. Tag Group Blacklist**
+### **4. Tag Group Blacklist**
 
 * **`tagGroupBlacklist`** — LuckPerms group names that are **never** imported as chat Tags (case-insensitive). Add internal/administrative groups here so they don't clutter the Tags menu. `default` is blacklisted out of the box. See [Tags](Tags.md).
 
-### **4. Database**
+### **5. Database**
 
 * **`useMySQL`** *(default `false`)* — `false` uses the built-in local **SQLite** file (`config/GreatCosmetics/` … `greatcosmetics.db`). `true` connects to the MySQL server below.
 * **`mysqlHost` / `mysqlPort` / `mysqlDatabase` / `mysqlUser` / `mysqlPassword`** — connection details, used only when `useMySQL` is `true`.
 
 Full explanation on [Storage (Database)](Storage.md).
 
-### **5. Slots**
+### **6. Slots**
 
 `slots` maps each of the nine virtual slot names to:
 
@@ -81,7 +90,7 @@ Full explanation on [Storage (Database)](Storage.md).
 
 You can remove slots you don't want, but the nine names above are the only valid ones.
 
-### **6. Types**
+### **7. Types**
 
 `types` is a free-form map — the key is the type name you'll type into a cosmetic's **Type** field. Each type has:
 
@@ -89,7 +98,7 @@ You can remove slots you don't want, but the nine names above are the only valid
 * **`limitPerPlayer`** — max cosmetics of this type a player may wear at once.
 * **`permission`** — base node for `<base>.<N>` / `<base>.bypass` tiers.
 
-### **7. Forced Resource Pack**
+### **8. Forced Resource Pack**
 
 Instead of `resource-pack` / `resource-pack-sha1` in `server.properties` (which need a restart), the mod can push the pack itself:
 
@@ -100,7 +109,7 @@ Instead of `resource-pack` / `resource-pack-sha1` in `server.properties` (which 
 
 See [Resource Pack](Resource Pack.md).
 
-### **8. Startup Commands**
+### **9. Startup Commands**
 
 * **`startupCommands`** — a list of commands run **as console** a few seconds after the server finishes starting (later than `SERVER_STARTED`, so mods/plugins that load slowly are ready). Example:
 

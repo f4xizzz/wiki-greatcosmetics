@@ -49,17 +49,6 @@ Cada subcomando tem o **seu próprio node de permissão** — ver [Permissões](
 
 ---
 
-## **Comandos de Client**
-
-Rodam no cliente, sem permissão:
-
-| Comando | Descrição |
-| :--- | :--- |
-| `/lightmode` | Muda o GUI/texturas do guarda-roupa pro tema claro e recarrega os recursos. |
-| `/darkmode` | Volta pro tema escuro. |
-
----
-
 ## **Teclas**
 
 Configuráveis em **Opções → Controles → GreatCosmetics**:

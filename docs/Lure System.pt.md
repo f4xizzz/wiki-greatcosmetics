@@ -17,6 +17,12 @@ Configure na seção **`>> Configure LURE`** do editor de cosmético do [Dev Stu
 
 ---
 
+## **HUD de Lure**
+
+Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-cosmético) com `enabled: true`, aparece uma coluna à **direita da hotbar** com os bônus **somados** — os mesmos totais que o servidor aplica de verdade. Some quando não tem Lure ativo. Liga/desliga pro servidor todo com `lureHud` no [Main Config](Main Config.md) (ligado por padrão).
+
+---
+
 ## **Campos**
 
 | Campo | Tipo | Efeito | Quando |

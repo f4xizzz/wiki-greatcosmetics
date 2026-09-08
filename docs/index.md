@@ -33,5 +33,5 @@ GreatCosmetics was fully designed and programmed by **F4xizzz** — the Fabric/J
 ---
 
 !!! info "Official Community"
-    Configuration questions, bug reports and update news happen on our official [**Discord**](https://discord.gg/aDCgBbvRe5).
+    Configuration questions, bug reports and update news happen on our official [**Discord**](https://discord.gg/YgM4Ng4QGu).
     *This documentation is kept up to date to give you the best setup experience for GreatCosmetics on your server.*

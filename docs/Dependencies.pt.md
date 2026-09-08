@@ -2,7 +2,7 @@
 
 ---
 
-O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java `21+`). Baixe o jar que combina com o seu loader.
+O lançamento atual do GreatCosmetics roda em **Fabric** no Minecraft `1.21.1` (Java `21+`). Um build de NeoForge está em testes.
 
 ## **Obrigatórias — Fabric**
 
@@ -14,7 +14,7 @@ O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java 
 | [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (Fabric) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
 | [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` (Fabric) | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
 
-## **Obrigatórias — NeoForge**
+## **Obrigatórias — NeoForge** *(em testes, ainda não lançado)*
 
 | Dependência | Observações |
 | :--- | :--- |
@@ -39,4 +39,4 @@ O GreatCosmetics roda em **Fabric** ou **NeoForge** no Minecraft `1.21.1` (Java 
 ---
 
 !!! info "Precisa de outra integração?"
-    Se o seu servidor usa um sistema de permissão ou chat que ainda não suportamos, abra um ticket no nosso [Discord](https://discord.gg/aDCgBbvRe5) — a gente avalia e prioriza integrações pedidas.
+    Se o seu servidor usa um sistema de permissão ou chat que ainda não suportamos, abra um ticket no nosso [Discord](https://discord.gg/YgM4Ng4QGu) — a gente avalia e prioriza integrações pedidas.

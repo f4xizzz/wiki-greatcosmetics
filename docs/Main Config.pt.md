@@ -13,6 +13,8 @@ Aplique mudanças com `/gc reload`.
 ```json
 {
   "autoDetectModels": true,
+  "compactStatusBars": true,
+  "lureHud": true,
   "devModePermission": "gc.perm.devmode",
   "tagGroupBlacklist": ["default"],
 
@@ -57,22 +59,29 @@ Aplique mudanças com `/gc reload`.
 
 * **`autoDetectModels`** *(padrão `true`)* — deixa o mod escanear o resource pack e gerar automaticamente os overrides de Custom Model Data no item fantasma. Deixe ligado a menos que você monte o JSON de modelo do item na mão.
 
-### **2. Dev Mode**
+### **2. HUD**
+
+Os dois são toggles visíveis no client, sincronizados do servidor; muda aqui e `/gc reload`.
+
+* **`compactStatusBars`** *(padrão `true`)* — quando a vida ou armadura **máxima** de um player passa de duas fileiras cheias (20 pontos), o HUD mostra uma barra + um multiplicador `xN` em vez de empilhar fileiras achatadas (vida) ou cortar o excedente (armadura). É só visual, e só dispara se algum player de fato tiver >20 de vida/armadura máxima por atributo ou equipamento — num servidor de stats vanilla nunca aparece. `false` = barras 100% vanilla.
+* **`lureHud`** *(padrão `true`)* — mostra os **bônus de Lure agregados** (a soma de todo cosmético / armadura-cosmético de Lure equipado com `enabled: true`, exatamente como o servidor aplica) numa coluna à direita da hotbar. Some quando não tem Lure ativo, quando o HUD está escondido (F1) ou com uma GUI aberta. Ver [Sistema de Lure](Lure System.md).
+
+### **3. Dev Mode**
 
 * **`devModePermission`** *(padrão `gc.perm.devmode`)* — o node de permissão que dá o bypass de **Dev Mode** (equipar qualquer cosmético pra teste sem possuir). Mude se quiser outro nome de node.
 
-### **3. Blacklist de Grupos de Tag**
+### **4. Blacklist de Grupos de Tag**
 
 * **`tagGroupBlacklist`** — nomes de grupo do LuckPerms que **nunca** são importados como Tags de chat (sem case-sensitive). Adicione grupos internos/administrativos aqui pra eles não sujarem o menu de Tags. `default` já vem na lista. Ver [Tags](Tags.md).
 
-### **4. Banco de Dados**
+### **5. Banco de Dados**
 
 * **`useMySQL`** *(padrão `false`)* — `false` usa o arquivo **SQLite** local embutido (`config/GreatCosmetics/database.db`). `true` conecta no servidor MySQL abaixo.
 * **`mysqlHost` / `mysqlPort` / `mysqlDatabase` / `mysqlUser` / `mysqlPassword`** — dados de conexão, usados só quando `useMySQL` é `true`.
 
 Explicação completa em [Armazenamento (Banco de Dados)](Storage.md).
 
-### **5. Slots**
+### **6. Slots**
 
 `slots` mapeia cada um dos nove nomes de slot virtual pra:
 
@@ -81,7 +90,7 @@ Explicação completa em [Armazenamento (Banco de Dados)](Storage.md).
 
 Você pode remover slots que não quer, mas os nove nomes acima são os únicos válidos.
 
-### **6. Tipos**
+### **7. Tipos**
 
 `types` é um mapa livre — a chave é o nome do tipo que você vai digitar no campo **Type** de um cosmético. Cada tipo tem:
 
@@ -89,7 +98,7 @@ Você pode remover slots que não quer, mas os nove nomes acima são os únicos 
 * **`limitPerPlayer`** — máximo de cosméticos desse tipo que um jogador pode usar ao mesmo tempo.
 * **`permission`** — node base pros tiers `<base>.<N>` / `<base>.bypass`.
 
-### **7. Resource Pack Forçado**
+### **8. Resource Pack Forçado**
 
 Em vez de `resource-pack` / `resource-pack-sha1` no `server.properties` (que precisam de restart), o mod pode enviar o pack sozinho:
 
@@ -100,7 +109,7 @@ Em vez de `resource-pack` / `resource-pack-sha1` no `server.properties` (que pre
 
 Ver [Resource Pack](Resource Pack.md).
 
-### **8. Comandos de Boot**
+### **9. Comandos de Boot**
 
 * **`startupCommands`** — lista de comandos rodados **como console** alguns segundos depois de o servidor terminar de iniciar (mais tarde que o `SERVER_STARTED`, pra mods/plugins lentos já estarem prontos). Exemplo:
 
