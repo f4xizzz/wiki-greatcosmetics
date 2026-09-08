@@ -20,6 +20,7 @@ GreatCosmetics uses the **Fabric permissions API** (provided by **LuckPerms**). 
 | `gc.command.giveskin` / `gc.command.removeskin` | `/gc giveskin` / `removeskin` |
 | `gc.command.tags.give` / `gc.command.tags.remove` | `/gc tags give` / `remove` |
 | `gc.command.npc.equip` / `gc.command.npc.remove` | `/gc npc equip` / `remove` |
+| `gc.command.display` | `/gc display` / `remove` / `clear` |
 | `gc.command.uuid` | `/gc uuid` |
 | `gc.command.reload` / `gc.command.debug` / `gc.command.inspect` | `/gc reload` / `debug` / `inspect` |
 | `gc.command.activation` | `/gc activation` |

@@ -34,6 +34,9 @@ Cada subcomando tem o **seu próprio node de permissão** — ver [Permissões](
 | `/gc tags remove <tag_id> <jogador>` | Remove uma Tag concedida. | `gc.command.tags.remove` |
 | `/gc npc equip <cosmetic_id>` | Equipa um cosmético no NPC / Armor Stand que você está olhando. | `gc.command.npc.equip` |
 | `/gc npc remove <slot>` | Limpa um slot virtual na entidade que você está olhando. | `gc.command.npc.remove` |
+| `/gc display <cosmetic_id>` | Cria um armor stand invisível e travado na sua posição "usando" o cosmético — só a model 3D dele aparece, como um corpo invisível vestindo a peça. Sobrevive a restart. | `gc.command.display` |
+| `/gc display remove` | Apaga o display que você está olhando (máx 5 blocos). | `gc.command.display` |
+| `/gc display clear` | Apaga todo `/gc display` nos chunks carregados de todos os mundos. | `gc.command.display` |
 | `/gc uuid` | Copia o UUID da entidade que você está olhando (pra configs de NPC). | `gc.command.uuid` |
 | `/gc wardrobe setbackground <nome>` | Salva sua posição atual como um cenário de estúdio nomeado. | `gc.command.wardrobe.setbackground` |
 
