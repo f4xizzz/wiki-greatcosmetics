@@ -28,7 +28,7 @@ Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-co
 
 | Campo | Tipo | Efeito | Quando |
 | :--- | :--- | :--- | :--- |
-| **Affected Type** (`lureTYPE`) | texto | Só Pokémon **selvagens** desse tipo spawnam em volta de você — qualquer outra espécie é bloqueada. Aceita nome ou id do tipo (ex.: `fire`). Só afeta seus próprios spawns; nunca o seu time nem NPCs. Se **nenhuma** espécie daquele tipo puder spawnar no bioma, quase nada vai aparecer. | No spawn |
+| **Affected Type** (`lureTYPE`) | texto | Enquanto ativo, só espécies desse tipo ficam elegíveis no **seu** pool de spawn selvagem — o Cobblemon então spawna normalmente entre o que sobrou, na taxa normal. Os spawns de outros jogadores não mudam, e o seu time / NPCs nunca são afetados. Se **nenhuma** espécie daquele tipo puder spawnar no seu bioma, nada spawna. Aceita nome ou id do tipo (ex.: `fire`). | No spawn |
 | **Shiny Multiplier** (`lureShinyMultiplier`) | chance | Chance de re-rolar uma captura não-shiny pra shiny | Na captura |
 | **Lure IV** (`lureIV`) | contagem | Número de IVs forçados a 31 na captura | Na captura |
 | **Per-IV Perfect Chance** (`lureChanceIV`) | chance | Chance, **por IV**, de cada um dos 6 IVs vir 31 (rolagem independente pra cada stat, além dos garantidos pelo Lure IV) | Na captura |
@@ -36,7 +36,7 @@ Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-co
 | **Ultra Rare Multiplier** (`lureUltraRAREMultiplier`) | chance | Chance de subir um spawn pro bucket "ultra raro" | No spawn |
 | **Capture Chance** (`lureChanceDeCaptura`) | chance | Chance de transformar uma captura **falha** em sucesso | No arremesso da ball |
 | **EXP Multiplier** (`lureEXP`) | multiplier | Experiência extra pro Pokémon que lutou (`0.5` = +50%) | No ganho de EXP |
-| **Exp Share to Party** (`lureExpAllMultiplier`) | fração (0 = off) | Se `> 0`, cada outro Pokémon **vivo** da party também recebe uma fração do XP total que o Pokémon ativo ganhou. `1.0` = XP cheio pra cada um; `0.5` = metade. Já conta o EXP Multiplier. **Não** vale pra XP de doce (Rare/Exp Candy). | No ganho de EXP |
+| **Exp Share to Party** (`lureExpAllMultiplier`) | on/off | Ligado, cada outro Pokémon **vivo** da party também recebe o XP cheio que o Pokémon ativo ganhou (com o EXP Multiplier incluso). **Não** vale pra XP de doce (Rare/Exp Candy). No editor aparece como um botão liga/desliga. | No ganho de EXP |
 | **Friendship Multiplier** (`lureAmizadeMultiplier`) | multiplier | Amizade extra ganha | Na atualização de amizade |
 | **Fishing Shiny** (`lurePescaShiny`) | chance | Chance de shiny extra, só na pesca (soma com o Shiny Multiplier) | Ao pescar um Pokémon |
 | **Fishing IV** (`lurePescaIv`) + **Fishing Per-IV Perfect Chance** (`lurePescaIvChance`) | contagem + chance | Igual ao Lure IV / Per-IV Perfect Chance, só que só na pesca | Ao pescar um Pokémon |
