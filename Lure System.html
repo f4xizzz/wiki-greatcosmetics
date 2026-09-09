@@ -1529,6 +1529,7 @@
 <li>Bonuses from <strong>every</strong> equipped Lure cosmetic are <strong>added together</strong> (unlike speed/potion effects, which take the highest).</li>
 <li>"Chance" fields are <code>0.0</code>–<code>1.0</code> probabilities (<code>0.25</code> = 25%). "Multiplier" fields multiply the base amount.</li>
 <li>Shiny and IV rolls happen <strong>on capture</strong>, not on spawn (a deliberate design choice) — so the player must actually catch the Pokémon.</li>
+<li><strong>Affected Type</strong> is the one exception that touches the <strong>spawn</strong>: it filters which wild species appear around you.</li>
 </ul>
 <hr />
 <h2 id="lure-hud"><strong>Lure HUD</strong></h2>
@@ -1546,6 +1547,12 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;"><strong>Affected Type</strong> (<code>lureTYPE</code>)</td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Only <strong>wild</strong> Pokémon of that type spawn around you — every other species is blocked. Accepts a type name or id (e.g. <code>fire</code>). Only affects your own spawns; never your party or NPCs. If <strong>no</strong> species of that type can spawn in the biome, almost nothing appears.</td>
+<td style="text-align: left;">On spawn</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Shiny Multiplier</strong> (<code>lureShinyMultiplier</code>)</td>
 <td style="text-align: left;">chance</td>
 <td style="text-align: left;">Chance to re-roll a non-shiny catch into shiny</td>
@@ -1558,9 +1565,9 @@
 <td style="text-align: left;">On capture</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>IV Chance</strong> (<code>lureChanceIV</code>)</td>
+<td style="text-align: left;"><strong>Per-IV Perfect Chance</strong> (<code>lureChanceIV</code>)</td>
 <td style="text-align: left;">chance</td>
-<td style="text-align: left;">Chance to apply the guaranteed IVs</td>
+<td style="text-align: left;">Chance, <strong>per IV</strong>, for each of the 6 IVs to roll 31 (independent roll per stat, on top of the ones guaranteed by Lure IV)</td>
 <td style="text-align: left;">On capture</td>
 </tr>
 <tr>
@@ -1582,9 +1589,15 @@
 <td style="text-align: left;">On ball throw</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>EXP Multiplier</strong> (<code>lureEXP</code>) + <strong>Exp All Multiplier</strong> (<code>lureExpAllMultiplier</code>)</td>
+<td style="text-align: left;"><strong>EXP Multiplier</strong> (<code>lureEXP</code>)</td>
 <td style="text-align: left;">multiplier</td>
-<td style="text-align: left;">Extra experience gained by the owner's Pokémon (the two values add)</td>
+<td style="text-align: left;">Extra experience for the Pokémon that battled (<code>0.5</code> = +50%)</td>
+<td style="text-align: left;">On EXP gain</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Exp Share to Party</strong> (<code>lureExpAllMultiplier</code>)</td>
+<td style="text-align: left;">fraction (0 = off)</td>
+<td style="text-align: left;">If <code>&gt; 0</code>, every other <strong>alive</strong> party Pokémon also receives a fraction of the total XP the active Pokémon gained. <code>1.0</code> = full XP to each; <code>0.5</code> = half. Already includes the EXP Multiplier. Does <strong>not</strong> apply to candy XP (Rare/Exp Candy).</td>
 <td style="text-align: left;">On EXP gain</td>
 </tr>
 <tr>
@@ -1600,9 +1613,9 @@
 <td style="text-align: left;">On fish caught</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Fishing IV</strong> (<code>lurePescaIv</code>) + <strong>Fishing IV Chance</strong> (<code>lurePescaIvChance</code>)</td>
+<td style="text-align: left;"><strong>Fishing IV</strong> (<code>lurePescaIv</code>) + <strong>Fishing Per-IV Perfect Chance</strong> (<code>lurePescaIvChance</code>)</td>
 <td style="text-align: left;">count + chance</td>
-<td style="text-align: left;">Extra guaranteed IVs, fishing only</td>
+<td style="text-align: left;">Same as Lure IV / Per-IV Perfect Chance, fishing only</td>
 <td style="text-align: left;">On fish caught</td>
 </tr>
 <tr>
@@ -1615,11 +1628,7 @@
 </table>
 <hr />
 <h2 id="not-implemented-yet"><strong>Not implemented yet</strong></h2>
-<p>These fields exist in the editor but currently do <strong>nothing</strong> — they're reserved for future mechanics:</p>
 <ul>
-<li><strong>Affected Type</strong> (<code>lureTYPE</code>)</li>
-<li><strong>Fishing Ultra Rare</strong> (<code>lurePescaUltraRare</code>)</li>
-<li><strong>Fishing Lure</strong> (<code>lureDePesca</code>)</li>
 <li><strong>EV Multiplier</strong> (<code>lureEV</code>) — EV gain is decided inside Cobblemon's battle logic, which exposes no hook.</li>
 </ul>
 <hr />
@@ -1627,11 +1636,11 @@
 <div class="highlight"><pre><span></span><code><span class="nt">"lure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"lureShinyMultiplier"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"lureChanceIV"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"lureIV"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">  </span><span class="nt">"lureChanceIV"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"lureIV"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Wearing this gives +5% chance to shiny a catch and a 50% chance for 3 perfect IVs. The wardrobe tooltip lists all active bonuses automatically.</p>
+<p>Wearing this gives +5% chance to shiny a catch, 2 guaranteed perfect IVs, and a +25% chance for <strong>each</strong> of the other 4 IVs to roll 31. The wardrobe tooltip lists all active bonuses automatically.</p>
 
 
 
