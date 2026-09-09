@@ -1030,7 +1030,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Editing a part">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1211,7 +1222,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1561,7 +1572,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Editing a part">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1689,6 +1711,10 @@
 <td style="text-align: left;">One block per <strong>part</strong> — see below.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Variants</strong></td>
+<td style="text-align: left;">Optional. Alternative placements of the same model — each with its own id, display name, slot and anchor/offset/rotation/scale. <code>+ Add Variant</code>, <code>&gt;&gt; Config Variant N</code>, <code>X Remove Variant N</code>. See below. <em>(virtual cosmetics only)</em></td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Status &amp; Combat</strong></td>
 <td style="text-align: left;">Armor Points, Toughness, Max Durability, Auto-Feed. → <a href="Attributes.html">Attributes</a></td>
 </tr>
@@ -1701,8 +1727,8 @@
 <td style="text-align: left;">Allows Flight?, Fly / Ground / Swim Speed, <code>&gt;&gt; Select Effects</code> (potion), Effect Visual, Fly Particle. → <a href="Attributes.html">Attributes</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Lure System</strong></td>
-<td style="text-align: left;"><code>&gt;&gt; Configure LURE</code> opens the bonus editor. → <a href="Lure%20System.html">Lure System</a></td>
+<td style="text-align: left;"><strong>Cobblemon Cosmetics</strong></td>
+<td style="text-align: left;"><code>&gt;&gt; Cobblemon Cosmetics</code> opens the Lure + IVs Scanner editor. Every field has a hover tooltip. → <a href="Lure%20System.html">Cobblemon Cosmetics</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Sounds</strong></td>
@@ -1723,6 +1749,17 @@
 </ul>
 <p>Full explanation on <a href="Parts%20and%20Models.html">Parts &amp; Models</a>, including the <strong>3D gizmo</strong> (hold <code>X</code>, <code>Y</code> or <code>Z</code> and drag outside the panel to move / rotate / scale the selected part live).</p>
 <p>The transform popup: gizmo tool (Move / Rotate / Scale), <strong>Anchor</strong>, <strong>Scale XYZ</strong>, <strong>Normal values</strong> (Offset / Rotation XYZ), and <strong>Sneak values</strong> (Shift Offset / Rotation XYZ, used while the player is sneaking).</p>
+<hr />
+<h2 id="variants"><strong>Variants</strong></h2>
+<p>A <strong>variant</strong> is an alternative <em>placement</em> of the cosmetic — same model, different position. Example: a scarf cosmetic with a <code>neck</code> variant and a <code>waist</code> variant.</p>
+<ul>
+<li><code>+ Add Variant</code> creates one; <code>X Remove Variant N</code> deletes it.</li>
+<li>Each variant row has a <strong>Variant ID</strong> field (<code>[a-z0-9_]</code>, unique in the cosmetic).</li>
+<li><code>&gt;&gt; Config Variant N</code> opens the editor: <strong>Display Name</strong> (what players see in the picker), <strong>Slot</strong> (blank = inherit the base cosmetic's slot — only affects slot limits), <strong>Anchor</strong>, and <strong>Offset / Rotation / Scale</strong>. The model itself is inherited from the base cosmetic's first part.</li>
+<li>When a cosmetic has ≥1 variant, players clicking it in the wardrobe get a picker: <strong>Default</strong> (the base placement) + each variant. Only <strong>one</strong> variant (or Default) of a cosmetic can be worn at a time — they must unequip before switching.</li>
+<li>Variants are free — anyone who owns the cosmetic can use any variant.</li>
+<li>Don't add variants to a <strong>backpack</strong> cosmetic (all variants would share one backpack).</li>
+</ul>
 <h3 id="left-sidebar">Left sidebar</h3>
 <p>Appears while a part is selected:</p>
 <ul>

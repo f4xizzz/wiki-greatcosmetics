@@ -1030,7 +1030,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Editando uma parte">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1211,7 +1222,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1561,7 +1572,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Editando uma parte">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1689,6 +1711,10 @@
 <td style="text-align: left;">Um bloco por <strong>parte</strong> — ver abaixo.</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Variants</strong></td>
+<td style="text-align: left;">Opcional. Posicionamentos alternativos do mesmo model — cada um com id, nome, slot e anchor/offset/rotação/escala próprios. <code>+ Add Variant</code>, <code>&gt;&gt; Config Variant N</code>, <code>X Remove Variant N</code>. Ver abaixo. <em>(só cosmético virtual)</em></td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Status &amp; Combat</strong></td>
 <td style="text-align: left;">Armor Points, Toughness, Max Durability, Auto-Feed. → <a href="Attributes.html">Atributos</a></td>
 </tr>
@@ -1701,8 +1727,8 @@
 <td style="text-align: left;">Allows Flight?, Fly / Ground / Swim Speed, <code>&gt;&gt; Select Effects</code> (poção), Effect Visual, Fly Particle. → <a href="Attributes.html">Atributos</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Lure System</strong></td>
-<td style="text-align: left;"><code>&gt;&gt; Configure LURE</code> abre o editor de bônus. → <a href="Lure%20System.html">Sistema de Lure</a></td>
+<td style="text-align: left;"><strong>Cobblemon Cosmetics</strong></td>
+<td style="text-align: left;"><code>&gt;&gt; Cobblemon Cosmetics</code> abre o editor de Lure + IVs Scanner. Cada campo tem tooltip por hover. → <a href="Lure%20System.html">Cobblemon Cosmetics</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Sounds</strong></td>
@@ -1723,6 +1749,17 @@
 </ul>
 <p>Explicação completa em <a href="Parts%20and%20Models.html">Partes &amp; Modelos</a>, incluindo o <strong>gizmo 3D</strong> (segure <code>X</code>, <code>Y</code> ou <code>Z</code> e arraste fora do painel pra mover / girar / escalar a parte selecionada ao vivo).</p>
 <p>O popup de transform: ferramenta do gizmo (Mover / Girar / Escala), <strong>Anchor</strong>, <strong>Scale XYZ</strong>, <strong>Valores normais</strong> (Offset / Rotation XYZ), e <strong>Valores de Sneak</strong> (Shift Offset / Rotation XYZ, usados enquanto o jogador está agachado).</p>
+<hr />
+<h2 id="variants"><strong>Variants</strong></h2>
+<p>Uma <strong>variante</strong> é um <em>posicionamento</em> alternativo do cosmético — mesmo model, posição diferente. Ex: um cachecol com uma variante <code>neck</code> e uma <code>waist</code>.</p>
+<ul>
+<li><code>+ Add Variant</code> cria; <code>X Remove Variant N</code> apaga.</li>
+<li>Cada linha tem um campo <strong>Variant ID</strong> (<code>[a-z0-9_]</code>, único no cosmético).</li>
+<li><code>&gt;&gt; Config Variant N</code> abre o editor: <strong>Display Name</strong> (o que aparece no menu pro jogador), <strong>Slot</strong> (vazio = herda o slot do cosmético base — só afeta o limite de slot), <strong>Anchor</strong> e <strong>Offset / Rotation / Scale</strong>. O model em si vem da 1ª part do cosmético base.</li>
+<li>Quando um cosmético tem ≥1 variante, ao clicar nele no guarda-roupa o jogador vê um menu: <strong>Padrão</strong> (o posicionamento base) + cada variante. Só <strong>uma</strong> variante (ou o Padrão) pode ser usada por vez — tem que desequipar pra trocar.</li>
+<li>Variantes são grátis — quem tem o cosmético usa qualquer variante.</li>
+<li>Não coloque variante num cosmético <strong>mochila</strong> (todas compartilhariam o mesmo baú).</li>
+</ul>
 <h3 id="barra-lateral-esquerda">Barra lateral esquerda</h3>
 <p>Aparece enquanto uma parte está selecionada:</p>
 <ul>

@@ -29,7 +29,7 @@
     
     
       
-        <title>Lure System - GreatCosmetics Wiki</title>
+        <title>Cobblemon Cosmetics - GreatCosmetics Wiki</title>
       
     
     
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lure-system" class="md-skip">
+        <a href="#cobblemon-cosmetics-lure-ivs-scanner" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lure System
+              Cobblemon Cosmetics
             
           </span>
         </div>
@@ -1051,7 +1051,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1069,7 +1069,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1095,6 +1095,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ivs-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IVs Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-the-numbers-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1106,10 +1117,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lure-hud" class="md-nav__link">
+  <a href="#cosmetic-hud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lure HUD
+        Cosmetic HUD
       
     </span>
   </a>
@@ -1447,6 +1458,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ivs-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IVs Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-the-numbers-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1458,10 +1480,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lure-hud" class="md-nav__link">
+  <a href="#cosmetic-hud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lure HUD
+        Cosmetic HUD
       
     </span>
   </a>
@@ -1518,10 +1540,14 @@
 
 
 
-<h1 id="lure-system"><strong>Lure System</strong></h1>
+<h1 id="cobblemon-cosmetics-lure-ivs-scanner"><strong>Cobblemon Cosmetics (Lure + IVs Scanner)</strong></h1>
 <hr />
-<p>The <strong>Lure</strong> system lets a cosmetic give <strong>Cobblemon</strong> gameplay bonuses: better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, friendship and fishing bonuses.</p>
-<p>Configure it in the <a href="Dev%20Studio.html">Dev Studio</a> cosmetic editor via <strong><code>&gt;&gt; Configure LURE</code></strong>. It only does anything with <strong>Cobblemon</strong> installed.</p>
+<p>The <strong>Cobblemon Cosmetics</strong> editor lets a cosmetic give <strong>Cobblemon</strong> perks: Lure bonuses (better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, friendship, spawn type filter and fishing bonuses) and an <strong>IVs Scanner</strong>.</p>
+<p>Configure it in the <a href="Dev%20Studio.html">Dev Studio</a> cosmetic editor via <strong><code>&gt;&gt; Cobblemon Cosmetics</code></strong>. Every field has a hover tooltip. It only does anything with <strong>Cobblemon</strong> installed.</p>
+<hr />
+<h2 id="ivs-scanner"><strong>IVs Scanner</strong></h2>
+<p>Turn on <strong>IVs Scanner</strong> on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of <strong>every Pokémon within ~48 blocks</strong> — wild included — are shown above its name as <code>HP · A · D · SpA · SpD · Spe</code>, colour-graded red → yellow → gold → green (green = 31).</p>
+<p>It is <strong>independent of the Lure <code>enabled</code> switch</strong>. Wild Pokémon IVs don't exist on the client, so the server computes and pushes them a few times per second while the scanner is worn.</p>
 <hr />
 <h2 id="how-the-numbers-work"><strong>How the numbers work</strong></h2>
 <ul>
@@ -1532,8 +1558,8 @@
 <li><strong>Affected Type</strong> is the one exception that touches the <strong>spawn</strong>: it filters which wild species appear around you.</li>
 </ul>
 <hr />
-<h2 id="lure-hud"><strong>Lure HUD</strong></h2>
-<p>While a player wears one or more Lure cosmetics (or cosmetic-armor) with <code>enabled: true</code>, a small column appears to the <strong>right of the hotbar</strong> showing the <strong>combined</strong> bonuses — the same summed totals the server actually applies. It disappears when no Lure is active. Toggle it server-wide with <code>lureHud</code> in <a href="Main%20Config.html">Main Config</a> (on by default).</p>
+<h2 id="cosmetic-hud"><strong>Cosmetic HUD</strong></h2>
+<p>While a player wears any cosmetic that grants something, a HUD appears in the <strong>bottom-left corner</strong> (transparent background) listing <strong>everything</strong> the equipped cosmetics give — grouped as bullets: <strong>Abilities</strong> (flight, backpack, auto-feed), <strong>Attributes</strong> (armor, speed…), <strong>Effects</strong> (potion effects, particle trail), <strong>Lure</strong>, <strong>Fishing</strong>, <strong>Scanner</strong>. Numeric Lure/Fishing bonuses show the <strong>combined</strong> totals the server actually applies. If the list gets tall, it shrinks itself so it never covers more than ~half the screen. Toggle it server-wide with <code>lureHud</code> in <a href="Main%20Config.html">Main Config</a> (on by default).</p>
 <hr />
 <h2 id="fields"><strong>Fields</strong></h2>
 <table>
@@ -1623,6 +1649,12 @@
 <td style="text-align: left;">value</td>
 <td style="text-align: left;">Adds Cobblemon "Lure" enchant levels to the fishing rod for faster bites</td>
 <td style="text-align: left;">On rod cast</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IVs Scanner</strong> (<code>ivScanner</code>)</td>
+<td style="text-align: left;">on/off</td>
+<td style="text-align: left;">See the section above — shows every nearby Pokémon's IVs above its name. Independent from <code>enabled</code>.</td>
+<td style="text-align: left;">While worn</td>
 </tr>
 </tbody>
 </table>

@@ -29,7 +29,7 @@
     
     
       
-        <title>Lure System - GreatCosmetics Wiki</title>
+        <title>Cobblemon Cosmetics - GreatCosmetics Wiki</title>
       
     
     
@@ -116,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sistema-de-lure" class="md-skip">
+        <a href="#cobblemon-cosmetics-lure-ivs-scanner" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lure System
+              Cobblemon Cosmetics
             
           </span>
         </div>
@@ -1051,7 +1051,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1069,7 +1069,7 @@
   <span class="md-ellipsis">
     
   
-    Lure System
+    Cobblemon Cosmetics
   
 
     
@@ -1095,6 +1095,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ivs-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IVs Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-os-numeros-funcionam" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1106,10 +1117,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hud-de-lure" class="md-nav__link">
+  <a href="#hud-de-cosmeticos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HUD de Lure
+        HUD de cosméticos
       
     </span>
   </a>
@@ -1447,6 +1458,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ivs-scanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IVs Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-os-numeros-funcionam" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1458,10 +1480,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hud-de-lure" class="md-nav__link">
+  <a href="#hud-de-cosmeticos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HUD de Lure
+        HUD de cosméticos
       
     </span>
   </a>
@@ -1518,10 +1540,14 @@
 
 
 
-<h1 id="sistema-de-lure"><strong>Sistema de Lure</strong></h1>
+<h1 id="cobblemon-cosmetics-lure-ivs-scanner"><strong>Cobblemon Cosmetics (Lure + IVs Scanner)</strong></h1>
 <hr />
-<p>O sistema <strong>Lure</strong> deixa um cosmético dar bônus de gameplay do <strong>Cobblemon</strong>: melhores chances de shiny, IVs garantidos, chance de captura, hidden abilities, EXP, amizade e bônus de pesca.</p>
-<p>Configure na seção <strong><code>&gt;&gt; Configure LURE</code></strong> do editor de cosmético do <a href="Dev%20Studio.html">Dev Studio</a>. Só faz algo com o <strong>Cobblemon</strong> instalado.</p>
+<p>O editor <strong>Cobblemon Cosmetics</strong> deixa um cosmético dar vantagens do <strong>Cobblemon</strong>: bônus de Lure (shiny, IVs garantidos, chance de captura, hidden abilities, EXP, amizade, filtro de tipo no spawn e bônus de pesca) e um <strong>IVs Scanner</strong>.</p>
+<p>Configure na seção <strong><code>&gt;&gt; Cobblemon Cosmetics</code></strong> do editor de cosmético do <a href="Dev%20Studio.html">Dev Studio</a>. Cada campo tem tooltip por hover. Só faz algo com o <strong>Cobblemon</strong> instalado.</p>
+<hr />
+<h2 id="ivs-scanner"><strong>IVs Scanner</strong></h2>
+<p>Liga o <strong>IVs Scanner</strong> num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de <strong>todo Pokémon num raio de ~48 blocos</strong> — selvagem incluso — aparecem acima do nome como <code>HP · A · D · SpA · SpD · Spe</code>, coloridos vermelho → amarelo → dourado → verde (verde = 31).</p>
+<p>É <strong>independente do <code>enabled</code> do Lure</strong>. IV de Pokémon selvagem não existe no cliente, então o servidor calcula e empurra algumas vezes por segundo enquanto o scanner está equipado.</p>
 <hr />
 <h2 id="como-os-numeros-funcionam"><strong>Como os números funcionam</strong></h2>
 <ul>
@@ -1532,8 +1558,8 @@
 <li><strong>Affected Type</strong> é a única exceção que mexe no <strong>spawn</strong>: ele filtra as espécies selvagens que aparecem em volta de você.</li>
 </ul>
 <hr />
-<h2 id="hud-de-lure"><strong>HUD de Lure</strong></h2>
-<p>Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-cosmético) com <code>enabled: true</code>, aparece uma coluna à <strong>direita da hotbar</strong> com os bônus <strong>somados</strong> — os mesmos totais que o servidor aplica de verdade. Some quando não tem Lure ativo. Liga/desliga pro servidor todo com <code>lureHud</code> no <a href="Main%20Config.html">Main Config</a> (ligado por padrão).</p>
+<h2 id="hud-de-cosmeticos"><strong>HUD de cosméticos</strong></h2>
+<p>Enquanto o player veste qualquer cosmético que dá alguma coisa, aparece uma HUD no <strong>canto inferior esquerdo</strong> (fundo transparente) listando <strong>tudo</strong> que os cosméticos equipados dão — em bullets: <strong>Abilities</strong> (voo, mochila, auto-feed), <strong>Attributes</strong> (armor, velocidade…), <strong>Effects</strong> (efeitos de poção, rastro de partícula), <strong>Lure</strong>, <strong>Fishing</strong>, <strong>Scanner</strong>. Os números de Lure/Fishing mostram o total <strong>somado</strong> que o servidor aplica. Se a lista fica grande, ela encolhe sozinha pra nunca cobrir mais de ~metade da tela. Liga/desliga pro servidor todo com <code>lureHud</code> no <a href="Main%20Config.html">Main Config</a> (ligado por padrão).</p>
 <hr />
 <h2 id="campos"><strong>Campos</strong></h2>
 <table>
@@ -1623,6 +1649,12 @@
 <td style="text-align: left;">valor</td>
 <td style="text-align: left;">Adiciona níveis do encantamento "Lure" do Cobblemon à vara pra fisgadas mais rápidas</td>
 <td style="text-align: left;">Ao lançar a vara</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IVs Scanner</strong> (<code>ivScanner</code>)</td>
+<td style="text-align: left;">on/off</td>
+<td style="text-align: left;">Ver a seção acima — mostra os IVs de todo Pokémon por perto acima do nome. Independente do <code>enabled</code>.</td>
+<td style="text-align: left;">Enquanto equipado</td>
 </tr>
 </tbody>
 </table>
