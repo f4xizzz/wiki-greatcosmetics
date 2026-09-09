@@ -1549,7 +1549,7 @@
 <tr>
 <td style="text-align: left;"><strong>Affected Type</strong> (<code>lureTYPE</code>)</td>
 <td style="text-align: left;">text</td>
-<td style="text-align: left;">Only <strong>wild</strong> Pokémon of that type spawn around you — every other species is blocked. Accepts a type name or id (e.g. <code>fire</code>). Only affects your own spawns; never your party or NPCs. If <strong>no</strong> species of that type can spawn in the biome, almost nothing appears.</td>
+<td style="text-align: left;">While active, only species of that type are eligible in <strong>your</strong> wild spawn pool — Cobblemon then spawns normally from what's left, at the normal rate. Other players' spawns are untouched, and your party / NPCs are never affected. If <strong>no</strong> species of that type can spawn in your biome, nothing spawns. Accepts a type name or id (e.g. <code>fire</code>).</td>
 <td style="text-align: left;">On spawn</td>
 </tr>
 <tr>
@@ -1596,8 +1596,8 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Exp Share to Party</strong> (<code>lureExpAllMultiplier</code>)</td>
-<td style="text-align: left;">fraction (0 = off)</td>
-<td style="text-align: left;">If <code>&gt; 0</code>, every other <strong>alive</strong> party Pokémon also receives a fraction of the total XP the active Pokémon gained. <code>1.0</code> = full XP to each; <code>0.5</code> = half. Already includes the EXP Multiplier. Does <strong>not</strong> apply to candy XP (Rare/Exp Candy).</td>
+<td style="text-align: left;">on/off</td>
+<td style="text-align: left;">When on, every other <strong>alive</strong> party Pokémon also receives the full XP the active Pokémon gained (EXP Multiplier included). Does <strong>not</strong> apply to candy XP (Rare/Exp Candy). Editor shows this as a toggle.</td>
 <td style="text-align: left;">On EXP gain</td>
 </tr>
 <tr>
