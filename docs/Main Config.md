@@ -64,7 +64,7 @@ Apply changes with `/gc reload`.
 Both are client-visible toggles synced from the server; change them here and `/gc reload`.
 
 * **`compactStatusBars`** *(default `true`)* — when a player's **maximum** health or armor goes past two full rows (20 points), the HUD shows one bar plus an `xN` multiplier instead of stacking squashed rows (health) or clipping the overflow (armor). Purely visual, and it only ever triggers if a player actually has >20 max health/armor from attributes or equipment — a vanilla-stats server never sees it. Set `false` for 100% vanilla bars.
-* **`lureHud`** *(default `true`)* — shows the **aggregated Lure bonuses** (the summed total of every equipped Lure cosmetic / cosmetic-armor with `enabled: true`, exactly as the server applies them) in a column to the right of the hotbar. Hidden when no Lure is active, when the HUD is hidden (F1), or while a GUI is open. See [Lure System](Lure System.md).
+* **`lureHud`** *(default `true`)* — shows the **cosmetic HUD** in the bottom-left corner: a grouped list of everything the equipped cosmetics grant (abilities, attributes, potion effects, Lure, fishing, scanner), transparent background, auto-shrinking if it gets tall. Hidden when nothing is active, when the HUD is hidden (F1), or while a GUI is open. See [Cobblemon Cosmetics](Lure System.md).
 
 ### **3. Dev Mode**
 

@@ -64,7 +64,7 @@ Aplique mudanças com `/gc reload`.
 Os dois são toggles visíveis no client, sincronizados do servidor; muda aqui e `/gc reload`.
 
 * **`compactStatusBars`** *(padrão `true`)* — quando a vida ou armadura **máxima** de um player passa de duas fileiras cheias (20 pontos), o HUD mostra uma barra + um multiplicador `xN` em vez de empilhar fileiras achatadas (vida) ou cortar o excedente (armadura). É só visual, e só dispara se algum player de fato tiver >20 de vida/armadura máxima por atributo ou equipamento — num servidor de stats vanilla nunca aparece. `false` = barras 100% vanilla.
-* **`lureHud`** *(padrão `true`)* — mostra os **bônus de Lure agregados** (a soma de todo cosmético / armadura-cosmético de Lure equipado com `enabled: true`, exatamente como o servidor aplica) numa coluna à direita da hotbar. Some quando não tem Lure ativo, quando o HUD está escondido (F1) ou com uma GUI aberta. Ver [Sistema de Lure](Lure System.md).
+* **`lureHud`** *(padrão `true`)* — mostra a **HUD de cosméticos** no canto inferior esquerdo: uma lista agrupada de tudo que os cosméticos equipados dão (habilidades, atributos, efeitos de poção, Lure, pesca, scanner), fundo transparente, encolhe sozinha se fica grande. Some quando nada está ativo, quando o HUD está escondido (F1) ou com uma GUI aberta. Ver [Cobblemon Cosmetics](Lure System.md).
 
 ### **3. Dev Mode**
 

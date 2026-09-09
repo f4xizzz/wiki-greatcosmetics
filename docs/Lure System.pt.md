@@ -1,10 +1,18 @@
-# **Sistema de Lure**
+# **Cobblemon Cosmetics (Lure + IVs Scanner)**
 
 ---
 
-O sistema **Lure** deixa um cosmético dar bônus de gameplay do **Cobblemon**: melhores chances de shiny, IVs garantidos, chance de captura, hidden abilities, EXP, amizade e bônus de pesca.
+O editor **Cobblemon Cosmetics** deixa um cosmético dar vantagens do **Cobblemon**: bônus de Lure (shiny, IVs garantidos, chance de captura, hidden abilities, EXP, amizade, filtro de tipo no spawn e bônus de pesca) e um **IVs Scanner**.
 
-Configure na seção **`>> Configure LURE`** do editor de cosmético do [Dev Studio](Dev Studio.md). Só faz algo com o **Cobblemon** instalado.
+Configure na seção **`>> Cobblemon Cosmetics`** do editor de cosmético do [Dev Studio](Dev Studio.md). Cada campo tem tooltip por hover. Só faz algo com o **Cobblemon** instalado.
+
+---
+
+## **IVs Scanner**
+
+Liga o **IVs Scanner** num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de **todo Pokémon num raio de ~48 blocos** — selvagem incluso — aparecem acima do nome como `HP · A · D · SpA · SpD · Spe`, coloridos vermelho → amarelo → dourado → verde (verde = 31).
+
+É **independente do `enabled` do Lure**. IV de Pokémon selvagem não existe no cliente, então o servidor calcula e empurra algumas vezes por segundo enquanto o scanner está equipado.
 
 ---
 
@@ -18,9 +26,9 @@ Configure na seção **`>> Configure LURE`** do editor de cosmético do [Dev Stu
 
 ---
 
-## **HUD de Lure**
+## **HUD de cosméticos**
 
-Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-cosmético) com `enabled: true`, aparece uma coluna à **direita da hotbar** com os bônus **somados** — os mesmos totais que o servidor aplica de verdade. Some quando não tem Lure ativo. Liga/desliga pro servidor todo com `lureHud` no [Main Config](Main Config.md) (ligado por padrão).
+Enquanto o player veste qualquer cosmético que dá alguma coisa, aparece uma HUD no **canto inferior esquerdo** (fundo transparente) listando **tudo** que os cosméticos equipados dão — em bullets: **Abilities** (voo, mochila, auto-feed), **Attributes** (armor, velocidade…), **Effects** (efeitos de poção, rastro de partícula), **Lure**, **Fishing**, **Scanner**. Os números de Lure/Fishing mostram o total **somado** que o servidor aplica. Se a lista fica grande, ela encolhe sozinha pra nunca cobrir mais de ~metade da tela. Liga/desliga pro servidor todo com `lureHud` no [Main Config](Main Config.md) (ligado por padrão).
 
 ---
 
@@ -41,6 +49,7 @@ Enquanto o player estiver usando um ou mais cosméticos de Lure (ou armaduras-co
 | **Fishing Shiny** (`lurePescaShiny`) | chance | Chance de shiny extra, só na pesca (soma com o Shiny Multiplier) | Ao pescar um Pokémon |
 | **Fishing IV** (`lurePescaIv`) + **Fishing Per-IV Perfect Chance** (`lurePescaIvChance`) | contagem + chance | Igual ao Lure IV / Per-IV Perfect Chance, só que só na pesca | Ao pescar um Pokémon |
 | **Fishing Speed** (`lurePescaVelocidade`) | valor | Adiciona níveis do encantamento "Lure" do Cobblemon à vara pra fisgadas mais rápidas | Ao lançar a vara |
+| **IVs Scanner** (`ivScanner`) | on/off | Ver a seção acima — mostra os IVs de todo Pokémon por perto acima do nome. Independente do `enabled`. | Enquanto equipado |
 
 ---
 

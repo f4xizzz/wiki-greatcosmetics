@@ -31,10 +31,11 @@ Click a cosmetic to open the editor. `S` saves, `X` deletes (with confirm), `<` 
 | :--- | :--- |
 | **Identification** | Main ID (file name), Icon Name, Display Name, Slot, Type, Permission. *(Armor cosmetics show "Real Item" instead of the ID.)* |
 | **3D Models** | One block per **part** — see below. |
+| **Variants** | Optional. Alternative placements of the same model — each with its own id, display name, slot and anchor/offset/rotation/scale. `+ Add Variant`, `>> Config Variant N`, `X Remove Variant N`. See below. *(virtual cosmetics only)* |
 | **Status & Combat** | Armor Points, Toughness, Max Durability, Auto-Feed. → [Attributes](Attributes.md) |
 | **Backpack** | Is Backpack?, Rows, Pages, Name. → [Backpacks](Backpacks.md) |
 | **Special Effects** | Allows Flight?, Fly / Ground / Swim Speed, `>> Select Effects` (potion), Effect Visual, Fly Particle. → [Attributes](Attributes.md) |
-| **Lure System** | `>> Configure LURE` opens the bonus editor. → [Lure System](Lure System.md) |
+| **Cobblemon Cosmetics** | `>> Cobblemon Cosmetics` opens the Lure + IVs Scanner editor. Every field has a hover tooltip. → [Cobblemon Cosmetics](Lure System.md) |
 | **Sounds** | Idle / Equip / Unequip / Walk / Fly / Shift / Backpack sounds, each with volume + pitch. → [Sounds](Sounds.md) |
 
 ---
@@ -53,6 +54,19 @@ Each part in **3D Models** has:
 Full explanation on [Parts & Models](Parts and Models.md), including the **3D gizmo** (hold `X`, `Y` or `Z` and drag outside the panel to move / rotate / scale the selected part live).
 
 The transform popup: gizmo tool (Move / Rotate / Scale), **Anchor**, **Scale XYZ**, **Normal values** (Offset / Rotation XYZ), and **Sneak values** (Shift Offset / Rotation XYZ, used while the player is sneaking).
+
+---
+
+## **Variants**
+
+A **variant** is an alternative *placement* of the cosmetic — same model, different position. Example: a scarf cosmetic with a `neck` variant and a `waist` variant.
+
+* `+ Add Variant` creates one; `X Remove Variant N` deletes it.
+* Each variant row has a **Variant ID** field (`[a-z0-9_]`, unique in the cosmetic).
+* `>> Config Variant N` opens the editor: **Display Name** (what players see in the picker), **Slot** (blank = inherit the base cosmetic's slot — only affects slot limits), **Anchor**, and **Offset / Rotation / Scale**. The model itself is inherited from the base cosmetic's first part.
+* When a cosmetic has ≥1 variant, players clicking it in the wardrobe get a picker: **Default** (the base placement) + each variant. Only **one** variant (or Default) of a cosmetic can be worn at a time — they must unequip before switching.
+* Variants are free — anyone who owns the cosmetic can use any variant.
+* Don't add variants to a **backpack** cosmetic (all variants would share one backpack).
 
 ### Left sidebar
 

@@ -1,10 +1,18 @@
-# **Lure System**
+# **Cobblemon Cosmetics (Lure + IVs Scanner)**
 
 ---
 
-The **Lure** system lets a cosmetic give **Cobblemon** gameplay bonuses: better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, friendship and fishing bonuses.
+The **Cobblemon Cosmetics** editor lets a cosmetic give **Cobblemon** perks: Lure bonuses (better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, friendship, spawn type filter and fishing bonuses) and an **IVs Scanner**.
 
-Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Configure LURE`**. It only does anything with **Cobblemon** installed.
+Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Cobblemon Cosmetics`**. Every field has a hover tooltip. It only does anything with **Cobblemon** installed.
+
+---
+
+## **IVs Scanner**
+
+Turn on **IVs Scanner** on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of **every Pokémon within ~48 blocks** — wild included — are shown above its name as `HP · A · D · SpA · SpD · Spe`, colour-graded red → yellow → gold → green (green = 31).
+
+It is **independent of the Lure `enabled` switch**. Wild Pokémon IVs don't exist on the client, so the server computes and pushes them a few times per second while the scanner is worn.
 
 ---
 
@@ -18,9 +26,9 @@ Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Config
 
 ---
 
-## **Lure HUD**
+## **Cosmetic HUD**
 
-While a player wears one or more Lure cosmetics (or cosmetic-armor) with `enabled: true`, a small column appears to the **right of the hotbar** showing the **combined** bonuses — the same summed totals the server actually applies. It disappears when no Lure is active. Toggle it server-wide with `lureHud` in [Main Config](Main Config.md) (on by default).
+While a player wears any cosmetic that grants something, a HUD appears in the **bottom-left corner** (transparent background) listing **everything** the equipped cosmetics give — grouped as bullets: **Abilities** (flight, backpack, auto-feed), **Attributes** (armor, speed…), **Effects** (potion effects, particle trail), **Lure**, **Fishing**, **Scanner**. Numeric Lure/Fishing bonuses show the **combined** totals the server actually applies. If the list gets tall, it shrinks itself so it never covers more than ~half the screen. Toggle it server-wide with `lureHud` in [Main Config](Main Config.md) (on by default).
 
 ---
 
@@ -41,6 +49,7 @@ While a player wears one or more Lure cosmetics (or cosmetic-armor) with `enable
 | **Fishing Shiny** (`lurePescaShiny`) | chance | Extra shiny chance, fishing only (stacks with Shiny Multiplier) | On fish caught |
 | **Fishing IV** (`lurePescaIv`) + **Fishing Per-IV Perfect Chance** (`lurePescaIvChance`) | count + chance | Same as Lure IV / Per-IV Perfect Chance, fishing only | On fish caught |
 | **Fishing Speed** (`lurePescaVelocidade`) | value | Adds Cobblemon "Lure" enchant levels to the fishing rod for faster bites | On rod cast |
+| **IVs Scanner** (`ivScanner`) | on/off | See the section above — shows every nearby Pokémon's IVs above its name. Independent from `enabled`. | While worn |
 
 ---
 

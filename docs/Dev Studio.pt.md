@@ -31,10 +31,11 @@ Clique num cosmético pra abrir o editor. `S` salva, `X` apaga (com confirmaçã
 | :--- | :--- |
 | **Identification** | Main ID (nome do arquivo), Icon Name, Display Name, Slot, Type, Permission. *(Cosméticos de armadura mostram "Real Item" no lugar do ID.)* |
 | **3D Models** | Um bloco por **parte** — ver abaixo. |
+| **Variants** | Opcional. Posicionamentos alternativos do mesmo model — cada um com id, nome, slot e anchor/offset/rotação/escala próprios. `+ Add Variant`, `>> Config Variant N`, `X Remove Variant N`. Ver abaixo. *(só cosmético virtual)* |
 | **Status & Combat** | Armor Points, Toughness, Max Durability, Auto-Feed. → [Atributos](Attributes.md) |
 | **Backpack** | Is Backpack?, Rows, Pages, Name. → [Mochilas](Backpacks.md) |
 | **Special Effects** | Allows Flight?, Fly / Ground / Swim Speed, `>> Select Effects` (poção), Effect Visual, Fly Particle. → [Atributos](Attributes.md) |
-| **Lure System** | `>> Configure LURE` abre o editor de bônus. → [Sistema de Lure](Lure System.md) |
+| **Cobblemon Cosmetics** | `>> Cobblemon Cosmetics` abre o editor de Lure + IVs Scanner. Cada campo tem tooltip por hover. → [Cobblemon Cosmetics](Lure System.md) |
 | **Sounds** | Sons de Idle / Equip / Unequip / Walk / Fly / Shift / Backpack, cada um com volume + pitch. → [Sons](Sounds.md) |
 
 ---
@@ -53,6 +54,19 @@ Cada parte em **3D Models** tem:
 Explicação completa em [Partes & Modelos](Parts and Models.md), incluindo o **gizmo 3D** (segure `X`, `Y` ou `Z` e arraste fora do painel pra mover / girar / escalar a parte selecionada ao vivo).
 
 O popup de transform: ferramenta do gizmo (Mover / Girar / Escala), **Anchor**, **Scale XYZ**, **Valores normais** (Offset / Rotation XYZ), e **Valores de Sneak** (Shift Offset / Rotation XYZ, usados enquanto o jogador está agachado).
+
+---
+
+## **Variants**
+
+Uma **variante** é um *posicionamento* alternativo do cosmético — mesmo model, posição diferente. Ex: um cachecol com uma variante `neck` e uma `waist`.
+
+* `+ Add Variant` cria; `X Remove Variant N` apaga.
+* Cada linha tem um campo **Variant ID** (`[a-z0-9_]`, único no cosmético).
+* `>> Config Variant N` abre o editor: **Display Name** (o que aparece no menu pro jogador), **Slot** (vazio = herda o slot do cosmético base — só afeta o limite de slot), **Anchor** e **Offset / Rotation / Scale**. O model em si vem da 1ª part do cosmético base.
+* Quando um cosmético tem ≥1 variante, ao clicar nele no guarda-roupa o jogador vê um menu: **Padrão** (o posicionamento base) + cada variante. Só **uma** variante (ou o Padrão) pode ser usada por vez — tem que desequipar pra trocar.
+* Variantes são grátis — quem tem o cosmético usa qualquer variante.
+* Não coloque variante num cosmético **mochila** (todas compartilhariam o mesmo baú).
 
 ### Barra lateral esquerda
 
