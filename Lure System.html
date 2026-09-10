@@ -65,15 +65,15 @@
     .md-header {
         height: 80px !important;
     }
-    /* Cor primária/accent (roxo cosmético) */
+    /* Cor primária/accent (roxo cosmético — tom "morto"/dessaturado) */
     [data-md-color-scheme="default"],
     [data-md-color-scheme="slate"] {
-        --md-primary-fg-color: #6d28d9 !important;
-        --md-primary-fg-color--light: #4c1d95 !important;
+        --md-primary-fg-color: #5c5175 !important;
+        --md-primary-fg-color--light: #453d5a !important;
         --md-accent-fg-color: #ffffff !important;
     }
     .md-nav__item--nested > .md-nav__link {
-        color: #a855f7 !important;
+        color: #978aba !important;
         font-weight: bold !important;
     }
   </style>
@@ -1546,7 +1546,7 @@
 <p>Configure it in the <a href="Dev%20Studio.html">Dev Studio</a> cosmetic editor via <strong><code>&gt;&gt; Cobblemon Cosmetics</code></strong>. Every field has a hover tooltip. It only does anything with <strong>Cobblemon</strong> installed.</p>
 <hr />
 <h2 id="ivs-scanner"><strong>IVs Scanner</strong></h2>
-<p>Turn on <strong>IVs Scanner</strong> on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of <strong>every Pokémon within ~48 blocks</strong> — wild included — are shown above its name as <code>HP · A · D · SpA · SpD · Spe</code>, colour-graded red → yellow → gold → green (green = 31).</p>
+<p>Turn on <strong>IVs Scanner</strong> on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of <strong>every Pokémon within ~48 blocks</strong> — wild included — are shown above its name as a six-line list, one stat per line (<code>Health</code>, <code>Attack</code>, <code>Defense</code>, <code>Sp. Attack</code>, <code>Sp. Defense</code>, <code>Speed</code>), each stat label in its own bold colour.</p>
 <p>It is <strong>independent of the Lure <code>enabled</code> switch</strong>. Wild Pokémon IVs don't exist on the client, so the server computes and pushes them a few times per second while the scanner is worn.</p>
 <hr />
 <h2 id="how-the-numbers-work"><strong>How the numbers work</strong></h2>

@@ -65,15 +65,15 @@
     .md-header {
         height: 80px !important;
     }
-    /* Cor primária/accent (roxo cosmético) */
+    /* Cor primária/accent (roxo cosmético — tom "morto"/dessaturado) */
     [data-md-color-scheme="default"],
     [data-md-color-scheme="slate"] {
-        --md-primary-fg-color: #6d28d9 !important;
-        --md-primary-fg-color--light: #4c1d95 !important;
+        --md-primary-fg-color: #5c5175 !important;
+        --md-primary-fg-color--light: #453d5a !important;
         --md-accent-fg-color: #ffffff !important;
     }
     .md-nav__item--nested > .md-nav__link {
-        color: #a855f7 !important;
+        color: #978aba !important;
         font-weight: bold !important;
     }
   </style>
@@ -1748,13 +1748,14 @@
 <li><strong><code>permission</code></strong> — node base pros tiers <code>&lt;base&gt;.&lt;N&gt;</code> / <code>&lt;base&gt;.bypass</code>.</li>
 </ul>
 <h3 id="8-resource-pack-forcado"><strong>8. Resource Pack Forçado</strong></h3>
-<p>Em vez de <code>resource-pack</code> / <code>resource-pack-sha1</code> no <code>server.properties</code> (que precisam de restart), o mod pode enviar o pack sozinho:</p>
+<p>O mod envia o pack sozinho no join e no <code>/gc reload</code> (sem restart pra trocar URL/hash), <strong>e</strong> mantém o <code>server.properties</code> sincronizado pra que um login vanilla puro também receba:</p>
 <ul>
 <li><strong><code>forceTexture</code></strong> <em>(padrão <code>false</code>)</em> — habilita o envio do pack no join e no <code>/gc reload</code>.</li>
 <li><strong><code>textureId</code></strong> — qualquer texto; identifica o pack pro cliente (não precisa ser um UUID).</li>
 <li><strong><code>textureUrl</code></strong> — um link de <strong>download direto</strong> do <code>.zip</code> do pack.</li>
 <li><strong><code>textureSha1</code></strong> — deixe em branco; o mod calcula o SHA-1 real automaticamente. Só preencha se você hospeda em algum lugar que exige um valor fixo.</li>
 </ul>
+<p><strong>Sincronização com <code>server.properties</code>.</strong> Num servidor dedicado, toda vez que esses campos são salvos (Dev Studio → Server Config, <code>/gc reload</code>, ou o recálculo automático do SHA-1) o mod escreve <code>resource-pack</code>, <code>resource-pack-sha1</code> e <code>resource-pack-id</code> no <code>server.properties</code>, e ajusta o <code>require-resource-pack</code> pra bater com o <code>forceTexture</code>. No boot, se o <code>mainconfig.conf</code> ainda não tem <code>textureUrl</code> mas o <code>server.properties</code> já tem um <code>resource-pack</code>, o mod importa (URL + sha1 + id) e liga o <code>forceTexture</code>. Desligar o <code>forceTexture</code> só zera o <code>require-resource-pack</code> — as linhas <code>resource-pack</code> ficam onde estão. O <code>server.properties</code> só é relido pelo servidor no boot, então uma mudança feita com ele ligado só vale pro login vanilla no próximo restart (o envio ao vivo do próprio mod já cobre a sessão em andamento).</p>
 <p>Ver <a href="Resource%20Pack.html">Resource Pack</a>.</p>
 <h3 id="9-comandos-de-boot"><strong>9. Comandos de Boot</strong></h3>
 <ul>

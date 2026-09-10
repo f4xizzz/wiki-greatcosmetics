@@ -65,15 +65,15 @@
     .md-header {
         height: 80px !important;
     }
-    /* Cor primária/accent (roxo cosmético) */
+    /* Cor primária/accent (roxo cosmético — tom "morto"/dessaturado) */
     [data-md-color-scheme="default"],
     [data-md-color-scheme="slate"] {
-        --md-primary-fg-color: #6d28d9 !important;
-        --md-primary-fg-color--light: #4c1d95 !important;
+        --md-primary-fg-color: #5c5175 !important;
+        --md-primary-fg-color--light: #453d5a !important;
         --md-accent-fg-color: #ffffff !important;
     }
     .md-nav__item--nested > .md-nav__link {
-        color: #a855f7 !important;
+        color: #978aba !important;
         font-weight: bold !important;
     }
   </style>
@@ -1546,7 +1546,7 @@
 <p>Configure na seção <strong><code>&gt;&gt; Cobblemon Cosmetics</code></strong> do editor de cosmético do <a href="Dev%20Studio.html">Dev Studio</a>. Cada campo tem tooltip por hover. Só faz algo com o <strong>Cobblemon</strong> instalado.</p>
 <hr />
 <h2 id="ivs-scanner"><strong>IVs Scanner</strong></h2>
-<p>Liga o <strong>IVs Scanner</strong> num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de <strong>todo Pokémon num raio de ~48 blocos</strong> — selvagem incluso — aparecem acima do nome como <code>HP · A · D · SpA · SpD · Spe</code>, coloridos vermelho → amarelo → dourado → verde (verde = 31).</p>
+<p>Liga o <strong>IVs Scanner</strong> num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de <strong>todo Pokémon num raio de ~48 blocos</strong> — selvagem incluso — aparecem acima do nome numa lista de seis linhas, uma stat por linha (<code>Health</code>, <code>Attack</code>, <code>Defense</code>, <code>Sp. Attack</code>, <code>Sp. Defense</code>, <code>Speed</code>), cada rótulo na sua própria cor em negrito.</p>
 <p>É <strong>independente do <code>enabled</code> do Lure</strong>. IV de Pokémon selvagem não existe no cliente, então o servidor calcula e empurra algumas vezes por segundo enquanto o scanner está equipado.</p>
 <hr />
 <h2 id="como-os-numeros-funcionam"><strong>Como os números funcionam</strong></h2>
