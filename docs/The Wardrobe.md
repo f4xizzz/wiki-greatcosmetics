@@ -22,6 +22,10 @@ Some categories lock the zoom to frame the relevant body area (e.g. picking **He
 
 ## **Tabs**
 
+The tab bar sits at the top. A tab that isn't hovered/active collapses to a **one-letter prefix** (`A`, `C`, `P`, `T`, `D`) — those letters, and the full names, are all editable in the [language files](Language.md) (`wardrobe.tab.*` and `wardrobe.tab.*.short`).
+
+**Party** only appears when the server runs **Cobblemon**; **Tags** only when it runs **LuckPerms**; **Dev Studio** only for real operators. On a plain Fabric server you'll just see Accessories and Preview.
+
 ### **Accessories**
 
 The main tab. Shows every cosmetic the player **owns**, in a 4-column grid.
@@ -41,17 +45,19 @@ Armor visibility toggles. Each button hides/shows one real armor piece **for eve
 
 Useful so a hat cosmetic isn't blocked by a real helmet.
 
+A fifth toggle — **Others' cosmetics** — is a **local** setting: turn it off and *you* stop seeing everyone else's cosmetics (your own still render). Saved per-client in `config/GreatCosmetics/client_local.json`, never sent to the server.
+
 ### **Party**
 
 Pokémon Skins for the player's Cobblemon party. Pick a party slot with the arrows, browse available skins, and apply one (subject to its cooldown and species match). A live 3D preview lets you cycle poses, alternate forms and shiny before committing. See [Pokemon Skins](Pokemon Skins.md).
 
 ### **Tags**
 
-Chat prefix selector. Owned Tags are listed first, locked ones (with a 🔒) after. Click to equip. Staff with `gc.dev` get a **DEV** toggle here to preview and manage Tags. See [Tags](Tags.md).
+Chat prefix selector (needs **LuckPerms**). Owned Tags are listed first, locked ones (with a 🔒) after. Click to equip. Staff with `gc.dev` get a **DEV** toggle here to preview and manage Tags — including **Add** / **Set** buttons for LuckPerms groups. See [Tags](Tags.md).
 
 ### **Dev Studio**
 
-Only visible to **real operators** (and only in the full server jar). The in-game editor for cosmetics, effects, types, slots and server config. See [Dev Studio](Dev Studio.md).
+Only visible to **real operators**. The in-game editor for cosmetics, effects, types, slots and server config. See [Dev Studio](Dev Studio.md).
 
 ---
 

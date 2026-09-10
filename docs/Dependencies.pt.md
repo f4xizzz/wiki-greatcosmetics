@@ -4,37 +4,41 @@
 
 O lançamento atual do GreatCosmetics roda em **Fabric** no Minecraft `1.21.1` (Java `21+`). Um build de NeoForge está em testes.
 
+O mod precisa **só do Fabric Loader + Fabric API**. Todo o resto é opcional — Cobblemon e LuckPerms cada um *destrava recursos extras* quando presentes, mas o mod carrega, a mochila funciona e os cosméticos renderizam num servidor Fabric puro sem eles.
+
 ## **Obrigatórias — Fabric**
 
 | Dependência | Observações |
 | :--- | :--- |
 | [**Fabric Loader**](https://fabricmc.net/use/) `>= 0.16` | Carregador de mods. |
 | [**Fabric API**](https://modrinth.com/mod/fabric-api) `0.116.9+1.21.1` ou mais novo | Hooks base do build Fabric. |
-| [**Fabric Language Kotlin**](https://modrinth.com/mod/fabric-language-kotlin) `1.13.13+kotlin.2.4.10` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
-| [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (Fabric) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
-| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` (Fabric) | A aba Party, as Skins de Pokémon e o sistema de Lure leem dados do Cobblemon. |
+
+Só isso. O renderizador **GeckoLib**, a biblioteca de texto **adventure / MiniMessage** e os drivers JDBC de SQLite / MySQL vêm *dentro* do jar do GreatCosmetics — você nunca os adiciona manualmente.
 
 ## **Obrigatórias — NeoForge** *(em testes, ainda não lançado)*
 
 | Dependência | Observações |
 | :--- | :--- |
 | [**NeoForge**](https://neoforged.net/) `21.1.133` ou mais novo | Carregador de mods. |
-| [**Kotlin for Forge**](https://modrinth.com/mod/kotlin-for-forge) `5.7.0` ou mais novo | Runtime do Kotlin — exigido pelo Cobblemon. |
-| [**Architectury API**](https://modrinth.com/mod/architectury-api) `>= 13.0` (NeoForge) | Hooks cross-loader que o GreatCosmetics usa. Normalmente o Cobblemon já instala. |
-| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` (NeoForge) | As mesmas features do Fabric. |
-
-!!! note "Bibliotecas embutidas"
-    O **GeckoLib** (renderizador dos modelos 3D animados), a biblioteca de texto **adventure / MiniMessage** e os drivers JDBC de SQLite / MySQL vêm *dentro* do jar do GreatCosmetics nos dois loaders. Você nunca os adiciona manualmente.
 
 ---
 
-## **Opcionais**
+## **Integrações opcionais**
 
-| Dependência | O que habilita |
-| :--- | :--- |
-| [**LuckPerms**](https://luckperms.net/) | Os nodes de permissão (limites por slot / tipo, permissões por cosmético, permissões de comando) **e** as Tags de chat automáticas por grupo. Sem ele, só operadores usam recursos restritos e as Tags de grupo ficam só visuais. |
-| **Servidor MySQL** | Banco de dados externo opcional no lugar do SQLite local embutido. Ver [Armazenamento](Storage.md). |
-| Um host de resource pack (Dropbox / GitHub / seu próprio servidor web) | Necessário só se você usar o recurso de **Resource Pack Forçado**. Ver [Resource Pack](Resource Pack.md). |
+| Dependência | O que destrava | Sem ela |
+| :--- | :--- | :--- |
+| [**Cobblemon**](https://modrinth.com/mod/cobblemon) `1.8.0` | A aba **Party**, as **Skins de Pokémon**, o sistema de bônus **Cobblemon Cosmetics / Lure** e os **scanners** de IV / natureza / habilidade / tamanho. | Esses recursos ficam escondidos. Dados de Lure/scanner já salvos num cosmético são mantidos no arquivo e ignorados. Todo o resto dos cosméticos funciona normal. |
+| [**LuckPerms**](https://luckperms.net/) | Nodes de permissão (limites por slot / tipo, `permission` por cosmético, permissões concedidas, permissões de comando) **e** a aba de **Tags** de chat automáticas por grupo. | Só operadores usam recursos restritos; a aba **Tags** e a página **Chat Tags** do Dev Studio ficam escondidas. |
+| [**Fabric Language Kotlin**](https://modrinth.com/mod/fabric-language-kotlin) | — | Só é preciso *porque o Cobblemon precisa*. O GreatCosmetics em si não exige. |
+| [**Architectury API**](https://modrinth.com/mod/architectury-api) | — | Só é preciso *porque o Cobblemon precisa* em alguns setups. O GreatCosmetics em si não exige. |
+| **Servidor MySQL** | Banco de dados externo no lugar do SQLite local embutido. Ver [Armazenamento](Storage.md). | Usa o arquivo SQLite embutido — suficiente pra maioria dos servidores. |
+| Um host de resource pack (Dropbox / GitHub / seu servidor web) | O recurso de **Resource Pack Forçado**. Ver [Resource Pack](Resource Pack.md). | Coloque o pack no seu modpack. |
+
+!!! tip "Rodando num servidor Cobblemon"
+    O caso comum. Instale o Cobblemon (que já traz Kotlin + Architectury) e o LuckPerms, jogue o GreatCosmetics e todo recurso fica disponível. Nada extra pra configurar.
+
+!!! note "Rodando num servidor Fabric puro"
+    Também suportado. Pule Cobblemon e LuckPerms totalmente — a mochila, os slots, os modelos GeckoLib, os efeitos de partícula, as mochilas de armazenamento, os cosméticos de armadura, os sons e os cosméticos de NPC funcionam. As abas específicas de Pokémon só não aparecem.
 
 ---
 

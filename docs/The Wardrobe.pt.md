@@ -22,6 +22,10 @@ Algumas categorias travam o zoom pra enquadrar a área do corpo relevante (ex: e
 
 ## **Abas**
 
+A barra de abas fica no topo. Uma aba que não está com o mouse em cima / ativa encolhe pra um **prefixo de uma letra** (`A`, `C`, `P`, `T`, `D`) — essas letras, e os nomes completos, são todos editáveis nos [arquivos de idioma](Language.md) (`wardrobe.tab.*` e `wardrobe.tab.*.short`).
+
+**Party** só aparece quando o servidor roda **Cobblemon**; **Tags** só quando roda **LuckPerms**; **Dev Studio** só pra operadores de verdade. Num servidor Fabric puro você vê só Acessórios e Preview.
+
 ### **Acessórios**
 
 A aba principal. Mostra todo cosmético que o jogador **possui**, numa grade de 4 colunas.
@@ -41,17 +45,19 @@ Toggles de visibilidade de armadura. Cada botão esconde/mostra uma peça de arm
 
 Útil pra um cosmético de chapéu não ficar bloqueado por um capacete real.
 
+Um quinto toggle — **Cosméticos dos outros** — é uma config **local**: desligue e *você* para de ver os cosméticos de todo mundo (os seus continuam aparecendo). Salvo por cliente em `config/GreatCosmetics/client_local.json`, nunca enviado ao servidor.
+
 ### **Party**
 
 Skins de Pokémon pro time do jogador. Escolha um slot do time com as setas, navegue nas skins disponíveis, e aplique uma (respeitando o cooldown e a espécie). Uma prévia 3D ao vivo deixa você ciclar poses, formas alternativas e shiny antes de confirmar. Ver [Skins de Pokémon](Pokemon Skins.md).
 
 ### **Tags**
 
-Seletor de prefixo de chat. Tags possuídas primeiro, as trancadas (com um 🔒) depois. Clique pra equipar. Staff com `gc.dev` ganha um toggle **DEV** aqui pra previsualizar e gerenciar Tags. Ver [Tags](Tags.md).
+Seletor de prefixo de chat (precisa do **LuckPerms**). Tags possuídas primeiro, as trancadas (com um 🔒) depois. Clique pra equipar. Staff com `gc.dev` ganha um toggle **DEV** aqui pra previsualizar e gerenciar Tags — incluindo botões **Add** / **Set** pros grupos do LuckPerms. Ver [Tags](Tags.md).
 
 ### **Dev Studio**
 
-Só visível pra **operadores de verdade** (e só no jar completo do servidor). O editor in-game de cosméticos, efeitos, tipos, slots e config do servidor. Ver [Dev Studio](Dev Studio.md).
+Só visível pra **operadores de verdade**. O editor in-game de cosméticos, efeitos, tipos, slots e config do servidor. Ver [Dev Studio](Dev Studio.md).
 
 ---
 

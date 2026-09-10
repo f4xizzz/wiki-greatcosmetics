@@ -4,6 +4,9 @@
 
 The cosmetics that ship with the mod have their models and textures **inside the jar**. Anything you add yourself lives in a **resource pack** that must reach the client.
 
+!!! tip "How to build the files"
+    This page is about **shipping** the pack. For creating the models and textures that go in it — folder layout, Blockbench, drawing the texture — see [Making Models & Textures](Making Models.md).
+
 ---
 
 ## **What goes in the pack**

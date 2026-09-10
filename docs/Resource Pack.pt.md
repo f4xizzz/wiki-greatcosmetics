@@ -4,6 +4,9 @@
 
 Os cosméticos que vêm com o mod têm os modelos e texturas **dentro do jar**. Qualquer coisa que você adicionar fica num **resource pack** que precisa chegar no cliente.
 
+!!! tip "Como criar os arquivos"
+    Esta página é sobre **entregar** o pack. Pra criar os modelos e texturas que vão nele — organização das pastas, Blockbench, desenhar a textura — veja [Criando Modelos & Texturas](Making Models.md).
+
 ---
 
 ## **O que vai no pack**

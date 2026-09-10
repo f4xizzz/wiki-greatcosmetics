@@ -4,6 +4,9 @@
 
 A cosmetic renders as one or more **parts**. Each part is either a **flat icon** (a floating item model) or a **GeckoLib** 3D model, anchored to a body point and transformed with offset / rotation / scale.
 
+!!! tip "Making the files"
+    This page is the reference for the *fields*. For a step-by-step on **creating the models and textures** — folder paths, Blockbench, drawing the texture — see [Making Models & Textures](Making Models.md).
+
 ---
 
 ## **The two rendering modes**
@@ -23,9 +26,7 @@ Set **`geoModelId`** to a name. This **takes priority** over the flat icon. The 
 
 * `geo/item/<name>.geo.json` — required
 * `textures/item/<name>.png` — required (the mod also tries the folder that mirrors the `.geo` path)
-* `animations/item/<name>.animation.json` — optional
-
-GeckoLib parts play their idle animation automatically.
+* `animations/item/<name>.animation.json` — optional (see [State animations](#state-animations))
 
 ### Exact Path mode
 
@@ -77,6 +78,53 @@ The text fields update as you drag, and vice-versa. Toggle the sidebar **S** but
 ## **Multiple parts**
 
 Add parts with **`+ Add Part`**. A single cosmetic can combine, say, a GeckoLib hat on `HEAD` plus a flat feather icon offset to the side — each with its own transform. There's no hard limit; keep it reasonable for performance.
+
+---
+
+## **State animations**
+
+*(GeckoLib parts only — flat icons never animate.)*
+
+A GeckoLib model plays an animation from its `.animation.json` **based on what the wearer is doing** — idle, walking, flying, and so on. There is **no controller code to write and nothing to configure**: the mod picks the clip purely by its **name**. Give a clip one of the fixed names below and it plays in that state; a model whose `.animation.json` has **none** of these names stays completely static (the old behaviour).
+
+### The fixed names
+
+| Name | Plays when | Falls back to |
+| :--- | :--- | :--- |
+| `idle` | Standing still (the default / rest state) | — |
+| `walk` | Moving on the ground | `idle` |
+| `run` | Sprinting on the ground | `walk` → `idle` |
+| `fly` | Flying (creative / cosmetic flight) or gliding with an elytra | `idle` |
+| `swim` | In water and off the ground | `walk` → `idle` |
+| `fall` | In the air, not flying (jumping / falling) | `idle` |
+| `sneak` | Sneaking | *(nothing — see below)* |
+
+**Priority** (the first one whose clip actually exists wins): `sneak` → `fly` → `swim` → `fall` → `run` → `walk` → `idle`.
+
+`sneak` is special: if the model has **no** `sneak` clip, crouching is **transparent** — the animation doesn't change (a moving player keeps playing `walk`, a still one keeps `idle`). Every other name falls back down the chain to `idle`.
+
+You only need the clips you care about. A cape with just `idle` and `fly` is fine — walking, sneaking, etc. all resolve down to `idle` (or, for sneak, just don't change anything).
+
+### Naming in Blockbench
+
+You don't have to rename anything to the bare word. The mod matches a clip whose name **ends with** the fixed name after a separator, so all of these count as `idle`:
+
+* `idle`
+* `animation.dragon_wings.idle` — Blockbench's default `animation.<model>.<action>`
+* `ground_idle` / `animation.charizard.ground_idle` — the Cobblemon convention (ripped Pokémon animations)
+* `battle_idle`, `air_idle`, … — anything ending `_idle` / `-idle`
+
+Same for the others: `ground_walk` → `walk`, `ground_run` → `run`, `air_fly` → `fly`. When several clips could match, the more specific one wins (`.idle` beats `ground_idle` beats `battle_idle`). Clips with `ride` or `test` in the name are ignored.
+
+!!! tip "Want an always-on animation?"
+    A model that should always do the same thing (a slowly spinning halo, a flickering flame) — just name that clip **`idle`**. It loops in every state because everything falls back to `idle`.
+
+### Notes
+
+* Every clip **loops**. One-shot animations are not supported here.
+* Each wearer animates independently — two players in the same cosmetic don't sync.
+* Blending between states is smoothed over ~5 ticks.
+* In the Dev Studio the preview player just stands there, so you'll only see `idle` (or nothing). Test movement animations in the world.
 
 ---
 
