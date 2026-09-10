@@ -33,9 +33,9 @@ Com **`useExactPath`** ligado, os dois campos acima deixam de ser "só o nome do
 
 | Modo | Valor do campo | Resolve pra |
 | :--- | :--- | :--- |
-| Off | `cigar` | `.../models/cigar.json` (namespace `greatcosmetics` pra modelos vanilla) |
-| On | `sas/cigar` | `.../models/sas/cigar.json` em **qualquer** namespace |
-| On (Geo) | `item/hat` | `.../geo/item/hat.geo.json` em qualquer namespace |
+| Off | `wizard_hat` | `.../models/wizard_hat.json` (namespace `greatcosmetics` pra modelos vanilla) |
+| On | `hats/wizard_hat` | `.../models/hats/wizard_hat.json` em **qualquer** namespace |
+| On (Geo) | `item/wizard_hat` | `.../geo/item/wizard_hat.geo.json` em qualquer namespace |
 
 Use quando seus arquivos estão em subpastas ou no namespace de outro mod, ou quando dois arquivos têm o mesmo nome.
 

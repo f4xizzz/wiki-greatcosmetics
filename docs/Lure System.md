@@ -10,7 +10,7 @@ Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Cobble
 
 ## **IVs Scanner**
 
-Turn on **IVs Scanner** on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of **every Pokémon within ~48 blocks** — wild included — are shown above its name as `HP · A · D · SpA · SpD · Spe`, colour-graded red → yellow → gold → green (green = 31).
+Turn on **IVs Scanner** on a cosmetic. While a player wears it (or a cosmetic-armor piece with it), the IVs of **every Pokémon within ~48 blocks** — wild included — are shown above its name as a six-line list, one stat per line (`Health`, `Attack`, `Defense`, `Sp. Attack`, `Sp. Defense`, `Speed`), each stat label in its own bold colour.
 
 It is **independent of the Lure `enabled` switch**. Wild Pokémon IVs don't exist on the client, so the server computes and pushes them a few times per second while the scanner is worn.
 

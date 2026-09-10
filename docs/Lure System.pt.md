@@ -10,7 +10,7 @@ Configure na seção **`>> Cobblemon Cosmetics`** do editor de cosmético do [De
 
 ## **IVs Scanner**
 
-Liga o **IVs Scanner** num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de **todo Pokémon num raio de ~48 blocos** — selvagem incluso — aparecem acima do nome como `HP · A · D · SpA · SpD · Spe`, coloridos vermelho → amarelo → dourado → verde (verde = 31).
+Liga o **IVs Scanner** num cosmético. Enquanto o jogador o veste (ou uma armadura-cosmético com ele), os IVs de **todo Pokémon num raio de ~48 blocos** — selvagem incluso — aparecem acima do nome numa lista de seis linhas, uma stat por linha (`Health`, `Attack`, `Defense`, `Sp. Attack`, `Sp. Defense`, `Speed`), cada rótulo na sua própria cor em negrito.
 
 É **independente do `enabled` do Lure**. IV de Pokémon selvagem não existe no cliente, então o servidor calcula e empurra algumas vezes por segundo enquanto o scanner está equipado.
 

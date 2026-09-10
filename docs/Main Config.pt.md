@@ -100,12 +100,14 @@ Você pode remover slots que não quer, mas os nove nomes acima são os únicos 
 
 ### **8. Resource Pack Forçado**
 
-Em vez de `resource-pack` / `resource-pack-sha1` no `server.properties` (que precisam de restart), o mod pode enviar o pack sozinho:
+O mod envia o pack sozinho no join e no `/gc reload` (sem restart pra trocar URL/hash), **e** mantém o `server.properties` sincronizado pra que um login vanilla puro também receba:
 
 * **`forceTexture`** *(padrão `false`)* — habilita o envio do pack no join e no `/gc reload`.
 * **`textureId`** — qualquer texto; identifica o pack pro cliente (não precisa ser um UUID).
 * **`textureUrl`** — um link de **download direto** do `.zip` do pack.
 * **`textureSha1`** — deixe em branco; o mod calcula o SHA-1 real automaticamente. Só preencha se você hospeda em algum lugar que exige um valor fixo.
+
+**Sincronização com `server.properties`.** Num servidor dedicado, toda vez que esses campos são salvos (Dev Studio → Server Config, `/gc reload`, ou o recálculo automático do SHA-1) o mod escreve `resource-pack`, `resource-pack-sha1` e `resource-pack-id` no `server.properties`, e ajusta o `require-resource-pack` pra bater com o `forceTexture`. No boot, se o `mainconfig.conf` ainda não tem `textureUrl` mas o `server.properties` já tem um `resource-pack`, o mod importa (URL + sha1 + id) e liga o `forceTexture`. Desligar o `forceTexture` só zera o `require-resource-pack` — as linhas `resource-pack` ficam onde estão. O `server.properties` só é relido pelo servidor no boot, então uma mudança feita com ele ligado só vale pro login vanilla no próximo restart (o envio ao vivo do próprio mod já cobre a sessão em andamento).
 
 Ver [Resource Pack](Resource Pack.md).
 
