@@ -1131,6 +1131,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Making%20Models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Models & Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Slots%20and%20Types.html" class="md-nav__link">
         
   
@@ -1649,6 +1677,8 @@
 <p>Some categories lock the zoom to frame the relevant body area (e.g. picking <strong>Head</strong> zooms to the face).</p>
 <hr />
 <h2 id="tabs"><strong>Tabs</strong></h2>
+<p>The tab bar sits at the top. A tab that isn't hovered/active collapses to a <strong>one-letter prefix</strong> (<code>A</code>, <code>C</code>, <code>P</code>, <code>T</code>, <code>D</code>) — those letters, and the full names, are all editable in the <a href="Language.html">language files</a> (<code>wardrobe.tab.*</code> and <code>wardrobe.tab.*.short</code>).</p>
+<p><strong>Party</strong> only appears when the server runs <strong>Cobblemon</strong>; <strong>Tags</strong> only when it runs <strong>LuckPerms</strong>; <strong>Dev Studio</strong> only for real operators. On a plain Fabric server you'll just see Accessories and Preview.</p>
 <h3 id="accessories"><strong>Accessories</strong></h3>
 <p>The main tab. Shows every cosmetic the player <strong>owns</strong>, in a 4-column grid.</p>
 <ul>
@@ -1665,12 +1695,13 @@
 <li>Helmet · Chestplate · Leggings · Boots</li>
 </ul>
 <p>Useful so a hat cosmetic isn't blocked by a real helmet.</p>
+<p>A fifth toggle — <strong>Others' cosmetics</strong> — is a <strong>local</strong> setting: turn it off and <em>you</em> stop seeing everyone else's cosmetics (your own still render). Saved per-client in <code>config/GreatCosmetics/client_local.json</code>, never sent to the server.</p>
 <h3 id="party"><strong>Party</strong></h3>
 <p>Pokémon Skins for the player's Cobblemon party. Pick a party slot with the arrows, browse available skins, and apply one (subject to its cooldown and species match). A live 3D preview lets you cycle poses, alternate forms and shiny before committing. See <a href="Pokemon%20Skins.html">Pokemon Skins</a>.</p>
 <h3 id="tags"><strong>Tags</strong></h3>
-<p>Chat prefix selector. Owned Tags are listed first, locked ones (with a 🔒) after. Click to equip. Staff with <code>gc.dev</code> get a <strong>DEV</strong> toggle here to preview and manage Tags. See <a href="Tags.html">Tags</a>.</p>
+<p>Chat prefix selector (needs <strong>LuckPerms</strong>). Owned Tags are listed first, locked ones (with a 🔒) after. Click to equip. Staff with <code>gc.dev</code> get a <strong>DEV</strong> toggle here to preview and manage Tags — including <strong>Add</strong> / <strong>Set</strong> buttons for LuckPerms groups. See <a href="Tags.html">Tags</a>.</p>
 <h3 id="dev-studio"><strong>Dev Studio</strong></h3>
-<p>Only visible to <strong>real operators</strong> (and only in the full server jar). The in-game editor for cosmetics, effects, types, slots and server config. See <a href="Dev%20Studio.html">Dev Studio</a>.</p>
+<p>Only visible to <strong>real operators</strong>. The in-game editor for cosmetics, effects, types, slots and server config. See <a href="Dev%20Studio.html">Dev Studio</a>.</p>
 <hr />
 <h2 id="equipped-slots-drawer"><strong>Equipped slots drawer</strong></h2>
 <p>A small drawer on the side shows the player's nine virtual slots and what's equipped in each. Operators / <code>gc.dev</code> holders also get a <strong>Dev: ON/OFF</strong> toggle here — Dev Mode makes every cosmetic and Tag appear as owned so you can preview them.</p>

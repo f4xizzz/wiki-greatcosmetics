@@ -99,6 +99,13 @@
         <xhtml:link rel="alternate" hreflang="pt" href="https://f4xizzz.github.io/wiki-greatcosmetics/pt/Main%20Config.html"/>
     </url>
     <url>
+        <loc>https://f4xizzz.github.io/wiki-greatcosmetics/Making%20Models.html</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://f4xizzz.github.io/wiki-greatcosmetics/Making%20Models.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://f4xizzz.github.io/wiki-greatcosmetics/pt/Making%20Models.html"/>
+    </url>
+    <url>
         <loc>https://f4xizzz.github.io/wiki-greatcosmetics/Migrating.html</loc>
         <lastmod>2026-09-10</lastmod>
         <changefreq>daily</changefreq>
@@ -279,6 +286,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://f4xizzz.github.io/wiki-greatcosmetics/pt/Main%20Config.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://f4xizzz.github.io/wiki-greatcosmetics/Main%20Config.html"/>
+    </url>
+    <url>
+        <loc>https://f4xizzz.github.io/wiki-greatcosmetics/pt/Making%20Models.html</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://f4xizzz.github.io/wiki-greatcosmetics/pt/Making%20Models.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://f4xizzz.github.io/wiki-greatcosmetics/Making%20Models.html"/>
     </url>
     <url>
         <loc>https://f4xizzz.github.io/wiki-greatcosmetics/pt/Migrating.html</loc>

@@ -977,6 +977,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Making%20Models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Models & Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Slots%20and%20Types.html" class="md-nav__link">
         
   
@@ -1316,6 +1344,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cor-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cor (RGB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grupos-de-efeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grupos de efeito
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#anexando-a-um-cosmetico" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1447,6 +1519,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cor-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cor (RGB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grupos-de-efeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grupos de efeito
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#anexando-a-um-cosmetico" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1476,21 +1592,19 @@
 
 <h1 id="efeitos-de-particula"><strong>Efeitos de Partícula</strong></h1>
 <hr />
-<p>Um <strong>efeito de partícula</strong> é um emissor de partículas nomeado e reutilizável que você anexa a cosméticos (como rastro, ou rastro só de voo). Definido na página <strong>Effects</strong> do <a href="Dev%20Studio.html">Dev Studio</a> e guardado em <strong><code>config/GreatCosmetics/effects.json</code></strong>.</p>
+<p>Um <strong>efeito de partícula</strong> é um emissor de partículas nomeado e reutilizável que você anexa a cosméticos (como rastro, ou rastro só de voo). Os efeitos são definidos na página <strong>Effects</strong> do <a href="Dev%20Studio.html">Dev Studio</a> e guardados em <strong><code>config/GreatCosmetics/effects.json</code></strong>. Os <strong>grupos de efeito</strong> juntam vários efeitos que disparam juntos, guardados em <strong><code>config/GreatCosmetics/effect_groups.json</code></strong>.</p>
 <hr />
 <h2 id="campos-do-efeito"><strong>Campos do efeito</strong></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"sparkle_trail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"particleId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minecraft:end_rod"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"shape"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLE"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tickInterval"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"spreadX"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"spreadY"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"spreadZ"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"offsetX"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"offsetY"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"offsetZ"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="nt">"spreadX"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">"spreadY"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="nt">"spreadZ"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"offsetX"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"offsetY"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"offsetZ"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"colorR"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="nt">"colorG"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="nt">"colorB"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1507,8 +1621,12 @@
 <td style="text-align: left;">Qualquer id de partícula do Minecraft (<code>minecraft:flame</code>, <code>minecraft:soul_fire_flame</code>, <code>minecraft:end_rod</code>…).</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>shape</strong></td>
+<td style="text-align: left;"><code>SIMPLE</code> (o emissor clássico) ou uma forma geométrica — <code>CIRCLE</code>, <code>HELIX</code>, <code>BEAM</code>, <code>PULSE</code>. Ver <a href="#formas">Formas</a>.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>count</strong></td>
-<td style="text-align: left;">Partículas geradas por rajada.</td>
+<td style="text-align: left;">Partículas geradas por rajada. <strong>Só <code>SIMPLE</code></strong> — as formas geram uma partícula por ponto da forma.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>tickInterval</strong></td>
@@ -1520,30 +1638,130 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>spreadX / Y / Z</strong></td>
-<td style="text-align: left;">Caixa de espalhamento aleatório ao redor do ponto de spawn.</td>
+<td style="text-align: left;">Caixa de espalhamento aleatório ao redor de cada ponto de spawn (jitter).</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>offsetX / Y / Z</strong></td>
-<td style="text-align: left;">Posição relativa ao jogador — <code>Y: 1.0</code> é mais ou menos a altura do peito. <code>X</code> é pros lados, <code>Z</code> é frente/trás.</td>
+<td style="text-align: left;">Posição relativa ao jogador — <code>Y: 1.0</code> é mais ou menos a altura do peito. <code>X</code> é pros lados, <code>Z</code> é frente/trás. Gira com o corpo do jogador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>colorR / G / B</strong></td>
+<td style="text-align: left;"><code>0–255</code> cada, ou <code>-1</code> = sem cor custom. Ver <a href="#cor-rgb">Cor (RGB)</a>.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="criando-um"><strong>Criando um</strong></h2>
-<p>Dev Studio → <strong>Effects</strong> → <strong>+ New Effect</strong>. O editor tem uma <strong>prévia 3D ao vivo</strong> e um <strong>gizmo 3D</strong>: segure <code>X</code>, <code>Y</code> ou <code>Z</code> e arraste fora do painel pra mover o offset visualmente. <strong>S</strong> salva.</p>
-<p>O campo Particle ID tem autocomplete pra toda partícula registrada (vanilla + mods).</p>
+<p>Dev Studio → <strong>Effects</strong> → <strong>+ New Effect</strong>. O editor tem uma <strong>prévia 3D ao vivo</strong> e um <strong>gizmo 3D</strong>: segure <code>X</code>, <code>Y</code> ou <code>Z</code> e arraste fora do painel pra mover o offset visualmente. <strong>S</strong> salva e transmite pra todo jogador online.</p>
+<p>O editor é de cima pra baixo:</p>
+<ol>
+<li><strong>=== EFFECT PRESET ===</strong> — um dropdown que preenche todos os campos de um template, aí você ajusta. Ver <a href="#presets">Presets</a>.</li>
+<li><strong>=== SHAPE ===</strong> — <code>SIMPLE</code> / <code>CIRCLE</code> / <code>HELIX</code> / <code>BEAM</code> / <code>PULSE</code>. Mudar isso troca os campos abaixo.</li>
+<li><strong>=== CONFIGURATION ===</strong> — id da partícula, count, tick interval.</li>
+<li><strong>shape params</strong> <em>(só quando shape ≠ SIMPLE)</em> — raio, pontos, strands, rotação, animação…</li>
+<li><strong>=== COLOR ===</strong> — o toggle <strong>Custom Color</strong> e os sliders R/G/B.</li>
+<li><strong>=== 3D TOOL / OFFSETS / SPREAD ===</strong> — posição e jitter.</li>
+</ol>
+<hr />
+<h2 id="cor-rgb"><strong>Cor (RGB)</strong></h2>
+<p>Ligue o <strong>Custom Color</strong> e defina os três sliders (<code>0–255</code>).</p>
+<p>O Minecraft só deixa <strong>três tipos de partícula</strong> carregar uma cor arbitrária: <code>minecraft:dust</code>, <code>minecraft:dust_color_transition</code> e <code>minecraft:entity_effect</code>. Se o Custom Color está ligado e você escolheu <strong>qualquer outra</strong> partícula (<code>flame</code>, <code>end_rod</code>, …), o mod renderiza como <strong>dust colorido</strong> em vez de ignorar a cor — o editor mostra um aviso amarelo quando isso acontece. Então "ligar cor → ter uma partícula colorida" sempre vale; escolha <code>minecraft:dust</code> explicitamente se quiser o visual de dust sem surpresa.</p>
+<p>Desligue o <strong>Custom Color</strong> pras cores naturais da partícula.</p>
+<hr />
+<h2 id="formas"><strong>Formas</strong></h2>
+<p>Com <strong>shape ≠ SIMPLE</strong>, o efeito desenha uma figura geométrica em volta do jogador a cada <code>tickInterval</code> em vez de uma rajada solta. Campos extras aparecem:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Formas</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>radius</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;">Tamanho da figura.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>points</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;">Partículas por anel / por volta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>strands</strong></td>
+<td style="text-align: left;">CIRCLE, HELIX</td>
+<td style="text-align: left;">Cópias paralelas (uma hélice dupla = <code>2</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>phase</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;">Ângulo inicial, graus.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>clockwise</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;">Direção.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>rotX / rotY / rotZ</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;">Inclina a figura inteira, graus (um anel inclinado = <code>rotX</code> ≈ 30).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>helixHeight / turns / reverse</strong></td>
+<td style="text-align: left;">HELIX</td>
+<td style="text-align: left;">Altura, número de voltas, direção do percurso.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>beamHeight / spacing / upwards</strong></td>
+<td style="text-align: left;">BEAM</td>
+<td style="text-align: left;">Altura da coluna, espaço entre partículas, pra cima ou pra baixo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>endRadius / endPoints / rings / outwards</strong></td>
+<td style="text-align: left;">PULSE</td>
+<td style="text-align: left;">Tamanho final, densidade final, número de anéis, expandir ou contrair.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>animTicks</strong></td>
+<td style="text-align: left;">todas</td>
+<td style="text-align: left;"><code>0</code> = a figura inteira a cada <code>tickInterval</code>. <code>&gt; 0</code> = a figura é <em>traçada/expandida</em> ao longo de <code>animTicks</code>, aí pausa por <code>tickInterval</code>, aí repete. Um <code>Pulse Out</code> com <code>animTicks: 40</code> = um anel que cresce de <code>radius</code> a <code>endRadius</code> em ~2 s.</td>
+</tr>
+</tbody>
+</table>
+<p><code>count</code> é ignorado pelas formas (uma partícula por ponto). <code>speed</code> e <code>spread</code> ainda valem como jitter por partícula.</p>
+<div class="admonition warning">
+<p class="admonition-title">Orçamento de partículas</p>
+<p>Uma forma grande pode gerar centenas de partículas por tick. O mod limita <code>points ≤ 200</code>, <code>strands ≤ 12</code>, <code>rings ≤ 24</code> e o total por spawn em ~1200, mas mantenha <code>points</code>/<code>strands</code> na moral ou vai afogar o FPS e a rede.</p>
+</div>
+<hr />
+<h2 id="presets"><strong>Presets</strong></h2>
+<p>O dropdown <strong>=== EFFECT PRESET ===</strong> carrega um template pronto no efeito atual — <code>Ring</code>, <code>Ring (Tilted)</code>, <code>Halo</code>, <code>Helix</code>, <code>Double Helix</code>, <code>Rising Helix</code>, <code>Beam Up</code>, <code>Beam Down</code>, <code>Pulse Out</code>, <code>Pulse In</code>, <code>Nova</code>, <code>Simple Aura</code>, … Escolher um sobrescreve <strong>todos</strong> os campos; aí você edita por cima. O campo em si fica vazio — é uma ação, não um valor.</p>
+<hr />
+<h2 id="grupos-de-efeito"><strong>Grupos de efeito</strong></h2>
+<p>Um <strong>grupo</strong> é 2+ efeitos que tocam juntos. Dev Studio → <strong>Effects</strong> → <strong>+ New Group</strong> (do lado de <em>+ New Effect</em>). Os grupos aparecem na lista com borda ciano e um prefixo <code>[G]</code>.</p>
+<p>No editor de grupo:</p>
+<ul>
+<li><strong>Add Existing Effect</strong> — escolhe um id de efeito que já está no catálogo.</li>
+<li><strong>Create New Effect</strong> — cria um efeito que vive <em>dentro do grupo</em> (ele <strong>não</strong> aparece na lista de Effects e não está no <code>effects.json</code> — fica no JSON do grupo).</li>
+<li><strong>Group Preset</strong> — um template combo (<code>Vortex</code>, <code>Smash</code>, <code>Twin Halo</code>) que enche o grupo com vários efeitos de uma vez.</li>
+<li><strong>Edit</strong> num membro → abre o editor daquele efeito "em contexto de grupo": os <strong>outros</strong> membros também aparecem no preview. O botão <strong>E</strong> da barra lateral (acima do <strong>S</strong>) isola — só o efeito que você está editando aparece. <strong>&lt; Back</strong> volta pro grupo.</li>
+</ul>
+<p>Um <strong>id de grupo é usado exatamente onde um id de efeito é usado</strong> (os campos <em>Effect Visual</em> / <em>Fly Particle</em> do cosmético). O mod expande pros membros na hora do spawn; cada membro mantém o próprio <code>tickInterval</code>.</p>
 <hr />
 <h2 id="anexando-a-um-cosmetico"><strong>Anexando a um cosmético</strong></h2>
 <p>No editor de cosmético, seção <strong>Special Effects</strong>:</p>
 <ul>
-<li><strong>Effect Visual</strong> — lista separada por vírgula de <strong>ids</strong> de efeito; toca sempre enquanto o cosmético está sendo usado.</li>
+<li><strong>Effect Visual</strong> — lista separada por vírgula de ids de efeito <strong>ou grupo</strong>; toca sempre enquanto o cosmético está sendo usado.</li>
 <li><strong>Fly Particle</strong> — igual, mas só enquanto o jogador está voando.</li>
 </ul>
-<p>Um efeito pode ser referenciado por qualquer quantidade de cosméticos.</p>
+<p>Um efeito (ou grupo) pode ser referenciado por qualquer quantidade de cosméticos.</p>
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Sync</p>
-<p>Os efeitos são transmitidos pra todos os jogadores online ao salvar. Se um jogador entrou antes do efeito existir, o <code>/gc reload</code> (ou o próximo join dele) pega.</p>
+<p>Efeitos e grupos são transmitidos pra todos os jogadores online ao salvar. Se um jogador entrou antes do efeito existir, o <code>/gc reload</code> (ou o próximo join dele) pega.</p>
 </div>
 
 

@@ -14,7 +14,7 @@
         <link rel="prev" href="Dev%20Studio.html">
       
       
-        <link rel="next" href="Slots%20and%20Types.html">
+        <link rel="next" href="Making%20Models.html">
       
       
         
@@ -1105,6 +1105,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#state-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State animations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State animations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fixed-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fixed names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-in-blockbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming in Blockbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#checklist-for-a-new-model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1119,6 +1169,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Making%20Models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Models & Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1591,6 +1669,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#state-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State animations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State animations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fixed-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fixed names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-in-blockbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming in Blockbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#checklist-for-a-new-model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1621,6 +1749,10 @@
 <h1 id="parts-models"><strong>Parts &amp; Models</strong></h1>
 <hr />
 <p>A cosmetic renders as one or more <strong>parts</strong>. Each part is either a <strong>flat icon</strong> (a floating item model) or a <strong>GeckoLib</strong> 3D model, anchored to a body point and transformed with offset / rotation / scale.</p>
+<div class="admonition tip">
+<p class="admonition-title">Making the files</p>
+<p>This page is the reference for the <em>fields</em>. For a step-by-step on <strong>creating the models and textures</strong> — folder paths, Blockbench, drawing the texture — see <a href="Making%20Models.html">Making Models &amp; Textures</a>.</p>
+</div>
 <hr />
 <h2 id="the-two-rendering-modes"><strong>The two rendering modes</strong></h2>
 <h3 id="1-flat-icon-vanilla-model">1. Flat icon / vanilla model</h3>
@@ -1635,9 +1767,8 @@
 <ul>
 <li><code>geo/item/&lt;name&gt;.geo.json</code> — required</li>
 <li><code>textures/item/&lt;name&gt;.png</code> — required (the mod also tries the folder that mirrors the <code>.geo</code> path)</li>
-<li><code>animations/item/&lt;name&gt;.animation.json</code> — optional</li>
+<li><code>animations/item/&lt;name&gt;.animation.json</code> — optional (see <a href="#state-animations">State animations</a>)</li>
 </ul>
-<p>GeckoLib parts play their idle animation automatically.</p>
 <h3 id="exact-path-mode">Exact Path mode</h3>
 <p>With <strong><code>useExactPath</code></strong> on, the two fields above stop being "just the file name" and become a <strong>full relative path</strong> resolved by exact match in any namespace:</p>
 <table>
@@ -1713,6 +1844,80 @@
 <h2 id="multiple-parts"><strong>Multiple parts</strong></h2>
 <p>Add parts with <strong><code>+ Add Part</code></strong>. A single cosmetic can combine, say, a GeckoLib hat on <code>HEAD</code> plus a flat feather icon offset to the side — each with its own transform. There's no hard limit; keep it reasonable for performance.</p>
 <hr />
+<h2 id="state-animations"><strong>State animations</strong></h2>
+<p><em>(GeckoLib parts only — flat icons never animate.)</em></p>
+<p>A GeckoLib model plays an animation from its <code>.animation.json</code> <strong>based on what the wearer is doing</strong> — idle, walking, flying, and so on. There is <strong>no controller code to write and nothing to configure</strong>: the mod picks the clip purely by its <strong>name</strong>. Give a clip one of the fixed names below and it plays in that state; a model whose <code>.animation.json</code> has <strong>none</strong> of these names stays completely static (the old behaviour).</p>
+<h3 id="the-fixed-names">The fixed names</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Plays when</th>
+<th style="text-align: left;">Falls back to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>idle</code></td>
+<td style="text-align: left;">Standing still (the default / rest state)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>walk</code></td>
+<td style="text-align: left;">Moving on the ground</td>
+<td style="text-align: left;"><code>idle</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>run</code></td>
+<td style="text-align: left;">Sprinting on the ground</td>
+<td style="text-align: left;"><code>walk</code> → <code>idle</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fly</code></td>
+<td style="text-align: left;">Flying (creative / cosmetic flight) or gliding with an elytra</td>
+<td style="text-align: left;"><code>idle</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>swim</code></td>
+<td style="text-align: left;">In water and off the ground</td>
+<td style="text-align: left;"><code>walk</code> → <code>idle</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fall</code></td>
+<td style="text-align: left;">In the air, not flying (jumping / falling)</td>
+<td style="text-align: left;"><code>idle</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sneak</code></td>
+<td style="text-align: left;">Sneaking</td>
+<td style="text-align: left;"><em>(nothing — see below)</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Priority</strong> (the first one whose clip actually exists wins): <code>sneak</code> → <code>fly</code> → <code>swim</code> → <code>fall</code> → <code>run</code> → <code>walk</code> → <code>idle</code>.</p>
+<p><code>sneak</code> is special: if the model has <strong>no</strong> <code>sneak</code> clip, crouching is <strong>transparent</strong> — the animation doesn't change (a moving player keeps playing <code>walk</code>, a still one keeps <code>idle</code>). Every other name falls back down the chain to <code>idle</code>.</p>
+<p>You only need the clips you care about. A cape with just <code>idle</code> and <code>fly</code> is fine — walking, sneaking, etc. all resolve down to <code>idle</code> (or, for sneak, just don't change anything).</p>
+<h3 id="naming-in-blockbench">Naming in Blockbench</h3>
+<p>You don't have to rename anything to the bare word. The mod matches a clip whose name <strong>ends with</strong> the fixed name after a separator, so all of these count as <code>idle</code>:</p>
+<ul>
+<li><code>idle</code></li>
+<li><code>animation.dragon_wings.idle</code> — Blockbench's default <code>animation.&lt;model&gt;.&lt;action&gt;</code></li>
+<li><code>ground_idle</code> / <code>animation.charizard.ground_idle</code> — the Cobblemon convention (ripped Pokémon animations)</li>
+<li><code>battle_idle</code>, <code>air_idle</code>, … — anything ending <code>_idle</code> / <code>-idle</code></li>
+</ul>
+<p>Same for the others: <code>ground_walk</code> → <code>walk</code>, <code>ground_run</code> → <code>run</code>, <code>air_fly</code> → <code>fly</code>. When several clips could match, the more specific one wins (<code>.idle</code> beats <code>ground_idle</code> beats <code>battle_idle</code>). Clips with <code>ride</code> or <code>test</code> in the name are ignored.</p>
+<div class="admonition tip">
+<p class="admonition-title">Want an always-on animation?</p>
+<p>A model that should always do the same thing (a slowly spinning halo, a flickering flame) — just name that clip <strong><code>idle</code></strong>. It loops in every state because everything falls back to <code>idle</code>.</p>
+</div>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Every clip <strong>loops</strong>. One-shot animations are not supported here.</li>
+<li>Each wearer animates independently — two players in the same cosmetic don't sync.</li>
+<li>Blending between states is smoothed over ~5 ticks.</li>
+<li>In the Dev Studio the preview player just stands there, so you'll only see <code>idle</code> (or nothing). Test movement animations in the world.</li>
+</ul>
+<hr />
 <h2 id="checklist-for-a-new-model"><strong>Checklist for a new model</strong></h2>
 <ol>
 <li>Drop the files in your resource pack (icon <strong>or</strong> <code>.geo</code> + texture).</li>
@@ -1768,13 +1973,13 @@
         
         
           
-          <a href="Slots%20and%20Types.html" class="md-footer__link md-footer__link--next" aria-label="Next: Slots &amp; Types">
+          <a href="Making%20Models.html" class="md-footer__link md-footer__link--next" aria-label="Next: Making Models &amp; Textures">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Slots & Types
+                Making Models & Textures
               </div>
             </div>
             <div class="md-footer__button md-icon">

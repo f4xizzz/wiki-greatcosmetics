@@ -464,10 +464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" class="md-nav__link">
+  <a href="#optional-integrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optional
+        Optional integrations
       
     </span>
   </a>
@@ -1059,6 +1059,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Making%20Models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Models & Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Slots%20and%20Types.html" class="md-nav__link">
         
   
@@ -1447,10 +1475,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" class="md-nav__link">
+  <a href="#optional-integrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optional
+        Optional integrations
       
     </span>
   </a>
@@ -1477,6 +1505,7 @@
 <h1 id="dependencies"><strong>Dependencies</strong></h1>
 <hr />
 <p>GreatCosmetics's current release runs on <strong>Fabric</strong> for Minecraft <code>1.21.1</code> (Java <code>21+</code>). A NeoForge build is in testing.</p>
+<p>The mod needs <strong>only Fabric Loader + Fabric API</strong>. Everything else is optional — Cobblemon and LuckPerms each <em>unlock extra features</em> when present, but the mod loads, the wardrobe works, and cosmetics render on a plain Fabric server without them.</p>
 <h2 id="required-fabric"><strong>Required — Fabric</strong></h2>
 <table>
 <thead>
@@ -1494,20 +1523,9 @@
 <td style="text-align: left;"><a href="https://modrinth.com/mod/fabric-api"><strong>Fabric API</strong></a> <code>0.116.9+1.21.1</code> or newer</td>
 <td style="text-align: left;">Core hooks the Fabric build uses.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/fabric-language-kotlin"><strong>Fabric Language Kotlin</strong></a> <code>1.13.13+kotlin.2.4.10</code> or newer</td>
-<td style="text-align: left;">Kotlin runtime — required by Cobblemon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/architectury-api"><strong>Architectury API</strong></a> <code>&gt;= 13.0</code> (Fabric)</td>
-<td style="text-align: left;">Cross-loader hooks GreatCosmetics is built on. Usually already installed by Cobblemon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.8.0</code> (Fabric)</td>
-<td style="text-align: left;">The Party tab, Pokémon Skins and the Lure system read Cobblemon data.</td>
-</tr>
 </tbody>
 </table>
+<p>That's it. The <strong>GeckoLib</strong> renderer, the <strong>adventure / MiniMessage</strong> text library, and the SQLite / MySQL JDBC drivers are shipped <em>inside</em> the GreatCosmetics jar — you never add them manually.</p>
 <h2 id="required-neoforge-in-testing-not-released-yet"><strong>Required — NeoForge</strong> <em>(in testing, not released yet)</em></h2>
 <table>
 <thead>
@@ -1521,48 +1539,59 @@
 <td style="text-align: left;"><a href="https://neoforged.net/"><strong>NeoForge</strong></a> <code>21.1.133</code> or newer</td>
 <td style="text-align: left;">Mod loader.</td>
 </tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/kotlin-for-forge"><strong>Kotlin for Forge</strong></a> <code>5.7.0</code> or newer</td>
-<td style="text-align: left;">Kotlin runtime — required by Cobblemon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/architectury-api"><strong>Architectury API</strong></a> <code>&gt;= 13.0</code> (NeoForge)</td>
-<td style="text-align: left;">Cross-loader hooks GreatCosmetics is built on. Usually already installed by Cobblemon.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.8.0</code> (NeoForge)</td>
-<td style="text-align: left;">Same features as on Fabric.</td>
-</tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Bundled libraries</p>
-<p><strong>GeckoLib</strong> (the animated 3D model renderer), the <strong>adventure / MiniMessage</strong> text library, and the SQLite / MySQL JDBC drivers are shipped <em>inside</em> the GreatCosmetics jar on both loaders. You never add them manually.</p>
-</div>
 <hr />
-<h2 id="optional"><strong>Optional</strong></h2>
+<h2 id="optional-integrations"><strong>Optional integrations</strong></h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Dependency</th>
-<th style="text-align: left;">What it enables</th>
+<th style="text-align: left;">What it unlocks</th>
+<th style="text-align: left;">Without it</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/cobblemon"><strong>Cobblemon</strong></a> <code>1.8.0</code></td>
+<td style="text-align: left;">The <strong>Party</strong> tab, <strong>Pokémon Skins</strong>, the <strong>Cobblemon Cosmetics / Lure</strong> bonus system, and the IV / nature / ability / size <strong>scanners</strong>.</td>
+<td style="text-align: left;">Those features are hidden. Any Lure/scanner data already saved on a cosmetic is kept in the file and ignored. All other cosmetic features work normally.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><a href="https://luckperms.net/"><strong>LuckPerms</strong></a></td>
-<td style="text-align: left;">Permission nodes (per-slot / per-type limits, per-cosmetic permissions, command permissions) <strong>and</strong> the automatic group-based chat Tags. Without it, only server operators can use restricted features and group Tags are cosmetic-only.</td>
+<td style="text-align: left;">Permission nodes (per-slot / per-type limits, per-cosmetic <code>permission</code>, granted permissions, command permissions) <strong>and</strong> the automatic group-based chat <strong>Tags</strong> tab.</td>
+<td style="text-align: left;">Only server operators can use restricted features; the <strong>Tags</strong> tab and the Dev Studio <strong>Chat Tags</strong> page are hidden.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/fabric-language-kotlin"><strong>Fabric Language Kotlin</strong></a></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Only needed <em>because Cobblemon needs it</em>. Not required by GreatCosmetics itself.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://modrinth.com/mod/architectury-api"><strong>Architectury API</strong></a></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Only needed <em>because Cobblemon needs it</em> on some setups. Not required by GreatCosmetics itself.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>MySQL server</strong></td>
-<td style="text-align: left;">Optional external database instead of the built-in local SQLite. See <a href="Storage.html">Storage</a>.</td>
+<td style="text-align: left;">External database instead of the built-in local SQLite. See <a href="Storage.html">Storage</a>.</td>
+<td style="text-align: left;">Uses the bundled SQLite file — fine for most servers.</td>
 </tr>
 <tr>
 <td style="text-align: left;">A resource-pack host (Dropbox / GitHub / your own web server)</td>
-<td style="text-align: left;">Needed only if you use the <strong>Forced Resource Pack</strong> feature. See <a href="Resource%20Pack.html">Resource Pack</a>.</td>
+<td style="text-align: left;">The <strong>Forced Resource Pack</strong> feature. See <a href="Resource%20Pack.html">Resource Pack</a>.</td>
+<td style="text-align: left;">Ship the pack in your modpack instead.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Running on a Cobblemon server</p>
+<p>The common case. Install Cobblemon (which pulls in Kotlin + Architectury) and LuckPerms, drop in GreatCosmetics, and every feature is available. Nothing extra to configure.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Running on a plain Fabric server</p>
+<p>Also supported. Skip Cobblemon and LuckPerms entirely — the wardrobe, slots, GeckoLib models, particle effects, backpacks, armor cosmetics, sounds and NPC cosmetics all work. The Pokémon-specific tabs simply don't appear.</p>
+</div>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Need another integration?</p>

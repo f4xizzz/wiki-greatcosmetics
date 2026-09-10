@@ -1131,6 +1131,34 @@
   
   
     <li class="md-nav__item">
+      <a href="Making%20Models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making Models & Textures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Slots%20and%20Types.html" class="md-nav__link">
         
   
@@ -1649,6 +1677,8 @@
 <p>Algumas categorias travam o zoom pra enquadrar a área do corpo relevante (ex: escolher <strong>Cabeça</strong> aproxima do rosto).</p>
 <hr />
 <h2 id="abas"><strong>Abas</strong></h2>
+<p>A barra de abas fica no topo. Uma aba que não está com o mouse em cima / ativa encolhe pra um <strong>prefixo de uma letra</strong> (<code>A</code>, <code>C</code>, <code>P</code>, <code>T</code>, <code>D</code>) — essas letras, e os nomes completos, são todos editáveis nos <a href="Language.html">arquivos de idioma</a> (<code>wardrobe.tab.*</code> e <code>wardrobe.tab.*.short</code>).</p>
+<p><strong>Party</strong> só aparece quando o servidor roda <strong>Cobblemon</strong>; <strong>Tags</strong> só quando roda <strong>LuckPerms</strong>; <strong>Dev Studio</strong> só pra operadores de verdade. Num servidor Fabric puro você vê só Acessórios e Preview.</p>
 <h3 id="acessorios"><strong>Acessórios</strong></h3>
 <p>A aba principal. Mostra todo cosmético que o jogador <strong>possui</strong>, numa grade de 4 colunas.</p>
 <ul>
@@ -1665,12 +1695,13 @@
 <li>Capacete · Peitoral · Calça · Botas</li>
 </ul>
 <p>Útil pra um cosmético de chapéu não ficar bloqueado por um capacete real.</p>
+<p>Um quinto toggle — <strong>Cosméticos dos outros</strong> — é uma config <strong>local</strong>: desligue e <em>você</em> para de ver os cosméticos de todo mundo (os seus continuam aparecendo). Salvo por cliente em <code>config/GreatCosmetics/client_local.json</code>, nunca enviado ao servidor.</p>
 <h3 id="party"><strong>Party</strong></h3>
 <p>Skins de Pokémon pro time do jogador. Escolha um slot do time com as setas, navegue nas skins disponíveis, e aplique uma (respeitando o cooldown e a espécie). Uma prévia 3D ao vivo deixa você ciclar poses, formas alternativas e shiny antes de confirmar. Ver <a href="Pokemon%20Skins.html">Skins de Pokémon</a>.</p>
 <h3 id="tags"><strong>Tags</strong></h3>
-<p>Seletor de prefixo de chat. Tags possuídas primeiro, as trancadas (com um 🔒) depois. Clique pra equipar. Staff com <code>gc.dev</code> ganha um toggle <strong>DEV</strong> aqui pra previsualizar e gerenciar Tags. Ver <a href="Tags.html">Tags</a>.</p>
+<p>Seletor de prefixo de chat (precisa do <strong>LuckPerms</strong>). Tags possuídas primeiro, as trancadas (com um 🔒) depois. Clique pra equipar. Staff com <code>gc.dev</code> ganha um toggle <strong>DEV</strong> aqui pra previsualizar e gerenciar Tags — incluindo botões <strong>Add</strong> / <strong>Set</strong> pros grupos do LuckPerms. Ver <a href="Tags.html">Tags</a>.</p>
 <h3 id="dev-studio"><strong>Dev Studio</strong></h3>
-<p>Só visível pra <strong>operadores de verdade</strong> (e só no jar completo do servidor). O editor in-game de cosméticos, efeitos, tipos, slots e config do servidor. Ver <a href="Dev%20Studio.html">Dev Studio</a>.</p>
+<p>Só visível pra <strong>operadores de verdade</strong>. O editor in-game de cosméticos, efeitos, tipos, slots e config do servidor. Ver <a href="Dev%20Studio.html">Dev Studio</a>.</p>
 <hr />
 <h2 id="gaveta-de-slots-equipados"><strong>Gaveta de slots equipados</strong></h2>
 <p>Uma pequena gaveta na lateral mostra os nove slots virtuais do jogador e o que está equipado em cada um. Operadores / quem tem <code>gc.dev</code> também ganha um toggle <strong>Dev: ON/OFF</strong> aqui — o Dev Mode faz todo cosmético e Tag aparecer como possuído pra você previsualizar.</p>
