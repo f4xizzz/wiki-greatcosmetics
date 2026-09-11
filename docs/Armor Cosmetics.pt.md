@@ -17,29 +17,43 @@ Dev Studio → página **Cosmetics** → **+ Armor**. O editor é igual ao de um
 * O ID **não é editável** (renomear quebraria a chave do mapa).
 * Você define um campo **Real Item** — um id de item do Minecraft/mod tipo `minecraft:diamond_helmet` ou `cobblemon_armory:algo`.
 
-Todo o resto — Display Name, Slot, modelo 3D / modelo GeckoLib, atributos, Lure, sons — funciona exatamente como um cosmético padrão.
+Todo o resto — Display Name, Slot, modelo 3D, atributos, efeitos de poção, permissões/tags concedidas, Lure, sons — funciona exatamente como um cosmético padrão, e vale **enquanto o item real está vestido no slot de armadura de verdade** (ele nunca ocupa um slot virtual como os cosméticos normais).
+
+As partes renderizam o **modelo 3D real da armadura** (a mesh de verdade do vanilla/mod, não um ícone chapado), colocado no osso que bate com o **Anchor** de cada parte — ver [Dev Studio → Editando uma parte](Dev Studio.md#editando-uma-parte) pro botão de auto-split que já organiza peitoral/calça/bota nas partes do corpo certas, e o [gizmo 3D](Parts and Models.md#o-gizmo-3d) pra ajustar cada uma.
 
 ---
 
 ## **Entrada padrão**
 
+Uma instalação nova (sem `armor_cosmetics.json` ainda) gera um exemplo — um **Capacete de Tartaruga**, escolhido justamente por mostrar que armor points/toughness/tooltip *e* efeitos de poção podem vir de um cosmético de armadura:
+
 ```json
 {
   "convertedItems": {
-    "diamond_helmet": {
-      "itemId": "minecraft:diamond_helmet",
+    "turtle_helmet": {
+      "itemId": "minecraft:turtle_helmet",
       "slot": "HEAD",
-      "type": "armor_cosmetic"
+      "type": "armor_cosmetic",
+      "effects": ["minecraft:water_breathing:1"]
     }
   }
 }
 ```
 
-* A chave (`diamond_helmet`) é o id de cosmético usado por `/gc give`, tags, etc.
+* A chave (`turtle_helmet`) é o id de cosmético usado por `/gc give`, tags, etc.
 * `itemId` é o item real que ele representa.
+* `effects` concede **Respiração Aquática** enquanto a peça está vestida — ver [Concedendo efeitos de poção](#concedendo-efeitos-de-pocao) abaixo. (Essa entrada só é gerada numa instalação nova; um `armor_cosmetics.json` já existente com o exemplo antigo `diamond_helmet` fica intocado — edite ou apague na mão se quiser o exemplo novo.)
 
 !!! warning "O item precisa existir"
     Se `itemId` aponta pra um item que não está carregado (mod não instalado, erro de digitação), o console imprime um aviso e a entrada é ignorada.
+
+---
+
+## **Concedendo efeitos de poção** {#concedendo-efeitos-de-pocao}
+
+O campo **Special Effects → `>> Select Effects`** de um cosmético de armadura (o mesmo que um cosmético normal usa) funciona aqui também: qualquer efeito de poção listado ali é aplicado enquanto o item real está vestido, e removido no instante em que é tirado.
+
+Isso **não** é o mod lendo um efeito vanilla do item real — é independente do que o item real normalmente faria. O exemplo padrão acima ilustra bem isso: a Respiração Aquática de um Capacete de Tartaruga de verdade é hardcoded pelo Minecraft vanilla especificamente àquele item no slot de cabeça de verdade, não é algo exposto que o mod possa "copiar" — então o cosmético de armadura concede a Respiração Aquática por conta própria, através da própria lista `effects`, enquanto a peça estiver equipada (não só debaixo d'água, diferente do efeito vanilla). Use o mesmo campo pra anexar qualquer efeito de poção a qualquer cosmético de armadura, independente do que o item real normalmente faz.
 
 ---
 

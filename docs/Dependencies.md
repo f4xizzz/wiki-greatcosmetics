@@ -43,4 +43,4 @@ That's it. The **GeckoLib** renderer, the **adventure / MiniMessage** text libra
 ---
 
 !!! info "Need another integration?"
-    If your server relies on a permission or chat system we don't support yet, open a ticket on our [Discord](https://discord.gg/YgM4Ng4QGu) — we evaluate and prioritize requested integrations.
+    If your server relies on a permission or chat system we don't support yet, open a ticket on our [Discord](https://discord.gg/GbbbNvQG3N) — we evaluate and prioritize requested integrations.

@@ -12,6 +12,13 @@ Every piece of text the mod shows (menus, chat, item names) is stored in editabl
 
 ---
 
+!!! warning "The mod ships with no cosmetic models"
+    GreatCosmetics is the **framework** — the wardrobe, the slots, the Dev Studio, the effects, the networking. It does **not** come with a library of cosmetics. Out of the box you only get a couple of small built-in **examples** (safe to leave in and use on your server, no catch), not a content pack.
+    
+    **Every cosmetic shown in the mod's showcase video was built separately and is not included with the mod.** To fill your server's wardrobe you need actual 3D models/textures, acquired however you like: model packs sold (or soon to be sold) on the official **SaSDevelopment Discord**, any other model source, or even reskinned armor from other mods turned into an [Armor Cosmetic](Armor Cosmetics.md). See [Making Models & Textures](Making Models.md) if you (or your artist) want to build your own from scratch.
+
+---
+
 ## **Main Features**
 
 * **3D Avatar Studio (`/wardrobe`):** a rotating 3D preview of the player where cosmetics are equipped with a click, organized by category and searchable.
@@ -30,10 +37,10 @@ Every piece of text the mod shows (menus, chat, item names) is stored in editabl
 
 ## **Development and Authorship**
 
-GreatCosmetics was fully designed and programmed by **F4xizzz** — the Fabric/Java mod and the Node.js licensing backend.
+GreatCosmetics was fully designed and programmed by **F4xizzz**, from **SaSDevelopment** — the Fabric/Java mod and the Node.js licensing backend.
 
 ---
 
 !!! info "Official Community"
-    Configuration questions, bug reports and update news happen on our official [**Discord**](https://discord.gg/YgM4Ng4QGu).
+    Configuration questions, bug reports and update news happen on our official [**Discord**](https://discord.gg/GbbbNvQG3N).
     *This documentation is kept up to date to give you the best setup experience for GreatCosmetics on your server.*

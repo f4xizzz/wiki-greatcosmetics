@@ -20,7 +20,10 @@ O GreatCosmetics usa a **API de permissões do Fabric** (fornecida pelo **LuckPe
 | `gc.command.giveskin` / `gc.command.removeskin` | `/gc giveskin` / `removeskin` |
 | `gc.command.tags.give` / `gc.command.tags.remove` | `/gc tags give` / `remove` |
 | `gc.command.npc.equip` / `gc.command.npc.remove` | `/gc npc equip` / `remove` |
+| `gc.command.display` | `/gc display` / `remove` / `clear` |
 | `gc.command.uuid` | `/gc uuid` |
+| `gc.command.extraslot` | `/gc extraslot` |
+| `gc.command.extratypeslot` | `/gc extratypeslot` |
 | `gc.command.reload` / `gc.command.debug` / `gc.command.inspect` | `/gc reload` / `debug` / `inspect` |
 | `gc.command.activation` | `/gc activation` |
 
@@ -42,6 +45,25 @@ O GreatCosmetics usa a **API de permissões do Fabric** (fornecida pelo **LuckPe
 
 * Um cosmético com o campo **`permission`** preenchido só aparece/equipa pra quem tem esse node exato (ou quem desbloqueou via `/gc give`, ou quem tem Dev Mode).
 * Fora isso, os jogadores desbloqueiam cosméticos por `/gc give`, pelo item físico (`/gc giveitem`), ou pela conversão automática de armadura.
+
+---
+
+## **Auto-Unlock**
+
+Um cosmético também pode ter uma **Unlock Permission** e/ou uma **Unlock Tag** (Dev Studio → editor de cosmético → seção **Auto-Unlock**). Quem tiver esse node de permissão **ou** essa scoreboard tag vanilla ganha o cosmético automaticamente — sem `/gc give`, sem linha no banco. É **dinâmico**: no instante em que o jogador deixa de ter um dos dois (grupo do LuckPerms mudou, `/tag remove`…), ele perde o acesso, e o cosmético é desequipado à força se estava vestido.
+
+Isso é diferente do gate `permission` acima: `permission` só decide *visibilidade/equipabilidade* de um cosmético que o jogador ainda precisa possuir separadamente; Unlock Permission / Unlock Tag concedem a **posse em si**, ao vivo.
+
+---
+
+## **Permissões e Tags concedidas POR um cosmético**
+
+Independente do gate `permission`, um cosmético (inclusive um [cosmético de armadura](Armor Cosmetics.md)) pode ter seus próprios campos **Granted Permissions** e **Minecraft Tags** (separados por vírgula no editor do Dev Studio):
+
+* Todo node em **Granted Permissions** é adicionado ao jogador como uma permissão **transient** do LuckPerms (nunca gravada na storage do LuckPerms) enquanto o cosmético está equipado e o gate `permission` dele passa.
+* Toda tag em **Minecraft Tags** é aplicada como uma scoreboard tag estilo `/tag` vanilla, na mesma condição — útil pra datapacks ou `/execute if entity @s[tag=...]`.
+
+Os dois são removidos no instante em que o cosmético é desequipado, e reaplicados automaticamente ao relogar se ele ainda estiver vestido. Bônus de vários cosméticos equipados se somam (a união de tudo que é concedido).
 
 ---
 
@@ -68,6 +90,8 @@ Os *tipos* de acessório (ex: `necklace`, `scarf`) também têm `limitPerPlayer`
 | :--- | :--- |
 | `gc.type.<type>.<N>` | Aumenta o limite por jogador desse tipo pra **N**. |
 | `gc.type.<type>.bypass` | Ilimitado (99) pra esse tipo. |
+| `gc.extratypeslot.<type>.<N>` | **Soma** N itens extras em cima do limite normal desse tipo. |
+| `gc.extratypeslot.all.<N>` | Soma N itens extras a **todo** tipo. |
 
 ---
 

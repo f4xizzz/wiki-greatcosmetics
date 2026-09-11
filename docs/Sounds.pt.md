@@ -10,15 +10,27 @@ Todo cosmético pode tocar sons vinculados a ações do jogador enquanto está e
 
 | Campo | Toca quando… |
 | :--- | :--- |
-| **Equip Sound** | O cosmético é equipado. |
-| **Unequip Sound** | O cosmético é removido. |
-| **Idle Sound** | O jogador fica parado (trigger aleatório ocasional depois de ~2 s parado). |
-| **Walk Sound** | O jogador está andando no chão. |
-| **Fly Sound** | O jogador está voando. |
+| **Idle Sound** | O jogador fica parado, repetindo a cada **Idle Sound Interval** ticks. |
+| **Walk Sound** | O jogador está andando no chão, repetindo a cada **Sound Interval** ticks. |
+| **Fly Sound** | O jogador está voando, repetindo a cada **Sound Interval** ticks. |
 | **Shift Sound** | O jogador começa a agachar. |
-| **Backpack Sound** | O GUI de baú de um cosmético de mochila abre. |
 
 Cada um tem o seu próprio **Volume** e **Pitch** (padrão `1.0`).
+
+!!! note "Equip / Unequip / Backpack Sound foram removidos"
+    Esses três campos existiam mas foram removidos do editor pra simplificar — os eventos de (des)equipar o cosmético e abrir o GUI da mochila não tocam mais som nenhum.
+
+!!! tip "Agora ele acompanha o jogador"
+    Idle, Walk, Fly e Shift Sound agora são sons de verdade amarrados à entidade, não um ponto fixo no espaço. Eles se movem junto com o jogador enquanto anda/voa/nada, e qualquer jogador por perto ouve — não só quem está usando o cosmético.
+
+---
+
+## **Intervalos de repetição**
+
+| Campo | Significado |
+| :--- | :--- |
+| **Sound Interval** | Ticks entre repetições do som de Walk / Fly enquanto a condição continua valendo. Padrão `8`. |
+| **Idle Sound Interval** | Ticks entre repetições do som de Idle enquanto o jogador fica parado. Padrão `120`, mínimo `20`. |
 
 ---
 

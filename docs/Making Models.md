@@ -144,7 +144,7 @@ A vanilla model is a `.json` that lists cuboids and a `textures` block pointing 
 
 1. `File → New → Bedrock Model`.
 2. `File → Project` (or the project settings panel) → set **Texture Size** to `64 × 64`.
-3. Model the hat. Keep it near the origin — the mod anchors it to a body point and you fine-tune position later, but a model centered on `[0,0,0]` is easiest to place.
+3. Model the hat. The mod auto-centers a GeckoLib model on the middle of its own bounding box when anchoring it to a body point, so building off-origin is fine — a model centered on `[0,0,0]` is still a tidy habit, but no longer required for a good default placement. Fine-tune from there with Offset.
 4. Paint it (the **Paint** tab) or `File → Export → Export Texture` a blank sheet and paint it in your image editor, then re-import.
 5. *(Optional)* **Animate** tab → create a looping animation and name it exactly `idle` (or `fly`, `walk`, … — see [State animations](Parts and Models.md#state-animations)). Skip this for a static hat.
 6. `File → Export → Export Bedrock Geometry` → `wizard_hat.geo.json`.
@@ -169,6 +169,9 @@ assets/mypack/animations/item/wizard_hat.animation.json   (only if you animated)
 
 If the hat is **invisible**: the console prints a `WARNING` naming the missing file — almost always the `.geo.json` or `.png` name doesn't match, or the PNG isn't in a scanned `textures/` folder.
 
+!!! info "No more flicker on animated models"
+    Older animated GeckoLib models — especially ones built from ripped Cobblemon geometry (wings, capes, etc.) — used to flicker or "z-fight" (the texture looking like one layer fighting another), most noticeable on animated models. Two bugs caused it: several instances of the same model sharing one animation clock, and GeckoLib rendering without back-face culling while Cobblemon's own models expect it on. Both are fixed — nothing to configure, animated models (Cobblemon-ripped or not) just render clean now.
+
 ---
 
 ## **The Model Texture field**
@@ -188,6 +191,8 @@ Use it to build one model and reskin it per cosmetic (red/blue/gold versions of 
 When a cosmetic has **no Icon Name** and no flat icon PNG, the wardrobe grid shows the **3D model itself** as the icon. GeckoLib has a single fixed GUI transform, so a model built for the body often comes out huge or off-centre in that little square.
 
 The **=== ICON ===** section fixes only the icon (never the worn model): drag the preview box to move, scroll to zoom, right-drag to rotate — or type into **Icon Scale / Offset / Rotation**. **Reset icon framing** puts it back. This does nothing for a PNG icon.
+
+If **Icon Scale** hasn't been touched (still at the default `1.0`), the mod now computes a starting scale automatically from the model's own bounds, aiming for roughly a normal item-icon size — instead of always starting flat at `1.0`, which was often way too big or way too small. The manual controls above still work exactly the same for fine-tuning or overriding; auto-scale just gets you a much closer starting point before you touch anything. It doesn't auto-rotate the model — a model's "front" is subjective, so rotation stays manual.
 
 ---
 

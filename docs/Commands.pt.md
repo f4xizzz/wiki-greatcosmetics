@@ -28,6 +28,8 @@ Cada subcomando tem o **seu próprio node de permissão** — ver [Permissões](
 | `/gc remove <cosmetic_id> [jogador]` | Remove um cosmético do guarda-roupa do alvo. | `gc.command.remove` |
 | `/gc cosmetics equip <cosmetic_id> <jogador>` | Força equipar um cosmético num jogador, ignorando limites de slot/tipo. | `gc.command.cosmetics.equip` |
 | `/gc cosmetics unequip <cosmetic_id> <jogador>` | Força desequipar um cosmético de um jogador. | `gc.command.cosmetics.unequip` |
+| `/gc extraslot <jogador> <slot\|ALL> add\|set\|remove <quantidade>` | Concede (ou define, ou remove) um bônus **aditivo** por jogador no limite de um slot virtual — guardado no banco de dados, separado dos nodes de permissão `gc.extraslot.*` e que se acumula com eles. Use `ALL` pra afetar todo slot de uma vez. | `gc.command.extraslot` |
+| `/gc extratypeslot <jogador> <tipo\|ALL> add\|set\|remove <quantidade>` | Igual ao `/gc extraslot`, mas pra **tipos de acessório** em vez de slots virtuais. | `gc.command.extratypeslot` |
 | `/gc giveskin <skin_id> [jogador]` | Desbloqueia uma Skin de Pokémon pro alvo. | `gc.command.giveskin` |
 | `/gc removeskin <skin_id> [jogador]` | Remove uma Skin de Pokémon do alvo. | `gc.command.removeskin` |
 | `/gc tags give <tag_id> <jogador>` | Concede a posse de uma Tag de chat (só tags personalizadas). | `gc.command.tags.give` |

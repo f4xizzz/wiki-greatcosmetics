@@ -43,4 +43,4 @@ Só isso. O renderizador **GeckoLib**, a biblioteca de texto **adventure / MiniM
 ---
 
 !!! info "Precisa de outra integração?"
-    Se o seu servidor usa um sistema de permissão ou chat que ainda não suportamos, abra um ticket no nosso [Discord](https://discord.gg/YgM4Ng4QGu) — a gente avalia e prioriza integrações pedidas.
+    Se o seu servidor usa um sistema de permissão ou chat que ainda não suportamos, abra um ticket no nosso [Discord](https://discord.gg/GbbbNvQG3N) — a gente avalia e prioriza integrações pedidas.

@@ -32,6 +32,21 @@ Each has:
 
 `gc.slot.*` **replaces** the limit with the tier value; `gc.extraslot.*` **adds** to it. They stack: base `1` + `gc.slot.head.3` → `3`, then + `gc.extraslot.all.2` → `5`.
 
+### Per-player bonus: `/gc extraslot`
+
+`gc.extraslot.*` above is granted through **LuckPerms**, so it applies to a whole group at once. GreatCosmetics also has a second, independent way to add slot bonuses — targeted at **one specific player** and stored in the database instead of as a permission node:
+
+**`/gc extraslot <player> <slot|ALL> add|set|remove <amount>`**
+
+* **`add <amount>`** — adds to that player's existing bonus for the slot.
+* **`set <amount>`** — overwrites it to exactly that amount.
+* **`remove <amount>`** — subtracts from it.
+* `<slot>` is one of the nine slot names (case-insensitive) or `ALL` for every slot at once.
+* Permission: `gc.command.extraslot`.
+
+!!! tip "Two bonuses, and they stack"
+    A LuckPerms `gc.extraslot.head.2` node and a `/gc extraslot Steve head add 2` command both add +2 to HEAD — and they add up together. Use the permission node to bonus an entire rank; use `/gc extraslot` to gift bonus slots to one specific player without creating a rank for it.
+
 ---
 
 ## **Accessory types**
@@ -52,16 +67,33 @@ A **type** is a free-text category you assign to a cosmetic (its **Type** field)
 | :--- | :--- |
 | `gc.type.necklace.2` | Raises the necklace limit to **2**. |
 | `gc.type.necklace.bypass` | Unlimited (99) for necklaces. |
+| `gc.extratypeslot.necklace.2` | **+2** on top of the normal limit (the highest single `extratypeslot.necklace.N` the player holds). |
+| `gc.extratypeslot.all.4` | **+4** to **every** type (added on top of the type-specific extra). |
+
+`gc.type.*` **replaces** the limit with the tier value; `gc.extratypeslot.*` **adds** to it. They stack the same way slot nodes do: base `1` + `gc.type.necklace.2` → `2`, then + `gc.extratypeslot.all.1` → `3`.
 
 A cosmetic with type `default` has **no** type limit — only its slot limit applies.
+
+### Per-player bonus: `/gc extratypeslot`
+
+Exact mirror of `/gc extraslot`, but for **accessory types** instead of virtual slots:
+
+**`/gc extratypeslot <player> <type|ALL> add|set|remove <amount>`**
+
+* Same `add` / `set` / `remove` semantics as `/gc extraslot`, stored **per-player in the database**.
+* `<type>` is any type id defined in your config (case-insensitive) or `ALL` for every type at once.
+* Permission: `gc.command.extratypeslot`.
+
+!!! tip "Two bonuses, and they stack"
+    A LuckPerms `gc.extratypeslot.necklace.2` node and a `/gc extratypeslot Steve necklace add 2` command both add +2 to the necklace limit — and they add up together, exactly like `gc.extraslot.*` vs. `/gc extraslot` for slots.
 
 ---
 
 ## **How a check runs when a player equips**
 
 1. Is the player **owner** (or has the `permission` node, or Dev Mode)? If not → blocked.
-2. **Slot count** for the target slot vs. the resolved slot limit (`defaultLimit` → `gc.slot` tier → `+ extraslot`).
-3. **Type count** for the cosmetic's type vs. the resolved type limit.
+2. **Slot count** for the target slot vs. the resolved slot limit (`defaultLimit` → `gc.slot` tier → `+ extraslot` bonuses, from permission nodes and/or `/gc extraslot`).
+3. **Type count** for the cosmetic's type vs. the resolved type limit (`limitPerPlayer` → `gc.type` tier → `+ extratypeslot` bonuses, from permission nodes and/or `/gc extratypeslot`).
 
 If any check fails, the player gets a message and a sound; nothing is equipped.
 

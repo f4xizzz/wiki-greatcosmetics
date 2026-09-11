@@ -17,29 +17,43 @@ Dev Studio → **Cosmetics** page → **+ Armor**. The editor is the same as a n
 * The ID is **not editable** (renaming would break the map key).
 * You set a **Real Item** field instead — a Minecraft/mod item id like `minecraft:diamond_helmet` or `cobblemon_armory:something`.
 
-Everything else — Display Name, Slot, 3D model / GeckoLib model, attributes, Lure, sounds — works exactly like a standard cosmetic.
+Everything else — Display Name, Slot, 3D model, attributes, potion effects, granted permissions/tags, Lure, sounds — works exactly like a standard cosmetic, and applies **while the real item is worn in its real armor slot** (it never occupies a virtual slot the way normal cosmetics do).
+
+The parts render the **real 3D armor model** (the actual vanilla/mod armor mesh, not a flat icon), placed on the bone matching each part's **Anchor** — see [Dev Studio → Editing a part](Dev Studio.md#editing-a-part) for the auto-split button that lays out a chestplate/leggings/boots into the right body parts automatically, and the [3D gizmo](Parts and Models.md#the-3d-gizmo) for nudging each one.
 
 ---
 
 ## **Default entry**
 
+A fresh install (no `armor_cosmetics.json` yet) generates one example — a **Turtle Shell**, chosen because it's a natural way to show that armor points/toughness/tooltip *and* potion effects can all come from an armor cosmetic:
+
 ```json
 {
   "convertedItems": {
-    "diamond_helmet": {
-      "itemId": "minecraft:diamond_helmet",
+    "turtle_helmet": {
+      "itemId": "minecraft:turtle_helmet",
       "slot": "HEAD",
-      "type": "armor_cosmetic"
+      "type": "armor_cosmetic",
+      "effects": ["minecraft:water_breathing:1"]
     }
   }
 }
 ```
 
-* The key (`diamond_helmet`) is the cosmetic id used by `/gc give`, tags, etc.
+* The key (`turtle_helmet`) is the cosmetic id used by `/gc give`, tags, etc.
 * `itemId` is the real item it represents.
+* `effects` grants **Water Breathing** while the piece is worn — see [Granting potion effects](#granting-potion-effects) below. (This entry only generates on a brand-new install; an existing `armor_cosmetics.json` with the old `diamond_helmet` example is left untouched — edit or delete it by hand if you want the new example instead.)
 
 !!! warning "Item must exist"
     If `itemId` points to an item that isn't loaded (mod not installed, typo), the console prints a warning and the entry is ignored.
+
+---
+
+## **Granting potion effects**
+
+An armor cosmetic's **Special Effects → `>> Select Effects`** field (the same one a normal cosmetic uses) works here too: any potion effect listed there is applied while the real item is worn, and removed the moment it's taken off.
+
+This is **not** the mod reading a vanilla effect off the real item — it's independent of whatever the real item would normally do. The stock example above is a good illustration: a real Turtle Shell's Water Breathing is hard-coded by vanilla Minecraft to that exact item in the real head slot, it isn't exposed as something the mod could "copy" — so the armor cosmetic instead grants Water Breathing itself, through its own `effects` list, for as long as the piece is equipped (not only while underwater, unlike the vanilla effect). Use the same field to attach any potion effect to any armor cosmetic, regardless of what the real item does normally.
 
 ---
 

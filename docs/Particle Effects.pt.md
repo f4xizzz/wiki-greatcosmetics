@@ -29,6 +29,7 @@ Um **efeito de partícula** é um emissor de partículas nomeado e reutilizável
 | **shape** | `SIMPLE` (o emissor clássico) ou uma forma geométrica — `CIRCLE`, `HELIX`, `BEAM`, `PULSE`. Ver [Formas](#formas). |
 | **count** | Partículas geradas por rajada. **Só `SIMPLE`** — as formas geram uma partícula por ponto da forma. |
 | **tickInterval** | Ticks entre rajadas (`20` = uma/segundo, `5` = 4×/segundo). |
+| **followPlayer** | `false` (padrão) = a partícula nasce parada — fica no lugar ou vai à deriva pelo próprio `speed`, virando um rastro deixado atrás do jogador em movimento. `true` = ela já nasce carregando a velocidade atual do jogador e viaja junto com ele em vez de ficar pra trás. Funciona tanto em `SIMPLE` quanto em formas (cada ponto da forma recebe a velocidade do jogador individualmente). |
 | **speed** | Velocidade da partícula — `0` = elas ficam paradas, maior = elas disparam pra fora. |
 | **spreadX / Y / Z** | Caixa de espalhamento aleatório ao redor de cada ponto de spawn (jitter). |
 | **offsetX / Y / Z** | Posição relativa ao jogador — `Y: 1.0` é mais ou menos a altura do peito. `X` é pros lados, `Z` é frente/trás. Gira com o corpo do jogador. |
@@ -44,7 +45,7 @@ O editor é de cima pra baixo:
 
 1. **=== EFFECT PRESET ===** — um dropdown que preenche todos os campos de um template, aí você ajusta. Ver [Presets](#presets).
 2. **=== SHAPE ===** — `SIMPLE` / `CIRCLE` / `HELIX` / `BEAM` / `PULSE`. Mudar isso troca os campos abaixo.
-3. **=== CONFIGURATION ===** — id da partícula, count, tick interval.
+3. **=== CONFIGURATION ===** — id da partícula, count, tick interval, toggle **Follow Player**.
 4. **shape params** *(só quando shape ≠ SIMPLE)* — raio, pontos, strands, rotação, animação…
 5. **=== COLOR ===** — o toggle **Custom Color** e os sliders R/G/B.
 6. **=== 3D TOOL / OFFSETS / SPREAD ===** — posição e jitter.
@@ -102,7 +103,7 @@ No editor de grupo:
 * **Group Preset** — um template combo (`Vortex`, `Smash`, `Twin Halo`) que enche o grupo com vários efeitos de uma vez.
 * **Edit** num membro → abre o editor daquele efeito "em contexto de grupo": os **outros** membros também aparecem no preview. O botão **E** da barra lateral (acima do **S**) isola — só o efeito que você está editando aparece. **< Back** volta pro grupo.
 
-Um **id de grupo é usado exatamente onde um id de efeito é usado** (os campos *Effect Visual* / *Fly Particle* do cosmético). O mod expande pros membros na hora do spawn; cada membro mantém o próprio `tickInterval`.
+Um **id de grupo é usado exatamente onde um id de efeito é usado** (os campos *Effect Visual* / *Fly Particle* / *Shift Particle* do cosmético). O mod expande pros membros na hora do spawn; cada membro mantém o próprio `tickInterval`.
 
 ---
 
@@ -112,8 +113,12 @@ No editor de cosmético, seção **Special Effects**:
 
 * **Effect Visual** — lista separada por vírgula de ids de efeito **ou grupo**; toca sempre enquanto o cosmético está sendo usado.
 * **Fly Particle** — igual, mas só enquanto o jogador está voando.
+* **Shift Particle** — igual, mas só enquanto o jogador está agachado/sneaking.
 
 Um efeito (ou grupo) pode ser referenciado por qualquer quantidade de cosméticos.
+
+!!! note "Variantes podem sobrescrever isso"
+    Uma [variante](Dev Studio.md#variants) tem suas próprias listas de Effect Visual / Fly Particle / Shift Particle. Deixe a lista de uma variante vazia e ela herda a do cosmético base; preencha pelo menos um id e ela é usada **no lugar da** lista base enquanto essa variante estiver equipada.
 
 ---
 

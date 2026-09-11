@@ -73,6 +73,8 @@ In the Dev Studio, select a part (click it in the outliner or open `>> Config Pa
 
 The text fields update as you drag, and vice-versa. Toggle the sidebar **S** button to edit the Sneak pose the same way.
 
+Whenever a part (or an effect) is selected, three colour-coded buttons also appear on the center-right of the screen: **X** (red), **Y** (green), **Z** (blue) — matching the gizmo's own axis colours. Clicking one instantly resets that axis's Offset back to zero, or, while previewing the Sneak pose with the sidebar **S** toggle, resets the Sneak/Shift Offset for that axis instead — a quick way to snap a part back to dead-center on its anchor without dragging the gizmo by hand or typing `0` into a field.
+
 ---
 
 ## **Multiple parts**

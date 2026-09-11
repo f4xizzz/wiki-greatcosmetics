@@ -73,6 +73,8 @@ No Dev Studio, selecione uma parte (clique nela no outliner ou abra `>> Config P
 
 Os campos de texto atualizam enquanto você arrasta, e vice-versa. Alterne o botão **S** da barra lateral pra editar a pose de Sneak do mesmo jeito.
 
+Sempre que uma parte (ou um efeito) está selecionada, também aparecem três botões coloridos no centro-direita da tela: **X** (vermelho), **Y** (verde), **Z** (azul) — seguindo a mesma convenção de cores dos eixos do gizmo. Clicar em um deles zera na hora o Offset daquele eixo — ou, enquanto você tá pré-visualizando a pose de Sneak com o toggle **S** da barra lateral, zera o Sneak/Shift Offset daquele eixo. Um jeito rápido de encaixar uma parte de volta bem no centro da âncora dela sem arrastar o gizmo na mão ou digitar `0` num campo.
+
 ---
 
 ## **Várias partes**

@@ -144,7 +144,7 @@ Um modelo vanilla é um `.json` que lista cuboides e um bloco `textures` apontan
 
 1. `File → New → Bedrock Model`.
 2. `File → Project` (ou o painel de configurações do projeto) → defina **Texture Size** como `64 × 64`.
-3. Modele o chapéu. Mantenha perto da origem — o mod ancora ele num ponto do corpo e você ajusta a posição depois, mas um modelo centrado em `[0,0,0]` é o mais fácil de posicionar.
+3. Modele o chapéu. O mod centraliza automaticamente um modelo GeckoLib no meio da própria caixa delimitadora dele ao ancorar num ponto do corpo, então modelar fora da origem tá tranquilo — um modelo centrado em `[0,0,0]` continua sendo um hábito legal, mas não é mais necessário pra um posicionamento padrão bom. Ajuste fino a partir daí com o Offset.
 4. Pinte (aba **Paint**) ou `File → Export → Export Texture` uma folha em branco e pinte no seu editor de imagem, depois re-importe.
 5. *(Opcional)* aba **Animate** → crie uma animação em loop e nomeie exatamente `idle` (ou `fly`, `walk`, … — ver [Animações por estado](Parts and Models.md#animacoes-por-estado)). Pule isso pra um chapéu estático.
 6. `File → Export → Export Bedrock Geometry` → `wizard_hat.geo.json`.
@@ -169,6 +169,9 @@ assets/meupack/animations/item/wizard_hat.animation.json   (só se você animou)
 
 Se o chapéu ficar **invisível**: o console imprime um `WARNING` dizendo qual arquivo faltou — quase sempre o nome do `.geo.json` ou do `.png` não bate, ou o PNG não está numa pasta `textures/` escaneada.
 
+!!! info "Sem mais flicker em modelos animados"
+    Modelos GeckoLib animados mais antigos — principalmente os feitos a partir de geometria rippada de Pokémon do Cobblemon (asas, capas, etc.) — costumavam tremular ou dar "z-fight" (a textura parecia uma camada brigando com a outra), mais visível em modelos animados. Dois bugs causavam isso: várias instâncias do mesmo modelo compartilhando um único relógio de animação, e o GeckoLib renderizando sem back-face culling enquanto os próprios modelos do Cobblemon esperam isso ligado. Os dois foram corrigidos — nada pra configurar, modelos animados (rippados do Cobblemon ou não) agora renderizam limpo.
+
 ---
 
 ## **O campo Model Texture**
@@ -183,11 +186,13 @@ Use pra fazer um modelo e reskinar por cosmético (versões vermelha/azul/dourad
 
 ---
 
-## **O ícone de um modelo 3D**
+## **O ícone de um modelo 3D** {#the-icon-of-a-3d-model}
 
 Quando um cosmético **não tem Icon Name** e nem um PNG de ícone chapado, a grade da mochila mostra o **próprio modelo 3D** como ícone. O GeckoLib tem um único transform fixo de GUI, então um modelo feito pro corpo costuma sair gigante ou desenquadrado naquele quadradinho.
 
 A seção **=== ICON ===** corrige só o ícone (nunca o modelo vestido): arraste a caixa de preview pra mover, scroll pra zoom, botão direito pra girar — ou digite em **Icon Scale / Offset / Rotation**. **Reset icon framing** volta ao normal. Isso não faz nada pra um ícone PNG.
+
+Se o **Icon Scale** não foi mexido (ainda no padrão `1.0`), o mod agora calcula uma escala inicial automaticamente a partir dos limites do próprio modelo, mirando em algo perto do tamanho normal de um ícone de item — em vez de sempre começar chapado em `1.0`, que costumava sair grande demais ou pequeno demais. Os controles manuais acima continuam funcionando do mesmo jeito pra ajuste fino ou pra sobrescrever; o auto-scale só deixa o ponto de partida bem mais perto do certo antes de você mexer em qualquer coisa. Ele não gira o modelo sozinho — a "frente" de um modelo é subjetiva, então a rotação continua manual.
 
 ---
 

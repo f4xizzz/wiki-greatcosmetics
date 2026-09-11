@@ -12,6 +12,13 @@ Todo texto que o mod mostra (menus, chat, nomes de item) fica em arquivos JSON e
 
 ---
 
+!!! warning "O mod não vem com nenhuma model de cosmético"
+    O GreatCosmetics é o **framework** — o guarda-roupa, os slots, o Dev Studio, os efeitos, a rede. Ele **não** vem com uma biblioteca de cosméticos. De fábrica você só ganha alguns **exemplos** pequenos embutidos (pode deixar e usar no seu servidor numa boa, sem pegadinha), não um pacote de conteúdo.
+    
+    **Todo cosmético mostrado no vídeo de showcase do mod foi feito à parte e não vem junto com o mod.** Pra encher o guarda-roupa do seu servidor você precisa de models/texturas de verdade, adquiridas do jeito que preferir: pacotes de model vendidos (ou que ainda vão ser vendidos) no **Discord oficial da SaSDevelopment**, qualquer outra fonte de model, ou até armadura de outros mods reskinada e virada [Cosmético de Armadura](Armor Cosmetics.md). Veja [Criando Modelos & Texturas](Making Models.md) se você (ou seu artista) quiser montar as suas do zero.
+
+---
+
 ## **Principais Recursos**
 
 * **Avatar Studio 3D (`/wardrobe`):** uma prévia 3D giratória do jogador onde os cosméticos são equipados com um clique, organizados por categoria e pesquisáveis.
@@ -30,10 +37,10 @@ Todo texto que o mod mostra (menus, chat, nomes de item) fica em arquivos JSON e
 
 ## **Desenvolvimento e Autoria**
 
-O GreatCosmetics foi totalmente projetado e programado pelo **F4xizzz** — o mod Fabric/Java e o backend de licenciamento em Node.js.
+O GreatCosmetics foi totalmente projetado e programado pelo **F4xizzz**, da **SaSDevelopment** — o mod Fabric/Java e o backend de licenciamento em Node.js.
 
 ---
 
 !!! info "Comunidade Oficial"
-    Dúvidas de configuração, reports de bug e novidades de update acontecem no nosso [**Discord**](https://discord.gg/YgM4Ng4QGu) oficial.
+    Dúvidas de configuração, reports de bug e novidades de update acontecem no nosso [**Discord**](https://discord.gg/GbbbNvQG3N) oficial.
     *Esta documentação é mantida atualizada para te dar a melhor experiência de setup do GreatCosmetics no seu servidor.*

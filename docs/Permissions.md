@@ -22,6 +22,8 @@ GreatCosmetics uses the **Fabric permissions API** (provided by **LuckPerms**). 
 | `gc.command.npc.equip` / `gc.command.npc.remove` | `/gc npc equip` / `remove` |
 | `gc.command.display` | `/gc display` / `remove` / `clear` |
 | `gc.command.uuid` | `/gc uuid` |
+| `gc.command.extraslot` | `/gc extraslot` |
+| `gc.command.extratypeslot` | `/gc extratypeslot` |
 | `gc.command.reload` / `gc.command.debug` / `gc.command.inspect` | `/gc reload` / `debug` / `inspect` |
 | `gc.command.activation` | `/gc activation` |
 
@@ -43,6 +45,25 @@ GreatCosmetics uses the **Fabric permissions API** (provided by **LuckPerms**). 
 
 * A cosmetic with a non-empty **`permission`** field is only shown/equippable to players who hold that exact node (or who unlocked it via `/gc give`, or who have Dev Mode).
 * Players otherwise unlock cosmetics through `/gc give`, the physical item (`/gc giveitem`), or automatic armor conversion.
+
+---
+
+## **Auto-Unlock**
+
+A cosmetic can also set an **Unlock Permission** and/or an **Unlock Tag** (Dev Studio → cosmetic editor → **Auto-Unlock** section). Whoever holds that permission node **or** that vanilla scoreboard tag gets the cosmetic automatically — no `/gc give`, no database row. It's **dynamic**: the moment the player no longer holds either one (LuckPerms group changed, `/tag remove`…), they lose access, and it's force-unequipped if they had it on.
+
+This is different from the `permission` gate above: `permission` only decides *visibility/equippability* for a cosmetic the player must still separately own; Unlock Permission / Unlock Tag grant **ownership itself**, live.
+
+---
+
+## **Permissions and Tags granted BY a cosmetic**
+
+Independent of the `permission` gate, a cosmetic (including an [armor cosmetic](Armor Cosmetics.md)) can have its own **Granted Permissions** and **Minecraft Tags** fields (comma-separated in the Dev Studio editor):
+
+* Every node in **Granted Permissions** is added to the player as a **transient** LuckPerms permission (never written to LuckPerms storage) while the cosmetic is worn and its `permission` gate passes.
+* Every tag in **Minecraft Tags** is applied as a vanilla `/tag`-style scoreboard tag under the same condition — handy for datapacks or `/execute if entity @s[tag=...]`.
+
+Both are removed the instant the cosmetic is unequipped, and re-applied automatically on rejoin if it's still worn. Bonuses from several equipped cosmetics stack (the union of everything granted).
 
 ---
 
@@ -69,6 +90,8 @@ Accessory *types* (e.g. `necklace`, `scarf`) also carry a `limitPerPlayer` and a
 | :--- | :--- |
 | `gc.type.<type>.<N>` | Raises the per-player limit for that type to **N**. |
 | `gc.type.<type>.bypass` | Unlimited (99) for that type. |
+| `gc.extratypeslot.<type>.<N>` | **Adds** N extra items on top of the normal limit for that type. |
+| `gc.extratypeslot.all.<N>` | Adds N extra items to **every** type. |
 
 ---
 

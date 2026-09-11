@@ -3,7 +3,7 @@
 ---
 
 !!! info "Fabric é o lançamento atual"
-    A versão pública roda em **Fabric** — use `greatcosmetics-fabric-<versão>.jar`. Existe um build de **NeoForge** em testes; ele vai ser publicado assim que for verificado. Fica de olho no [Discord](https://discord.gg/YgM4Ng4QGu) pro anúncio.
+    A versão pública roda em **Fabric** — use `greatcosmetics-fabric-<versão>.jar`. Existe um build de **NeoForge** em testes; ele vai ser publicado assim que for verificado. Fica de olho no [Discord](https://discord.gg/GbbbNvQG3N) pro anúncio.
 
 ## **Requisitos do Servidor**
 
