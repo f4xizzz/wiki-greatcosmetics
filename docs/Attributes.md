@@ -76,7 +76,7 @@ A separate, large system: shiny rate, guaranteed IVs, EV gain, capture chance, h
 
 ## **Special Effects**
 
-A cosmetic can also grant an *active ability*, editable in the Dev Studio's **Special Effects** section (or, for the four marked **Cobblemon**, inside the **Cobblemon Effects** popup — see [Cobblemon Effects](Lure System.md) — they only appear on a server running Cobblemon). See [Integrations](Integrations.md) for how the Cobblemon-gated ones work under the hood.
+A cosmetic can also grant an *active ability*, editable in the Dev Studio's **Special Effects** section (or, for the four marked **Cobblemon**, inside the **Cobblemon Effects** popup — see [Cobblemon Effects](Lure System.md) — they only appear on a server running Cobblemon). See [Cobblemon Integration](Cobblemon Integration.md) for how the Cobblemon-gated ones work under the hood.
 
 Each ability can also be reached from the **Quick Actions** wheel (default key `V`, see [The Wardrobe](The Wardrobe.md#quick-actions-menu)) instead of holding Shift.
 
@@ -117,4 +117,4 @@ Beyond the single `permission` gate (who can use the cosmetic at all), a cosmeti
 * **Granted Permissions** — a comma-separated list of LuckPerms permission nodes applied as *transient* (session-only, never written to LuckPerms storage) while the cosmetic is worn and its gate passes. Removed the instant it's unequipped.
 * **Minecraft Tags** — a comma-separated list of vanilla scoreboard tags (`/tag`) added the same way, for use in `/execute if entity @s[tag=...]` or datapacks.
 
-See [Integrations](Integrations.md#luckperms) for the full LuckPerms picture, including the server-wide "block effects for this group" switch.
+See [LuckPerms Integration](LuckPerms Integration.md) for the full picture, including the server-wide "block effects for this group" switch.

@@ -45,10 +45,14 @@ nav:
       - Introduction: index.md
       - Dependencies: Dependencies.md
       - Installation: Installation.md
-      - Integrations: Integrations.md
       - Commands: Commands.md
       - Permissions: Permissions.md
       - FAQs: FAQs.md
+
+  - Integrations:
+      - Integrations: Integrations.md
+      - Cobblemon: Cobblemon Integration.md
+      - LuckPerms: LuckPerms Integration.md
 
   - Configuration:
       - Main Config: Main Config.md

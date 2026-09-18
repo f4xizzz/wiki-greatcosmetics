@@ -76,7 +76,7 @@ Um sistema separado e grande: taxa de shiny, IVs garantidos, ganho de EV, chance
 
 ## **Special Effects (habilidades ativas)**
 
-Um cosmético também pode conceder uma *habilidade ativa*, editável na seção **Special Effects** do Dev Studio (ou, pras quatro marcadas **Cobblemon**, dentro do popup **Cobblemon Effects** — ver [Cobblemon Effects](Lure System.pt.md) — só aparecem num servidor rodando Cobblemon). Ver [Integrações](Integrations.pt.md) pra entender como as que dependem do Cobblemon funcionam por baixo dos panos.
+Um cosmético também pode conceder uma *habilidade ativa*, editável na seção **Special Effects** do Dev Studio (ou, pras quatro marcadas **Cobblemon**, dentro do popup **Cobblemon Effects** — ver [Cobblemon Effects](Lure System.pt.md) — só aparecem num servidor rodando Cobblemon). Ver [Integração com Cobblemon](Cobblemon Integration.pt.md) pra entender como as que dependem do Cobblemon funcionam por baixo dos panos.
 
 Cada habilidade também pode ser acionada pela roda de **Ações Rápidas** (tecla padrão `V`, ver [O Wardrobe](The Wardrobe.pt.md#menu-de-acoes-rapidas)) em vez de segurar Shift.
 
@@ -117,4 +117,4 @@ Além do único gate `permission` (quem pode sequer usar o cosmético), um cosm�
 * **Granted Permissions** — uma lista separada por vírgula de nodes de permissão do LuckPerms aplicados como *transient* (só na sessão, nunca gravados na storage do LuckPerms) enquanto o cosmético está equipado e o gate dele passa. Removidos no instante em que é desequipado.
 * **Minecraft Tags** — uma lista separada por vírgula de scoreboard tags vanilla (`/tag`) adicionadas do mesmo jeito, pra usar em `/execute if entity @s[tag=...]` ou datapacks.
 
-Ver [Integrações](Integrations.pt.md#luckperms) pro panorama completo do LuckPerms, incluindo o interruptor "bloquear efeitos pra esse grupo" que vale pro servidor inteiro.
+Ver [Integração com LuckPerms](LuckPerms Integration.pt.md) pro panorama completo, incluindo o interruptor "bloquear efeitos pra esse grupo" que vale pro servidor inteiro.
