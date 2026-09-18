@@ -2,7 +2,7 @@
 
 ---
 
-The **Cobblemon Effects** editor lets a cosmetic give **Cobblemon** perks: Lure bonuses (better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, EV gain, friendship, a wild-spawn type boost and fishing bonuses) and four **Scanners** (IVs, Nature, Ability, Size).
+The **Cobblemon Effects** editor lets a cosmetic give **Cobblemon** perks: Lure bonuses (better shiny odds, guaranteed IVs, capture chance, hidden abilities, EXP, EV gain, friendship, a wild-spawn type boost and fishing bonuses), five **Scanners** (IVs, Nature, Ability, Size, Dex), and two active abilities, **Heal Ability** and **Shiny & HA Radar** (see [Attributes & Abilities § Special Effects](Attributes.md#special-effects)).
 
 Configure it in the [Dev Studio](Dev Studio.md) cosmetic editor via **`>> Cobblemon Effects`**. Every field has a hover tooltip. The whole page (and the fields below) only appears / does anything on a server that has **Cobblemon** installed.
 
@@ -18,8 +18,9 @@ Four independent toggles. While a player wears a cosmetic (or an [armor cosmetic
 | **Nature Scanner** (`natureScanner`) | The Pokémon's nature. | One line above the nametag (below the IV block, if both are on). |
 | **Ability Scanner** (`abilityScanner`) | The Pokémon's ability. | To the **right** of the nametag. |
 | **Size Scanner** (`sizeScanner`) | Its size category (XS/S/M/L/XL). | To the **left** of the nametag. |
+| **Dex Scanner** (`dexScanner`) | Nothing visual — auto-registers any **wild** Pokémon looked at (crosshair) from 5+ blocks away as "seen" in the player's Pokédex, no item needed. | — |
 
-They're all **independent of the Lure `enabled` switch** and of each other — mix and match on the same cosmetic. Wild Pokémon data (IVs, nature, ability, exact size) doesn't exist on the client at all, so the server computes and pushes it a few times per second while any scanner is worn.
+They're all **independent of the Lure `enabled` switch** and of each other — mix and match on the same cosmetic. Wild Pokémon data (IVs, nature, ability, exact size) doesn't exist on the client at all, so the server computes and pushes it a few times per second while any scanner is worn. See [Attributes & Abilities § Special Effects](Attributes.md#special-effects) for the other two Cobblemon abilities that share this popup, **Heal Ability** and **Shiny & HA Radar**.
 
 ---
 

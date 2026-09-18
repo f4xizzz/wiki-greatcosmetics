@@ -72,6 +72,7 @@ Uma **variante** é um *posicionamento* alternativo do cosmético — mesmo mode
 * `+ Add Variant` cria e já abre o editor dela; `X Remove Variant N` apaga.
 * Cada linha tem um campo **Variant ID** (`[a-z0-9_]`, único no cosmético).
 * `>> Config Variant N` abre o editor: **Display Name** (o que aparece no menu pro jogador), **Slot** (vazio = herda o slot do cosmético base — só afeta o limite de slot), **Anchor**, **Offset / Rotation / Scale** (com o gizmo 3D e a prévia ao vivo, igual uma parte normal) e uma seção **=== EFFECTS ===** — deixar **Effect Visual** / **Fly Particle** / **Shift Particle** **vazios** herda os do cosmético base; preencher pelo menos um dá à variante o próprio conjunto.
+* Se o cosmético base tem **mais de uma Part** (ex: um par de sapatos, uma pra cada pé), aparece um campo **Editing Part** no topo do popup — escolhe qual das Parts do base os campos abaixo estão reposicionando agora. Cada Part da variante nasce como clone da Part correspondente do base (mesmo model, mesma pose inicial); trocar entre elas nunca perde o que você já ajustou nas outras.
 * Quando um cosmético tem ≥1 variante, ao clicar nele no guarda-roupa o jogador vê um menu: **Padrão** (o posicionamento base) + cada variante. Só **uma** variante (ou o Padrão) pode ser usada por vez — tem que desequipar pra trocar.
 * Variantes são grátis — quem tem o cosmético usa qualquer variante.
 * Não coloque variante num cosmético **mochila** (todas compartilhariam o mesmo baú).

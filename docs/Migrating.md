@@ -46,4 +46,4 @@ Unrelated to the item migration: older builds kept all text in one `config/Great
 
 ## **Migrating the database**
 
-To move player data between SQLite and MySQL, see [Storage → Migrating](Storage.md#migrating-sqlite--mysql).
+To move player data between SQLite and MySQL, see [Storage → Migrating](Storage.md#migrating-sqlite-mysql).

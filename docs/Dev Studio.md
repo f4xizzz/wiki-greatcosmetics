@@ -72,6 +72,7 @@ A **variant** is an alternative *placement* of the cosmetic — same model, diff
 * `+ Add Variant` creates one and opens its editor immediately; `X Remove Variant N` deletes it.
 * Each variant row has a **Variant ID** field (`[a-z0-9_]`, unique in the cosmetic).
 * `>> Config Variant N` opens the editor: **Display Name** (what players see in the picker), **Slot** (blank = inherit the base cosmetic's slot — only affects slot limits), **Anchor**, **Offset / Rotation / Scale** (with the live 3D gizmo and preview, same as a normal part), and an **=== EFFECTS ===** section — **Effect Visual** / **Fly Particle** / **Shift Particle** left **empty** inherit the base cosmetic's; filling in at least one gives the variant its own set instead.
+* If the base cosmetic has **more than one Part** (e.g. a two-part shoe pair, one per foot), an **Editing Part** field appears at the top of the popup — pick which of the base's Parts the fields below are currently repositioning. Each Part of the variant starts as a clone of the matching base Part (same model, same starting pose); switching between them never loses what you already tuned on the others.
 * When a cosmetic has ≥1 variant, players clicking it in the wardrobe get a picker: **Default** (the base placement) + each variant. Only **one** variant (or Default) of a cosmetic can be worn at a time — they must unequip before switching.
 * Variants are free — anyone who owns the cosmetic can use any variant.
 * Don't add variants to a **backpack** cosmetic (all variants would share one backpack).

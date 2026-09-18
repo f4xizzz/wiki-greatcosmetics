@@ -47,6 +47,19 @@ Deixe um campo **em branco** (ou `none`) pra desativar esse som.
 
 ---
 
+## **Combat Sounds**
+
+Mais dois slots de som, também na seção **Sounds**: **Hit Taken Sound** e **Hit Dealt Sound**, cada um com seu próprio **Volume**, **Pitch** e **Interval** (ticks, cooldown mínimo entre repetições pra uma sequência de hits não virar uma metralhadora de som).
+
+| Campo | Toca quando… |
+| :--- | :--- |
+| **Hit Taken Sound** | O jogador leva dano. |
+| **Hit Dealt Sound** | O jogador causa dano. |
+
+100% vanilla — não precisa de Cobblemon. Ver [Special Effects](Attributes.pt.md#special-effects-habilidades-ativas) pro resto das habilidades ativas que um cosmético pode conceder.
+
+---
+
 ## **`sounds.json`**
 
 Também existe um arquivo de presets de som globais do servidor em `config/GreatCosmetics/sounds.json` usado por algumas ações internas (ex: o som de "você bateu num limite", a confirmação de equipar). As chaves mapeiam um nome curto pra `{ id, volume, pitch }`. Edite e `/gc reload` pra mudar esses sons de feedback globais.

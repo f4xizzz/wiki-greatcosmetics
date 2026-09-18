@@ -47,6 +47,19 @@ Leave a field **blank** (or `none`) to disable that sound.
 
 ---
 
+## **Combat Sounds**
+
+Two more sound slots, also in the **Sounds** section: **Hit Taken Sound** and **Hit Dealt Sound**, each with its own **Volume**, **Pitch** and **Interval** (ticks, minimum cooldown between repeats so a flurry of hits doesn't turn into a machine gun of sound).
+
+| Field | Plays when… |
+| :--- | :--- |
+| **Hit Taken Sound** | The player takes damage. |
+| **Hit Dealt Sound** | The player deals damage. |
+
+Pure vanilla — no Cobblemon needed. See [Special Effects](Attributes.md#special-effects) for the rest of the active abilities a cosmetic can grant.
+
+---
+
 ## **`sounds.json`**
 
 There is also a server-wide sound preset file at `config/GreatCosmetics/sounds.json` used by a few internal actions (e.g. the "you hit a limit" error sound, the equip confirmation). Keys map a short name to `{ id, volume, pitch }`. Edit it and `/gc reload` to change those global feedback sounds.

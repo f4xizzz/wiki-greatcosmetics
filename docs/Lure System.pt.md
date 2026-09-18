@@ -2,7 +2,7 @@
 
 ---
 
-O editor **Cobblemon Effects** deixa um cosmético dar vantagens do **Cobblemon**: bônus de Lure (shiny, IVs garantidos, chance de captura, hidden abilities, EXP, ganho de EV, amizade, um boost de tipo no spawn selvagem e bônus de pesca) e quatro **Scanners** (IVs, Nature, Ability, Size).
+O editor **Cobblemon Effects** deixa um cosmético dar vantagens do **Cobblemon**: bônus de Lure (shiny, IVs garantidos, chance de captura, hidden abilities, EXP, ganho de EV, amizade, um boost de tipo no spawn selvagem e bônus de pesca), cinco **Scanners** (IVs, Nature, Ability, Size, Dex), e duas habilidades ativas, **Heal Ability** e **Shiny & HA Radar** (ver [Atributos & Habilidades § Special Effects](Attributes.pt.md#special-effects-habilidades-ativas)).
 
 Configure na seção **`>> Cobblemon Effects`** do editor de cosmético do [Dev Studio](Dev Studio.md). Cada campo tem tooltip por hover. A página inteira (e os campos abaixo) só aparece / faz alguma coisa num servidor com **Cobblemon** instalado.
 
@@ -18,8 +18,9 @@ Quatro toggles independentes. Enquanto o jogador veste um cosmético (ou um [cos
 | **Nature Scanner** (`natureScanner`) | A nature do Pokémon. | Uma linha acima do nome (abaixo do bloco de IV, se os dois estiverem ligados). |
 | **Ability Scanner** (`abilityScanner`) | A ability do Pokémon. | À **direita** do nome. |
 | **Size Scanner** (`sizeScanner`) | A categoria de tamanho (XS/S/M/L/XL). | À **esquerda** do nome. |
+| **Dex Scanner** (`dexScanner`) | Nada visual — registra automaticamente todo Pokémon **selvagem** mirado (cruz de mira) a 5+ blocos de distância como "visto" na Pokédex do jogador, sem precisar de item. | — |
 
-Todos são **independentes do `enabled` do Lure** e uns dos outros — combine à vontade no mesmo cosmético. Dados de Pokémon selvagem (IVs, nature, ability, tamanho exato) simplesmente não existem no cliente, então o servidor calcula e empurra isso algumas vezes por segundo enquanto qualquer scanner está equipado.
+Todos são **independentes do `enabled` do Lure** e uns dos outros — combine à vontade no mesmo cosmético. Dados de Pokémon selvagem (IVs, nature, ability, tamanho exato) simplesmente não existem no cliente, então o servidor calcula e empurra isso algumas vezes por segundo enquanto qualquer scanner está equipado. Ver [Atributos & Habilidades § Special Effects](Attributes.pt.md#special-effects-habilidades-ativas) pras outras duas habilidades do Cobblemon que dividem esse popup, **Heal Ability** e **Shiny & HA Radar**.
 
 ---
 

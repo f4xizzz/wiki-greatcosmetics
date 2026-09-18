@@ -29,7 +29,6 @@ Um **efeito de partícula** é um emissor de partículas nomeado e reutilizável
 | **shape** | `SIMPLE` (o emissor clássico) ou uma forma geométrica — `CIRCLE`, `HELIX`, `BEAM`, `PULSE`. Ver [Formas](#formas). |
 | **count** | Partículas geradas por rajada. **Só `SIMPLE`** — as formas geram uma partícula por ponto da forma. |
 | **tickInterval** | Ticks entre rajadas (`20` = uma/segundo, `5` = 4×/segundo). |
-| **followPlayer** | `false` (padrão) = a partícula nasce parada — fica no lugar ou vai à deriva pelo próprio `speed`, virando um rastro deixado atrás do jogador em movimento. `true` = ela já nasce carregando a velocidade atual do jogador e viaja junto com ele em vez de ficar pra trás. Funciona tanto em `SIMPLE` quanto em formas (cada ponto da forma recebe a velocidade do jogador individualmente). |
 | **speed** | Velocidade da partícula — `0` = elas ficam paradas, maior = elas disparam pra fora. |
 | **spreadX / Y / Z** | Caixa de espalhamento aleatório ao redor de cada ponto de spawn (jitter). |
 | **offsetX / Y / Z** | Posição relativa ao jogador — `Y: 1.0` é mais ou menos a altura do peito. `X` é pros lados, `Z` é frente/trás. Gira com o corpo do jogador. |
@@ -45,7 +44,7 @@ O editor é de cima pra baixo:
 
 1. **=== EFFECT PRESET ===** — um dropdown que preenche todos os campos de um template, aí você ajusta. Ver [Presets](#presets).
 2. **=== SHAPE ===** — `SIMPLE` / `CIRCLE` / `HELIX` / `BEAM` / `PULSE`. Mudar isso troca os campos abaixo.
-3. **=== CONFIGURATION ===** — id da partícula, count, tick interval, toggle **Follow Player**.
+3. **=== CONFIGURATION ===** — id da partícula, count, tick interval.
 4. **shape params** *(só quando shape ≠ SIMPLE)* — raio, pontos, strands, rotação, animação…
 5. **=== COLOR ===** — o toggle **Custom Color** e os sliders R/G/B.
 6. **=== 3D TOOL / OFFSETS / SPREAD ===** — posição e jitter.

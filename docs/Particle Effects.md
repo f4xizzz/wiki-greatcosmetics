@@ -29,7 +29,6 @@ A **particle effect** is a named, reusable particle emitter you attach to cosmet
 | **shape** | `SIMPLE` (the classic emitter) or a geometric shape — `CIRCLE`, `HELIX`, `BEAM`, `PULSE`. See [Shapes](#shapes). |
 | **count** | Particles spawned each burst. **`SIMPLE` only** — shapes spawn one particle per point of the shape. |
 | **tickInterval** | Ticks between bursts (`20` = once/second, `5` = 4×/second). |
-| **followPlayer** | `false` (default) = the particle spawns stationary — it hangs in place or drifts by its own `speed`, becoming a trail left behind a moving player. `true` = it spawns already carrying the player's current velocity and travels along with them instead of trailing. Works for `SIMPLE` and shapes alike (each point of a shape gets the player's velocity individually). |
 | **speed** | Particle velocity — `0` = they hang in place, higher = they shoot outward. |
 | **spreadX / Y / Z** | Random spread box around each spawn point (jitter). |
 | **offsetX / Y / Z** | Position relative to the player — `Y: 1.0` is roughly chest height. `X` is sideways, `Z` is front/back. Rotates with the player's body. |
@@ -45,7 +44,7 @@ The editor is laid out top-to-bottom:
 
 1. **=== EFFECT PRESET ===** — a dropdown that fills in every field from a template, then you tweak. See [Presets](#presets).
 2. **=== SHAPE ===** — `SIMPLE` / `CIRCLE` / `HELIX` / `BEAM` / `PULSE`. Changing this swaps the fields below.
-3. **=== CONFIGURATION ===** — particle id, count, tick interval, **Follow Player** toggle.
+3. **=== CONFIGURATION ===** — particle id, count, tick interval.
 4. **shape params** *(only when shape ≠ SIMPLE)* — radius, points, strands, rotation, animation…
 5. **=== COLOR ===** — the **Custom Color** toggle and R/G/B sliders.
 6. **=== 3D TOOL / OFFSETS / SPREAD ===** — position and jitter.

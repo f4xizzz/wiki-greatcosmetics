@@ -70,3 +70,32 @@ Uma pequena gaveta na lateral mostra os nove slots virtuais do jogador e o que e
 ## **Cenários de estúdio**
 
 `/gc wardrobe setbackground <nome>` salva sua posição atual como uma cena nomeada. Aí `/wardrobe <jogador> <nome>` abre o guarda-roupa pra esse jogador **naquele lugar** — ótimo pra um "provador" decorado. Salvo em `config/GreatCosmetics/studios.json`.
+
+---
+
+## **O Bloco Wardrobe**
+
+Um móvel colocável, animado com GeckoLib, que abre a mesma tela de guarda-roupa sem precisar de comando nenhum — clique com o botão direito e ele toca uma animação de **abrir**, fechando de novo (troca instantânea, sem blend do GeckoLib no meio) quando o jogador sai.
+
+* Encontre na aba de criativo **GreatCosmetics**, ou `/give <jogador> greatcosmetics:wardrobe`.
+* É um **multiblock**: um footprint de 18 células (um retângulo plano 3×3, mais uma camada idêntica invisível bem atrás pra dar profundidade). Só o bloco que você clicou pra colocar é visível/interativo — o resto é colisão sólida mas invisível, e quebrar **qualquer** célula da estrutura remove tudo de uma vez.
+* Clicar com o botão direito abre o guarda-roupa com a câmera **travada**: o jogador fica de frente pro bloco (então fica de costas pra ele, de frente pra câmera) e arrastar pra girar a visão fica desativado — só o zoom da roda do mouse continua funcionando. Nada na barra de abas (troca de página, filtro de categoria, etc) consegue mexer na câmera também.
+* Dois controles extras aparecem que não existem na visão do comando `/wardrobe`:
+    * **Setas `<` / `>`** (no mesmo estilo das setas de trocar Pokémon da aba Party) — giram o personagem 30° pra esquerda/direita pra você ver de ângulos diferentes sem mexer na câmera travada.
+    * Um **botão de foco** (canto superior direito, acima da gaveta de slots equipados) que cicla o ponto de foco vertical da câmera entre **Head**, **Body**, **Legs** e **Feet**.
+* A aba **Dev Studio** fica escondida aqui mesmo pra operadores de verdade — o bloco é pensado como um provador pro jogador, não um atalho de admin.
+
+---
+
+## **Menu de Ações Rápidas**
+
+Aperte **`V`** (alterável em *Controles → GreatCosmetics*) em qualquer lugar do mundo pra abrir um menu radial ("roda") — a mesma ideia de layout da roda de interação com Pokémon do Cobblemon — listando atalhos rápidos pra quaisquer [Special Effects](Attributes.pt.md#special-effects-habilidades-ativas) que o jogador tenha equipado no momento:
+
+| Slot | Sempre aparece? | Comportamento |
+| :--- | :--- | :--- |
+| **Open PC** | Sempre | Roda `/pc` na hora, de qualquer lugar. |
+| **Heal Party Now** | Só se um cosmético de Heal Ability estiver equipado | Cura a party Cobblemon na hora, pulando o Shift-hold. |
+| **Pollinate Now** | Só se um cosmético de Pollinator estiver equipado | Dispara o burst de bone meal na hora, pulando o Shift-hold. |
+| **Vein Miner** / **Tree Capitator** | Só se essa habilidade estiver equipada | Liga/desliga pra sessão atual — o próprio botão da roda fica **verde** (ligado) ou **vermelho** (desligado) como indicador. Desligar não mexe na config do cosmético, e reseta sozinho no relogin. |
+
+Clique num slot (ou clique num espaço vazio pra cancelar) — nenhum outro clique, atalho de teclado ou menu consegue abrir por cima enquanto esse já está na tela.

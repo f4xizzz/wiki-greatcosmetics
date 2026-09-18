@@ -46,4 +46,4 @@ Sem relação com a migração de item: builds mais antigas guardavam todo texto
 
 ## **Migrando o banco de dados**
 
-Pra mover dados de jogador entre SQLite e MySQL, ver [Armazenamento → Migrando](Storage.md#migrando-sqlite--mysql).
+Pra mover dados de jogador entre SQLite e MySQL, ver [Armazenamento → Migrando](Storage.pt.md#migrando-sqlite-mysql).

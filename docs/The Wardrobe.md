@@ -70,3 +70,32 @@ A small drawer on the side shows the player's nine virtual slots and what's equi
 ## **Studio backgrounds**
 
 `/gc wardrobe setbackground <name>` saves your current position as a named scene. Then `/wardrobe <player> <name>` opens the wardrobe for that player **at that location** — handy for a decorated "dressing room" build. Saved in `config/GreatCosmetics/studios.json`.
+
+---
+
+## **The Wardrobe Block**
+
+A placeable, GeckoLib-animated piece of furniture that opens the same wardrobe view without any command — right-click it and it plays an **open** animation, closing again (instant snap, no in-between GeckoLib blend) once the player leaves.
+
+* Find it in the **GreatCosmetics** creative tab, or `/give <player> greatcosmetics:wardrobe`.
+* It's a **multiblock**: an 18-cell footprint (a flat 3×3 rectangle, plus an identical invisible layer right behind it for depth). Only the block you clicked to place is visible/interactive — the rest is solid but invisible collision, and breaking *any* cell of the structure removes the whole thing.
+* Right-clicking opens the wardrobe with the camera **locked**: the player faces the block (so their back is to it, front to the camera) and dragging to rotate the view is disabled — only the scroll-wheel zoom still works. Nothing in the tab bar (page switches, category filters, etc.) is allowed to nudge the camera either.
+* Two extra controls appear that don't exist in the `/wardrobe` command view:
+    * **`<` / `>` arrows** (styled like the Party tab's Pokémon-switch arrows) — spin the character 30° left/right so you can see it from different angles without touching the locked camera.
+    * A **focus button** (top-right, above the equipped-slots drawer) that cycles the camera's vertical focus point between **Head**, **Body**, **Legs** and **Feet**.
+* The **Dev Studio** tab is hidden here even for real operators — the block is meant as a player-facing fitting room, not an admin shortcut.
+
+---
+
+## **Quick Actions Menu**
+
+Press **`V`** (rebindable under *Controls → GreatCosmetics*) anywhere in the world to open a radial "wheel" menu — same layout idea as Cobblemon's Pokémon interact wheel — listing quick shortcuts for whatever [Special Effects](Attributes.md#special-effects) the player currently has equipped:
+
+| Slot | Always shown? | Behavior |
+| :--- | :--- | :--- |
+| **Open PC** | Always | Runs `/pc` instantly, from anywhere. |
+| **Heal Party Now** | Only if a Heal Ability cosmetic is equipped | Heals the Cobblemon party right away, skipping the Shift-hold. |
+| **Pollinate Now** | Only if a Pollinator cosmetic is equipped | Triggers the bone-meal burst right away, skipping the Shift-hold. |
+| **Vein Miner** / **Tree Capitator** | Only if that ability is equipped | Toggles it on/off for the current session — the wheel button itself turns **green** (on) or **red** (off) as an on/off indicator. Turning it off doesn't touch the cosmetic's config, and resets automatically on relog. |
+
+Click a slot (or click empty space to cancel) — no other click, keyboard shortcut, or menu can open this while it's already up.
